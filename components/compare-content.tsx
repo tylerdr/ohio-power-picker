@@ -30,6 +30,7 @@ export default function CompareContent({ utility, rawSuppliers, zip, allUtilitie
 
   const suppliers = useMemo(() => {
     return rawSuppliers
+      .filter((s) => s.termMonths > 0) // Exclude Standard Offer (default utility rate)
       .map((supplier) => {
         const yearlySavings = (utility.priceToCompare - supplier.ratePerKwh) * estimatedKwh * 12;
         return { ...supplier, yearlySavings };
@@ -75,17 +76,21 @@ export default function CompareContent({ utility, rawSuppliers, zip, allUtilitie
             </div>
             <div className="rounded-3xl border border-white/60 bg-white/70 p-6 shadow-card backdrop-blur">
               <h2 className="text-xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
-                Savings Calculator
+                How it works
               </h2>
-              <p className="mt-2 text-sm text-ink/70">
-                Savings update automatically based on your home profile above.
-              </p>
-              <div className="mt-6 rounded-2xl bg-white p-4 text-sm text-ink/80">
-                <p className="font-semibold text-ink">Formula</p>
-                <p className="mt-2">({formatRate(utility.priceToCompare)} - Supplier Rate) × {estimatedKwh.toLocaleString()} kWh × 12 months</p>
-              </div>
-              <div className="mt-4 rounded-2xl bg-mist p-4 text-sm text-ink/70">
-                <p>Suppliers are sorted by estimated savings. Green means you save money, red means you pay more than the default rate.</p>
+              <div className="mt-4 grid gap-3 text-sm text-ink/70">
+                <div className="rounded-2xl bg-leaf/10 p-4">
+                  <p className="font-semibold text-ink">✅ Green = saves money</p>
+                  <p className="mt-1">Supplier rate is below your utility&apos;s Price to Compare ({formatRate(utility.priceToCompare)}).</p>
+                </div>
+                <div className="rounded-2xl bg-danger/10 p-4">
+                  <p className="font-semibold text-ink">🔴 Red = costs more</p>
+                  <p className="mt-1">You&apos;d pay more than sticking with the default rate.</p>
+                </div>
+                <div className="rounded-2xl bg-sky/60 p-4">
+                  <p className="font-semibold text-ink">📊 Personalized estimates</p>
+                  <p className="mt-1">Based on your home profile: {estimatedKwh.toLocaleString()} kWh/month. Adjust above to refine.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -94,7 +99,7 @@ export default function CompareContent({ utility, rawSuppliers, zip, allUtilitie
 
       <section className="px-5 pt-10 md:px-10">
         <div className="mx-auto max-w-6xl">
-          <SupplierTable suppliers={suppliers} priceToCompare={utility.priceToCompare} />
+          <SupplierTable suppliers={suppliers} priceToCompare={utility.priceToCompare} estimatedKwh={estimatedKwh} />
         </div>
       </section>
 

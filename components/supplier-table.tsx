@@ -5,22 +5,21 @@ import { useMemo, useState } from 'react';
 import { Supplier } from '@/lib/types';
 import { formatCurrency, formatRate } from '@/lib/utils';
 
-const AVG_KWH = 900;
-
 type Props = {
   suppliers: Supplier[];
   priceToCompare: number;
+  estimatedKwh?: number;
 };
 
-const getYearlySavings = (priceToCompare: number, supplier: Supplier) =>
-  (priceToCompare - supplier.ratePerKwh) * AVG_KWH * 12;
+const getYearlySavings = (priceToCompare: number, supplier: Supplier, kwh: number) =>
+  (priceToCompare - supplier.ratePerKwh) * kwh * 12;
 
 const getSavingsLabel = (value: number) =>
   value >= 0 ? `Save ${formatCurrency(value)}/yr` : `+${formatCurrency(Math.abs(value))}/yr`;
 
 type SortKey = 'savings' | 'rate' | 'term' | 'type';
 
-export default function SupplierTable({ suppliers, priceToCompare }: Props) {
+export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh = 900 }: Props) {
   const [sortKey, setSortKey] = useState<SortKey>('savings');
 
   const sortLabel = useMemo(() => {
@@ -40,7 +39,7 @@ export default function SupplierTable({ suppliers, priceToCompare }: Props) {
   const sortedSuppliers = useMemo(() => {
     const withSavings = suppliers.map((supplier) => ({
       supplier,
-      yearlySavings: getYearlySavings(priceToCompare, supplier)
+      yearlySavings: getYearlySavings(priceToCompare, supplier, estimatedKwh)
     }));
 
     const sorted = [...withSavings].sort((a, b) => {
@@ -70,7 +69,7 @@ export default function SupplierTable({ suppliers, priceToCompare }: Props) {
           <p className="text-sm text-ink/70">{sortLabel}</p>
         </div>
         <div className="flex flex-wrap items-center gap-3 text-xs text-ink/60">
-          <span>Avg usage: 900 kWh/month</span>
+          <span>Usage: {estimatedKwh.toLocaleString()} kWh/month</span>
           <label className="flex items-center gap-2 text-xs text-ink/70">
             Sort by
             <select
@@ -89,7 +88,7 @@ export default function SupplierTable({ suppliers, priceToCompare }: Props) {
 
       <div className="mt-6 grid gap-4 md:hidden">
         {sortedSuppliers.map((supplier) => {
-          const yearlySavings = getYearlySavings(priceToCompare, supplier);
+          const yearlySavings = getYearlySavings(priceToCompare, supplier, estimatedKwh);
           const isSaving = yearlySavings >= 0;
 
           return (
@@ -147,7 +146,7 @@ export default function SupplierTable({ suppliers, priceToCompare }: Props) {
           </thead>
           <tbody className="divide-y divide-sea/10">
             {sortedSuppliers.map((supplier) => {
-              const yearlySavings = getYearlySavings(priceToCompare, supplier);
+              const yearlySavings = getYearlySavings(priceToCompare, supplier, estimatedKwh);
               const isSaving = yearlySavings >= 0;
               return (
                 <tr key={supplier.id} className="align-top">
