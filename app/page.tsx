@@ -1,9 +1,28 @@
 import Link from 'next/link';
 import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
+import ScamShield from '@/components/scam-shield';
+import QuickQuiz from '@/components/quick-quiz';
+import { supplierData } from '@/lib/data';
 import { utilities } from '@/lib/utilities';
+import { formatRate } from '@/lib/utils';
 
 export default function HomePage() {
+  const utilityComparison = utilities.map((utility) => {
+    const availableSuppliers = supplierData.filter((supplier) =>
+      supplier.utilityTerritories.includes(utility.id)
+    );
+    const bestSupplier = availableSuppliers.reduce((best, supplier) => {
+      if (!best || supplier.ratePerKwh < best.ratePerKwh) return supplier;
+      return best;
+    }, undefined as undefined | (typeof availableSuppliers)[number]);
+
+    return {
+      utility,
+      bestSupplier
+    };
+  });
+
   return (
     <main className="pb-16">
       <SiteHeader />
@@ -84,6 +103,53 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="px-5 pt-10 md:px-10">
+        <div className="mx-auto max-w-6xl rounded-3xl border border-white/60 bg-white/70 p-8 shadow-card backdrop-blur">
+          <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Statewide Snapshot</p>
+              <h2 className="mt-2 text-2xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
+                Ohio utility comparison at a glance
+              </h2>
+              <p className="mt-2 text-sm text-ink/70">
+                See every utility’s Price to Compare and the best supplier rate available right now.
+              </p>
+            </div>
+            <Link
+              href="/compare"
+              className="inline-flex items-center justify-center rounded-full bg-sea px-5 py-2 text-sm font-semibold text-white"
+            >
+              Compare suppliers
+            </Link>
+          </div>
+
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full min-w-[640px] text-left text-sm">
+              <thead className="text-xs uppercase text-ink/60">
+                <tr>
+                  <th className="pb-3">Utility</th>
+                  <th className="pb-3">Price to Compare</th>
+                  <th className="pb-3">Best available rate</th>
+                  <th className="pb-3">Best supplier</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-sea/10">
+                {utilityComparison.map(({ utility, bestSupplier }) => (
+                  <tr key={utility.id}>
+                    <td className="py-3 font-semibold text-ink">{utility.name}</td>
+                    <td className="py-3 text-ink/70">{formatRate(utility.priceToCompare)}</td>
+                    <td className="py-3 text-ink/70">
+                      {bestSupplier ? formatRate(bestSupplier.ratePerKwh) : 'No offers listed'}
+                    </td>
+                    <td className="py-3 text-ink/70">{bestSupplier ? bestSupplier.name : '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       <section className="px-5 pt-12 md:px-10">
         <div className="mx-auto max-w-6xl rounded-3xl border border-white/60 bg-white/70 p-8 shadow-card backdrop-blur">
           <div className="grid gap-6 md:grid-cols-3">
@@ -103,6 +169,18 @@ export default function HomePage() {
               <p className="mt-2 text-sm text-ink/70">AI flags variable rates, fees, and best value.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="px-5 pt-12 md:px-10">
+        <div className="mx-auto max-w-6xl">
+          <ScamShield variant="compact" />
+        </div>
+      </section>
+
+      <section className="px-5 pt-12 md:px-10">
+        <div className="mx-auto max-w-6xl">
+          <QuickQuiz />
         </div>
       </section>
 

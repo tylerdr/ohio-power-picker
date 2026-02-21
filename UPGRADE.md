@@ -63,6 +63,19 @@ Then auto-filter and rank suppliers based on answers.
 - Smooth animations with Tailwind transitions
 - Chat should feel modern (like ChatGPT's interface but simpler)
 
+### 6. Home Profile Quick Picker
+Instead of a generic 900 kWh/month estimate, let the user quickly personalize:
+- **Home size** — visual icon buttons (not dropdowns): Apartment (~500 kWh) / Small Home (~750 kWh) / Medium Home (~1000 kWh) / Large Home (~1400 kWh) / XL Home (~2000 kWh)
+- **Heating type** — Electric (+40% usage) / Gas (baseline) / Heat Pump (+15% usage)
+- **Household size** — 1-2 (+0%) / 3-4 (+15%) / 5+ (+30%)
+- Calculate estimated monthly kWh from these 3 inputs
+- Show the estimated kWh prominently: "Your estimated usage: ~1,150 kWh/month"
+- ALL savings calculations update in real-time based on this
+- Make it a horizontal card at the top of the compare page, 3 taps and done
+- Use emoji/icons for each option, big tap targets, mobile-friendly
+- New component: `components/home-profile.tsx`
+- Store selection in React state, pass estimated kWh down to all components
+
 ## DO NOT
 - Add any npm packages other than react-markdown
 - Add authentication

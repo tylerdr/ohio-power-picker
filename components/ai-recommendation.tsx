@@ -2,6 +2,7 @@
 
 import { useCompletion } from 'ai/react';
 import { useMemo } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Supplier } from '@/lib/types';
 import { formatCurrency, formatCurrencyPrecise, formatRate } from '@/lib/utils';
 
@@ -73,7 +74,19 @@ export default function AIRecommendation({
 
       <div className="mt-5 rounded-2xl border border-sea/10 bg-mist p-4 text-sm text-ink/80">
         {completion ? (
-          <div className="whitespace-pre-line">{completion}</div>
+          <div className="space-y-3 text-sm text-ink/80">
+            <ReactMarkdown
+              components={{
+                p: ({ children }) => <p className="leading-relaxed">{children}</p>,
+                ul: ({ children }) => <ul className="ml-5 list-disc space-y-1">{children}</ul>,
+                ol: ({ children }) => <ol className="ml-5 list-decimal space-y-1">{children}</ol>,
+                li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+                strong: ({ children }) => <strong className="font-semibold text-ink">{children}</strong>
+              }}
+            >
+              {completion}
+            </ReactMarkdown>
+          </div>
         ) : (
           <p>
             Click generate to get a plain-English summary of the best options for your home.
