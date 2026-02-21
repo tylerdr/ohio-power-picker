@@ -19,8 +19,11 @@ const getSavingsLabel = (value: number) =>
 
 type SortKey = 'savings' | 'rate' | 'term' | 'type';
 
+const INITIAL_SHOW = 8;
+
 export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh = 900 }: Props) {
   const [sortKey, setSortKey] = useState<SortKey>('savings');
+  const [showAll, setShowAll] = useState(false);
 
   const sortLabel = useMemo(() => {
     switch (sortKey) {
@@ -57,7 +60,10 @@ export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh 
     });
 
     return sorted.map((item) => item.supplier);
-  }, [suppliers, priceToCompare, sortKey]);
+  }, [suppliers, priceToCompare, sortKey, estimatedKwh]);
+
+  const visibleSuppliers = showAll ? sortedSuppliers : sortedSuppliers.slice(0, INITIAL_SHOW);
+  const hasMore = sortedSuppliers.length > INITIAL_SHOW;
 
   return (
     <section className="rounded-3xl border border-white/60 bg-white/70 p-6 shadow-card backdrop-blur">
@@ -87,7 +93,7 @@ export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh 
       </div>
 
       <div className="mt-6 grid gap-4 md:hidden">
-        {sortedSuppliers.map((supplier) => {
+        {visibleSuppliers.map((supplier) => {
           const yearlySavings = getYearlySavings(priceToCompare, supplier, estimatedKwh);
           const isSaving = yearlySavings >= 0;
 
@@ -145,7 +151,7 @@ export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh 
             </tr>
           </thead>
           <tbody className="divide-y divide-sea/10">
-            {sortedSuppliers.map((supplier) => {
+            {visibleSuppliers.map((supplier) => {
               const yearlySavings = getYearlySavings(priceToCompare, supplier, estimatedKwh);
               const isSaving = yearlySavings >= 0;
               return (
@@ -188,6 +194,17 @@ export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh 
           </tbody>
         </table>
       </div>
+
+      {hasMore && !showAll && (
+        <div className="mt-4 text-center">
+          <button
+            onClick={() => setShowAll(true)}
+            className="rounded-full bg-mist px-6 py-2 text-sm font-semibold text-ink transition hover:bg-sky/60"
+          >
+            Show all {sortedSuppliers.length} suppliers
+          </button>
+        </div>
+      )}
     </section>
   );
 }

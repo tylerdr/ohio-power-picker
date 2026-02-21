@@ -1,7 +1,7 @@
 import { Supplier } from '@/lib/types';
 import { formatRate } from '@/lib/utils';
 
-const TOO_GOOD_MULTIPLIER = 0.7;
+const TOO_GOOD_MULTIPLIER = 0.55;
 
 type Props = {
   variant?: 'compact' | 'full';
