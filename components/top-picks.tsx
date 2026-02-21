@@ -25,30 +25,62 @@ const riskTone = (score: number) => {
 };
 
 const accents = [
-  'border-leaf/60 from-leaf/15 via-white to-white',
-  'border-sea/40 from-sky/60 via-white to-white',
-  'border-sun/70 from-sun/25 via-white to-white'
+  'border-l-leaf',
+  'border-l-sea',
+  'border-l-sun'
 ];
+
+const pickLabels = ['🏆 Best Overall', '🔒 Best Fixed Rate', '💰 Lowest Price'];
 
 const buildWhy = (supplier: Supplier, yearlySavings: number) => {
   const savingsText = yearlySavings > 0
-    ? `${formatCurrency(yearlySavings)} est. yearly savings`
-    : 'a competitive rate compared to other offers';
+    ? `Save ~${formatCurrency(yearlySavings)}/year`
+    : 'Competitive rate';
 
   if (supplier.rateType === 'fixed' && supplier.renewablePercent >= 50) {
-    return `Fixed rate with ${supplier.renewablePercent}% renewable energy and ${savingsText}.`;
+    return `${savingsText}. Fixed rate with ${supplier.renewablePercent}% renewable energy.`;
   }
-
+  if (supplier.rateType === 'fixed' && supplier.earlyTerminationFee === 0) {
+    return `${savingsText}. Fixed rate with no early termination fee — cancel anytime.`;
+  }
   if (supplier.rateType === 'fixed') {
-    return `Fixed rate for stability with ${savingsText}.`;
+    return `${savingsText}. Predictable fixed rate — your bill won't surprise you.`;
   }
-
   if (supplier.rateType === 'variable') {
-    return 'Lowest starting rate, but variable pricing means higher risk.';
+    return `${savingsText}. ⚠️ Variable rate — can spike in summer/winter. Best for short-term savings.`;
   }
-
-  return `${supplier.termMonths}-month term with ${savingsText}.`;
+  return `${savingsText}. ${supplier.termMonths}-month term.`;
 };
+
+/** Pick 3 diverse top picks: best overall (fixed+savings), best fixed, lowest price */
+function selectTopPicks(suppliers: Supplier[], priceToCompare: number, estimatedKwh: number) {
+  const withSavings = suppliers.map((s) => ({
+    supplier: s,
+    yearlySavings: (priceToCompare - s.ratePerKwh) * estimatedKwh * 12,
+    riskScore: getRiskScore(s)
+  }));
+
+  // Best overall: highest savings with lowest risk (weighted score)
+  const bestOverall = [...withSavings]
+    .sort((a, b) => {
+      const scoreA = a.yearlySavings - a.riskScore * 40;
+      const scoreB = b.yearlySavings - b.riskScore * 40;
+      return scoreB - scoreA;
+    })[0];
+
+  // Best fixed: highest savings among fixed-rate plans
+  const bestFixed = [...withSavings]
+    .filter((s) => s.supplier.rateType === 'fixed' && s.supplier.id !== bestOverall?.supplier.id)
+    .sort((a, b) => b.yearlySavings - a.yearlySavings)[0];
+
+  // Lowest price: cheapest rate regardless of type (different from above picks)
+  const usedIds = new Set([bestOverall?.supplier.id, bestFixed?.supplier.id]);
+  const lowestPrice = [...withSavings]
+    .filter((s) => !usedIds.has(s.supplier.id))
+    .sort((a, b) => a.supplier.ratePerKwh - b.supplier.ratePerKwh)[0];
+
+  return [bestOverall, bestFixed, lowestPrice].filter(Boolean);
+}
 
 type Props = {
   suppliers: Supplier[];
@@ -57,6 +89,8 @@ type Props = {
 };
 
 export default function TopPicks({ suppliers, priceToCompare, estimatedKwh }: Props) {
+  const picks = selectTopPicks(suppliers, priceToCompare, estimatedKwh);
+
   return (
     <section className="space-y-5">
       <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
@@ -66,71 +100,76 @@ export default function TopPicks({ suppliers, priceToCompare, estimatedKwh }: Pr
             The best options for your home
           </h2>
           <p className="mt-2 text-sm text-ink/70">
-            Estimated with {estimatedKwh.toLocaleString()} kWh/month and your utility rate.
+            Based on {estimatedKwh.toLocaleString()} kWh/month usage.
           </p>
-        </div>
-        <div className="rounded-full bg-leaf/10 px-4 py-2 text-xs font-semibold text-ink">
-          Top picks update as you adjust your usage
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
-        {suppliers.slice(0, 3).map((supplier, index) => {
+      <div className="grid gap-5 md:grid-cols-3">
+        {picks.map((pick, index) => {
+          const { supplier, yearlySavings, riskScore } = pick;
           const monthlyCost = supplier.ratePerKwh * estimatedKwh;
-          const yearlySavings = (priceToCompare - supplier.ratePerKwh) * estimatedKwh * 12;
           const savingsPositive = yearlySavings >= 0;
-          const riskScore = getRiskScore(supplier);
-          const accent = accents[index % accents.length];
 
           return (
             <article
               key={supplier.id}
-              className={`relative overflow-hidden rounded-3xl border border-white/60 border-l-4 bg-gradient-to-br ${accent} p-6 shadow-card`}
+              className={`relative rounded-3xl border border-white/60 border-l-4 ${accents[index]} bg-white/80 p-6 shadow-card backdrop-blur`}
             >
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Pick #{index + 1}</p>
-                  <h3 className="mt-2 text-xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
+              {/* Header */}
+              <div className="flex items-start justify-between gap-2">
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs font-bold text-sea">{pickLabels[index]}</p>
+                  <h3 className="mt-1.5 text-lg font-bold leading-tight text-ink">
                     {supplier.name}
                   </h3>
-                  <p className="mt-1 text-xs text-ink/60">
-                    {supplier.termMonths} mo | {supplier.rateType} | {supplier.renewablePercent}% renewable
+                  <p className="mt-1 text-xs text-ink/50">
+                    {supplier.termMonths === 1 ? '1 month' : `${supplier.termMonths} months`} · {supplier.rateType} · {supplier.renewablePercent}% green
                   </p>
                 </div>
-                <span className={`rounded-full px-3 py-1 text-xs font-semibold ${riskTone(riskScore)}`}>
-                  Risk: {riskLabel(riskScore)}
+                <span className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-bold leading-none ${riskTone(riskScore)}`}>
+                  {riskLabel(riskScore)}
                 </span>
               </div>
 
-              <div className="mt-5 grid gap-3">
-                <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-2xl bg-white/80 p-3">
-                    <p className="text-xs uppercase text-ink/40">Rate</p>
-                    <p className="mt-2 text-2xl font-semibold text-ink">{formatRate(supplier.ratePerKwh)}</p>
-                  </div>
-                  <div className="rounded-2xl bg-white/80 p-3">
-                    <p className="text-xs uppercase text-ink/40">Est. Monthly</p>
-                    <p className="mt-2 text-2xl font-semibold text-ink">{formatCurrency(monthlyCost)}</p>
-                  </div>
-                  <div className="rounded-2xl bg-white/80 p-3">
-                    <p className="text-xs uppercase text-ink/40">Yearly Savings</p>
-                    <p className={`mt-2 text-2xl font-semibold ${savingsPositive ? 'text-leaf' : 'text-danger'}`}>
-                      {savingsPositive ? formatCurrency(yearlySavings) : `-${formatCurrency(Math.abs(yearlySavings))}`}
-                    </p>
-                  </div>
+              {/* Key metrics */}
+              <div className="mt-5 flex items-end gap-4">
+                <div>
+                  <p className="text-[11px] uppercase tracking-wider text-ink/40">Rate</p>
+                  <p className="text-2xl font-bold text-ink">{formatRate(supplier.ratePerKwh)}</p>
                 </div>
-                <p className="text-sm text-ink/70">
-                  {buildWhy(supplier, yearlySavings)}
-                </p>
+                <div>
+                  <p className="text-[11px] uppercase tracking-wider text-ink/40">Monthly</p>
+                  <p className="text-xl font-bold text-ink">{formatCurrency(monthlyCost)}</p>
+                </div>
+                <div className="ml-auto text-right">
+                  <p className="text-[11px] uppercase tracking-wider text-ink/40">Yearly</p>
+                  <p className={`text-xl font-bold ${savingsPositive ? 'text-leaf' : 'text-danger'}`}>
+                    {savingsPositive ? `+${formatCurrency(yearlySavings)}` : `-${formatCurrency(Math.abs(yearlySavings))}`}
+                  </p>
+                </div>
               </div>
 
+              {/* Why this pick */}
+              <p className="mt-4 text-sm leading-relaxed text-ink/60">
+                {buildWhy(supplier, yearlySavings)}
+              </p>
+
+              {/* ETF warning if applicable */}
+              {supplier.earlyTerminationFee > 0 && (
+                <p className="mt-2 text-xs text-ink/40">
+                  Early termination fee: ${supplier.earlyTerminationFee}
+                </p>
+              )}
+
+              {/* CTA */}
               <Link
                 href={supplier.website}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-leaf px-5 py-3 text-sm font-semibold text-white transition hover:bg-sea"
+                className="mt-5 flex w-full items-center justify-center rounded-full bg-sea py-3 text-sm font-bold text-white transition hover:bg-leaf"
               >
-                View Plan
+                View Plan →
               </Link>
             </article>
           );

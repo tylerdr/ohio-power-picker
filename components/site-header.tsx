@@ -78,7 +78,7 @@ export default function SiteHeader({ zip, utility }: Props) {
   };
 
   return (
-    <header className="px-5 pt-6 md:px-10">
+    <header className="relative z-50 px-5 pt-6 md:px-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 rounded-3xl border border-white/60 bg-white/70 px-4 py-3 shadow-card backdrop-blur md:flex-row md:items-center md:justify-between">
         <Link href="/" className="flex items-center gap-2 text-lg font-semibold text-ink">
           <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-sea text-white font-semibold">OP</span>
