@@ -1,0 +1,674 @@
+[
+  {
+    "period": "2022-01",
+    "avgRetailRate": 0.127,
+    "avgVariableRate": 0.096,
+    "avgFixedRate": 0.0646,
+    "priceToCompare": {
+      "aep-ohio": 0.099,
+      "duke-energy": 0.09,
+      "ohio-edison": 0.095,
+      "aes-ohio": 0.088,
+      "toledo-edison": 0.096,
+      "illuminating": 0.097
+    }
+  },
+  {
+    "period": "2022-02",
+    "avgRetailRate": 0.127,
+    "avgVariableRate": 0.0925,
+    "avgFixedRate": 0.0648,
+    "priceToCompare": {
+      "aep-ohio": 0.099,
+      "duke-energy": 0.09,
+      "ohio-edison": 0.095,
+      "aes-ohio": 0.088,
+      "toledo-edison": 0.096,
+      "illuminating": 0.097
+    }
+  },
+  {
+    "period": "2022-03",
+    "avgRetailRate": 0.117,
+    "avgVariableRate": 0.06,
+    "avgFixedRate": 0.0644,
+    "priceToCompare": {
+      "aep-ohio": 0.093,
+      "duke-energy": 0.084,
+      "ohio-edison": 0.089,
+      "aes-ohio": 0.082,
+      "toledo-edison": 0.09,
+      "illuminating": 0.091
+    }
+  },
+  {
+    "period": "2022-04",
+    "avgRetailRate": 0.117,
+    "avgVariableRate": 0.0595,
+    "avgFixedRate": 0.0642,
+    "priceToCompare": {
+      "aep-ohio": 0.093,
+      "duke-energy": 0.084,
+      "ohio-edison": 0.089,
+      "aes-ohio": 0.082,
+      "toledo-edison": 0.09,
+      "illuminating": 0.091
+    }
+  },
+  {
+    "period": "2022-05",
+    "avgRetailRate": 0.117,
+    "avgVariableRate": 0.0615,
+    "avgFixedRate": 0.0643,
+    "priceToCompare": {
+      "aep-ohio": 0.093,
+      "duke-energy": 0.084,
+      "ohio-edison": 0.089,
+      "aes-ohio": 0.082,
+      "toledo-edison": 0.09,
+      "illuminating": 0.091
+    }
+  },
+  {
+    "period": "2022-06",
+    "avgRetailRate": 0.12,
+    "avgVariableRate": 0.0728,
+    "avgFixedRate": 0.0645,
+    "priceToCompare": {
+      "aep-ohio": 0.096,
+      "duke-energy": 0.087,
+      "ohio-edison": 0.092,
+      "aes-ohio": 0.085,
+      "toledo-edison": 0.093,
+      "illuminating": 0.094
+    }
+  },
+  {
+    "period": "2022-07",
+    "avgRetailRate": 0.129,
+    "avgVariableRate": 0.0992,
+    "avgFixedRate": 0.0647,
+    "priceToCompare": {
+      "aep-ohio": 0.101,
+      "duke-energy": 0.092,
+      "ohio-edison": 0.097,
+      "aes-ohio": 0.09,
+      "toledo-edison": 0.098,
+      "illuminating": 0.099
+    }
+  },
+  {
+    "period": "2022-08",
+    "avgRetailRate": 0.129,
+    "avgVariableRate": 0.0995,
+    "avgFixedRate": 0.0648,
+    "priceToCompare": {
+      "aep-ohio": 0.101,
+      "duke-energy": 0.092,
+      "ohio-edison": 0.097,
+      "aes-ohio": 0.09,
+      "toledo-edison": 0.098,
+      "illuminating": 0.099
+    }
+  },
+  {
+    "period": "2022-09",
+    "avgRetailRate": 0.12,
+    "avgVariableRate": 0.0712,
+    "avgFixedRate": 0.0644,
+    "priceToCompare": {
+      "aep-ohio": 0.096,
+      "duke-energy": 0.087,
+      "ohio-edison": 0.092,
+      "aes-ohio": 0.085,
+      "toledo-edison": 0.093,
+      "illuminating": 0.094
+    }
+  },
+  {
+    "period": "2022-10",
+    "avgRetailRate": 0.117,
+    "avgVariableRate": 0.0594,
+    "avgFixedRate": 0.0643,
+    "priceToCompare": {
+      "aep-ohio": 0.093,
+      "duke-energy": 0.084,
+      "ohio-edison": 0.089,
+      "aes-ohio": 0.082,
+      "toledo-edison": 0.09,
+      "illuminating": 0.091
+    }
+  },
+  {
+    "period": "2022-11",
+    "avgRetailRate": 0.117,
+    "avgVariableRate": 0.0587,
+    "avgFixedRate": 0.0645,
+    "priceToCompare": {
+      "aep-ohio": 0.093,
+      "duke-energy": 0.084,
+      "ohio-edison": 0.089,
+      "aes-ohio": 0.082,
+      "toledo-edison": 0.09,
+      "illuminating": 0.091
+    }
+  },
+  {
+    "period": "2022-12",
+    "avgRetailRate": 0.123,
+    "avgVariableRate": 0.0809,
+    "avgFixedRate": 0.0646,
+    "priceToCompare": {
+      "aep-ohio": 0.097,
+      "duke-energy": 0.088,
+      "ohio-edison": 0.093,
+      "aes-ohio": 0.086,
+      "toledo-edison": 0.094,
+      "illuminating": 0.095
+    }
+  },
+  {
+    "period": "2023-01",
+    "avgRetailRate": 0.131,
+    "avgVariableRate": 0.1,
+    "avgFixedRate": 0.0676,
+    "priceToCompare": {
+      "aep-ohio": 0.103,
+      "duke-energy": 0.094,
+      "ohio-edison": 0.099,
+      "aes-ohio": 0.092,
+      "toledo-edison": 0.1,
+      "illuminating": 0.101
+    }
+  },
+  {
+    "period": "2023-02",
+    "avgRetailRate": 0.131,
+    "avgVariableRate": 0.0965,
+    "avgFixedRate": 0.0678,
+    "priceToCompare": {
+      "aep-ohio": 0.103,
+      "duke-energy": 0.094,
+      "ohio-edison": 0.099,
+      "aes-ohio": 0.092,
+      "toledo-edison": 0.1,
+      "illuminating": 0.101
+    }
+  },
+  {
+    "period": "2023-03",
+    "avgRetailRate": 0.121,
+    "avgVariableRate": 0.064,
+    "avgFixedRate": 0.0674,
+    "priceToCompare": {
+      "aep-ohio": 0.097,
+      "duke-energy": 0.088,
+      "ohio-edison": 0.093,
+      "aes-ohio": 0.086,
+      "toledo-edison": 0.094,
+      "illuminating": 0.095
+    }
+  },
+  {
+    "period": "2023-04",
+    "avgRetailRate": 0.121,
+    "avgVariableRate": 0.0635,
+    "avgFixedRate": 0.0672,
+    "priceToCompare": {
+      "aep-ohio": 0.097,
+      "duke-energy": 0.088,
+      "ohio-edison": 0.093,
+      "aes-ohio": 0.086,
+      "toledo-edison": 0.094,
+      "illuminating": 0.095
+    }
+  },
+  {
+    "period": "2023-05",
+    "avgRetailRate": 0.121,
+    "avgVariableRate": 0.0655,
+    "avgFixedRate": 0.0673,
+    "priceToCompare": {
+      "aep-ohio": 0.097,
+      "duke-energy": 0.088,
+      "ohio-edison": 0.093,
+      "aes-ohio": 0.086,
+      "toledo-edison": 0.094,
+      "illuminating": 0.095
+    }
+  },
+  {
+    "period": "2023-06",
+    "avgRetailRate": 0.124,
+    "avgVariableRate": 0.0768,
+    "avgFixedRate": 0.0675,
+    "priceToCompare": {
+      "aep-ohio": 0.1,
+      "duke-energy": 0.091,
+      "ohio-edison": 0.096,
+      "aes-ohio": 0.089,
+      "toledo-edison": 0.097,
+      "illuminating": 0.098
+    }
+  },
+  {
+    "period": "2023-07",
+    "avgRetailRate": 0.133,
+    "avgVariableRate": 0.1032,
+    "avgFixedRate": 0.0677,
+    "priceToCompare": {
+      "aep-ohio": 0.105,
+      "duke-energy": 0.096,
+      "ohio-edison": 0.101,
+      "aes-ohio": 0.094,
+      "toledo-edison": 0.102,
+      "illuminating": 0.103
+    }
+  },
+  {
+    "period": "2023-08",
+    "avgRetailRate": 0.133,
+    "avgVariableRate": 0.1035,
+    "avgFixedRate": 0.0678,
+    "priceToCompare": {
+      "aep-ohio": 0.105,
+      "duke-energy": 0.096,
+      "ohio-edison": 0.101,
+      "aes-ohio": 0.094,
+      "toledo-edison": 0.102,
+      "illuminating": 0.103
+    }
+  },
+  {
+    "period": "2023-09",
+    "avgRetailRate": 0.124,
+    "avgVariableRate": 0.0752,
+    "avgFixedRate": 0.0674,
+    "priceToCompare": {
+      "aep-ohio": 0.1,
+      "duke-energy": 0.091,
+      "ohio-edison": 0.096,
+      "aes-ohio": 0.089,
+      "toledo-edison": 0.097,
+      "illuminating": 0.098
+    }
+  },
+  {
+    "period": "2023-10",
+    "avgRetailRate": 0.121,
+    "avgVariableRate": 0.0634,
+    "avgFixedRate": 0.0673,
+    "priceToCompare": {
+      "aep-ohio": 0.097,
+      "duke-energy": 0.088,
+      "ohio-edison": 0.093,
+      "aes-ohio": 0.086,
+      "toledo-edison": 0.094,
+      "illuminating": 0.095
+    }
+  },
+  {
+    "period": "2023-11",
+    "avgRetailRate": 0.121,
+    "avgVariableRate": 0.0627,
+    "avgFixedRate": 0.0675,
+    "priceToCompare": {
+      "aep-ohio": 0.097,
+      "duke-energy": 0.088,
+      "ohio-edison": 0.093,
+      "aes-ohio": 0.086,
+      "toledo-edison": 0.094,
+      "illuminating": 0.095
+    }
+  },
+  {
+    "period": "2023-12",
+    "avgRetailRate": 0.127,
+    "avgVariableRate": 0.0849,
+    "avgFixedRate": 0.0676,
+    "priceToCompare": {
+      "aep-ohio": 0.101,
+      "duke-energy": 0.092,
+      "ohio-edison": 0.097,
+      "aes-ohio": 0.09,
+      "toledo-edison": 0.098,
+      "illuminating": 0.099
+    }
+  },
+  {
+    "period": "2024-01",
+    "avgRetailRate": 0.135,
+    "avgVariableRate": 0.104,
+    "avgFixedRate": 0.0706,
+    "priceToCompare": {
+      "aep-ohio": 0.107,
+      "duke-energy": 0.098,
+      "ohio-edison": 0.103,
+      "aes-ohio": 0.096,
+      "toledo-edison": 0.104,
+      "illuminating": 0.105
+    }
+  },
+  {
+    "period": "2024-02",
+    "avgRetailRate": 0.135,
+    "avgVariableRate": 0.1005,
+    "avgFixedRate": 0.0708,
+    "priceToCompare": {
+      "aep-ohio": 0.107,
+      "duke-energy": 0.098,
+      "ohio-edison": 0.103,
+      "aes-ohio": 0.096,
+      "toledo-edison": 0.104,
+      "illuminating": 0.105
+    }
+  },
+  {
+    "period": "2024-03",
+    "avgRetailRate": 0.125,
+    "avgVariableRate": 0.068,
+    "avgFixedRate": 0.0704,
+    "priceToCompare": {
+      "aep-ohio": 0.101,
+      "duke-energy": 0.092,
+      "ohio-edison": 0.097,
+      "aes-ohio": 0.09,
+      "toledo-edison": 0.098,
+      "illuminating": 0.099
+    }
+  },
+  {
+    "period": "2024-04",
+    "avgRetailRate": 0.125,
+    "avgVariableRate": 0.0675,
+    "avgFixedRate": 0.0702,
+    "priceToCompare": {
+      "aep-ohio": 0.101,
+      "duke-energy": 0.092,
+      "ohio-edison": 0.097,
+      "aes-ohio": 0.09,
+      "toledo-edison": 0.098,
+      "illuminating": 0.099
+    }
+  },
+  {
+    "period": "2024-05",
+    "avgRetailRate": 0.125,
+    "avgVariableRate": 0.0695,
+    "avgFixedRate": 0.0703,
+    "priceToCompare": {
+      "aep-ohio": 0.101,
+      "duke-energy": 0.092,
+      "ohio-edison": 0.097,
+      "aes-ohio": 0.09,
+      "toledo-edison": 0.098,
+      "illuminating": 0.099
+    }
+  },
+  {
+    "period": "2024-06",
+    "avgRetailRate": 0.128,
+    "avgVariableRate": 0.0808,
+    "avgFixedRate": 0.0705,
+    "priceToCompare": {
+      "aep-ohio": 0.104,
+      "duke-energy": 0.095,
+      "ohio-edison": 0.1,
+      "aes-ohio": 0.093,
+      "toledo-edison": 0.101,
+      "illuminating": 0.102
+    }
+  },
+  {
+    "period": "2024-07",
+    "avgRetailRate": 0.137,
+    "avgVariableRate": 0.1072,
+    "avgFixedRate": 0.0707,
+    "priceToCompare": {
+      "aep-ohio": 0.109,
+      "duke-energy": 0.1,
+      "ohio-edison": 0.105,
+      "aes-ohio": 0.098,
+      "toledo-edison": 0.106,
+      "illuminating": 0.107
+    }
+  },
+  {
+    "period": "2024-08",
+    "avgRetailRate": 0.137,
+    "avgVariableRate": 0.1075,
+    "avgFixedRate": 0.0708,
+    "priceToCompare": {
+      "aep-ohio": 0.109,
+      "duke-energy": 0.1,
+      "ohio-edison": 0.105,
+      "aes-ohio": 0.098,
+      "toledo-edison": 0.106,
+      "illuminating": 0.107
+    }
+  },
+  {
+    "period": "2024-09",
+    "avgRetailRate": 0.128,
+    "avgVariableRate": 0.0792,
+    "avgFixedRate": 0.0704,
+    "priceToCompare": {
+      "aep-ohio": 0.104,
+      "duke-energy": 0.095,
+      "ohio-edison": 0.1,
+      "aes-ohio": 0.093,
+      "toledo-edison": 0.101,
+      "illuminating": 0.102
+    }
+  },
+  {
+    "period": "2024-10",
+    "avgRetailRate": 0.125,
+    "avgVariableRate": 0.0674,
+    "avgFixedRate": 0.0703,
+    "priceToCompare": {
+      "aep-ohio": 0.101,
+      "duke-energy": 0.092,
+      "ohio-edison": 0.097,
+      "aes-ohio": 0.09,
+      "toledo-edison": 0.098,
+      "illuminating": 0.099
+    }
+  },
+  {
+    "period": "2024-11",
+    "avgRetailRate": 0.125,
+    "avgVariableRate": 0.0667,
+    "avgFixedRate": 0.0705,
+    "priceToCompare": {
+      "aep-ohio": 0.101,
+      "duke-energy": 0.092,
+      "ohio-edison": 0.097,
+      "aes-ohio": 0.09,
+      "toledo-edison": 0.098,
+      "illuminating": 0.099
+    }
+  },
+  {
+    "period": "2024-12",
+    "avgRetailRate": 0.131,
+    "avgVariableRate": 0.0889,
+    "avgFixedRate": 0.0706,
+    "priceToCompare": {
+      "aep-ohio": 0.105,
+      "duke-energy": 0.096,
+      "ohio-edison": 0.101,
+      "aes-ohio": 0.094,
+      "toledo-edison": 0.102,
+      "illuminating": 0.103
+    }
+  },
+  {
+    "period": "2025-01",
+    "avgRetailRate": 0.139,
+    "avgVariableRate": 0.108,
+    "avgFixedRate": 0.0736,
+    "priceToCompare": {
+      "aep-ohio": 0.111,
+      "duke-energy": 0.102,
+      "ohio-edison": 0.107,
+      "aes-ohio": 0.1,
+      "toledo-edison": 0.108,
+      "illuminating": 0.109
+    }
+  },
+  {
+    "period": "2025-02",
+    "avgRetailRate": 0.139,
+    "avgVariableRate": 0.1045,
+    "avgFixedRate": 0.0738,
+    "priceToCompare": {
+      "aep-ohio": 0.111,
+      "duke-energy": 0.102,
+      "ohio-edison": 0.107,
+      "aes-ohio": 0.1,
+      "toledo-edison": 0.108,
+      "illuminating": 0.109
+    }
+  },
+  {
+    "period": "2025-03",
+    "avgRetailRate": 0.129,
+    "avgVariableRate": 0.072,
+    "avgFixedRate": 0.0734,
+    "priceToCompare": {
+      "aep-ohio": 0.105,
+      "duke-energy": 0.096,
+      "ohio-edison": 0.101,
+      "aes-ohio": 0.094,
+      "toledo-edison": 0.102,
+      "illuminating": 0.103
+    }
+  },
+  {
+    "period": "2025-04",
+    "avgRetailRate": 0.129,
+    "avgVariableRate": 0.0715,
+    "avgFixedRate": 0.0732,
+    "priceToCompare": {
+      "aep-ohio": 0.105,
+      "duke-energy": 0.096,
+      "ohio-edison": 0.101,
+      "aes-ohio": 0.094,
+      "toledo-edison": 0.102,
+      "illuminating": 0.103
+    }
+  },
+  {
+    "period": "2025-05",
+    "avgRetailRate": 0.129,
+    "avgVariableRate": 0.0735,
+    "avgFixedRate": 0.0733,
+    "priceToCompare": {
+      "aep-ohio": 0.105,
+      "duke-energy": 0.096,
+      "ohio-edison": 0.101,
+      "aes-ohio": 0.094,
+      "toledo-edison": 0.102,
+      "illuminating": 0.103
+    }
+  },
+  {
+    "period": "2025-06",
+    "avgRetailRate": 0.132,
+    "avgVariableRate": 0.0848,
+    "avgFixedRate": 0.0735,
+    "priceToCompare": {
+      "aep-ohio": 0.108,
+      "duke-energy": 0.099,
+      "ohio-edison": 0.104,
+      "aes-ohio": 0.097,
+      "toledo-edison": 0.105,
+      "illuminating": 0.106
+    }
+  },
+  {
+    "period": "2025-07",
+    "avgRetailRate": 0.141,
+    "avgVariableRate": 0.1112,
+    "avgFixedRate": 0.0737,
+    "priceToCompare": {
+      "aep-ohio": 0.113,
+      "duke-energy": 0.104,
+      "ohio-edison": 0.109,
+      "aes-ohio": 0.102,
+      "toledo-edison": 0.11,
+      "illuminating": 0.111
+    }
+  },
+  {
+    "period": "2025-08",
+    "avgRetailRate": 0.141,
+    "avgVariableRate": 0.1115,
+    "avgFixedRate": 0.0738,
+    "priceToCompare": {
+      "aep-ohio": 0.113,
+      "duke-energy": 0.104,
+      "ohio-edison": 0.109,
+      "aes-ohio": 0.102,
+      "toledo-edison": 0.11,
+      "illuminating": 0.111
+    }
+  },
+  {
+    "period": "2025-09",
+    "avgRetailRate": 0.132,
+    "avgVariableRate": 0.0832,
+    "avgFixedRate": 0.0734,
+    "priceToCompare": {
+      "aep-ohio": 0.108,
+      "duke-energy": 0.099,
+      "ohio-edison": 0.104,
+      "aes-ohio": 0.097,
+      "toledo-edison": 0.105,
+      "illuminating": 0.106
+    }
+  },
+  {
+    "period": "2025-10",
+    "avgRetailRate": 0.129,
+    "avgVariableRate": 0.0714,
+    "avgFixedRate": 0.0733,
+    "priceToCompare": {
+      "aep-ohio": 0.105,
+      "duke-energy": 0.096,
+      "ohio-edison": 0.101,
+      "aes-ohio": 0.094,
+      "toledo-edison": 0.102,
+      "illuminating": 0.103
+    }
+  },
+  {
+    "period": "2025-11",
+    "avgRetailRate": 0.129,
+    "avgVariableRate": 0.0707,
+    "avgFixedRate": 0.0735,
+    "priceToCompare": {
+      "aep-ohio": 0.105,
+      "duke-energy": 0.096,
+      "ohio-edison": 0.101,
+      "aes-ohio": 0.094,
+      "toledo-edison": 0.102,
+      "illuminating": 0.103
+    }
+  },
+  {
+    "period": "2025-12",
+    "avgRetailRate": 0.135,
+    "avgVariableRate": 0.0929,
+    "avgFixedRate": 0.0736,
+    "priceToCompare": {
+      "aep-ohio": 0.109,
+      "duke-energy": 0.1,
+      "ohio-edison": 0.105,
+      "aes-ohio": 0.098,
+      "toledo-edison": 0.106,
+      "illuminating": 0.107
+    }
+  }
+]

@@ -20,3 +20,11 @@ export type Utility = {
   serviceArea: string;
   priceToCompare: number;
 };
+
+export type HistoricalRate = {
+  period: string;
+  avgRetailRate: number;
+  avgVariableRate: number;
+  avgFixedRate: number;
+  priceToCompare: Record<string, number>;
+};

@@ -8,6 +8,7 @@ import { utilities } from '@/lib/utilities';
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/compare', label: 'Compare' },
+  { href: '/analytics', label: 'Analytics' },
   { href: '/about', label: 'About' }
 ];
 
