@@ -106,7 +106,7 @@ export default function SiteHeader({ zip, utility }: Props) {
               {selectionLabel}
             </button>
             {menuOpen && (
-              <div className="absolute right-0 mt-3 w-72 rounded-3xl border border-white/60 bg-white p-5 shadow-card">
+              <div className="absolute right-0 z-50 mt-3 w-64 overflow-hidden rounded-3xl border border-white/60 bg-white p-5 shadow-card sm:w-72">
                 <form onSubmit={handleSubmit} className="grid gap-3 text-sm text-ink">
                   <label className="grid gap-2 text-xs font-semibold uppercase tracking-wider text-ink/50">
                     Zip code
@@ -116,7 +116,7 @@ export default function SiteHeader({ zip, utility }: Props) {
                       inputMode="numeric"
                       pattern="[0-9]{5}"
                       placeholder="43215"
-                      className="rounded-2xl border border-sea/20 bg-white px-3 py-2 text-sm text-ink shadow-sm focus:border-sea focus:outline-none"
+                      className="w-full rounded-2xl border border-sea/20 bg-white px-3 py-2 text-sm text-ink shadow-sm focus:border-sea focus:outline-none"
                     />
                   </label>
                   <label className="grid gap-2 text-xs font-semibold uppercase tracking-wider text-ink/50">
@@ -124,7 +124,7 @@ export default function SiteHeader({ zip, utility }: Props) {
                     <select
                       value={draftUtility}
                       onChange={(event) => setDraftUtility(event.target.value)}
-                      className="rounded-2xl border border-sea/20 bg-white px-3 py-2 text-sm text-ink shadow-sm focus:border-sea focus:outline-none"
+                      className="w-full rounded-2xl border border-sea/20 bg-white px-3 py-2 text-sm text-ink shadow-sm focus:border-sea focus:outline-none"
                     >
                       <option value="">Select utility</option>
                       {utilities.map((item) => (

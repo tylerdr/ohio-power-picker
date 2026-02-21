@@ -35,22 +35,27 @@ export default function SeasonalChart({ data }: Props) {
 
   return (
     <div className="rounded-3xl border border-white/70 bg-white/80 p-4 shadow-card">
-      <div className="flex h-40 items-end gap-2">
+      <div className="flex items-end gap-2" style={{ height: 160 }}>
         {data.map((item) => {
-          const height = `${(item.value / max) * 100}%`;
+          // Use pixel height based on proportion to max
+          const barHeight = Math.max(8, Math.round((item.value / max) * 140));
           return (
-            <div key={item.month} className="flex flex-1 flex-col items-center gap-2">
-              <div className="w-full">
-                <div
-                  className={`w-full rounded-2xl ${getColor(item.value)}`}
-                  style={{ height }}
-                  title={`${item.month}: ${formatRate(item.value)}`}
-                />
-              </div>
-              <span className="text-xs text-ink/60">{item.month}</span>
+            <div key={item.month} className="flex flex-1 flex-col items-center justify-end h-full">
+              <div
+                className={`w-full rounded-t-lg ${getColor(item.value)} transition-all`}
+                style={{ height: barHeight }}
+                title={`${item.month}: ${formatRate(item.value)}`}
+              />
             </div>
           );
         })}
+      </div>
+      <div className="mt-2 flex gap-2">
+        {data.map((item) => (
+          <div key={`label-${item.month}`} className="flex-1 text-center text-xs text-ink/60">
+            {item.month}
+          </div>
+        ))}
       </div>
       <div className="mt-4 flex flex-wrap gap-4 text-xs text-ink/60">
         <span className="inline-flex items-center gap-2">
