@@ -190,7 +190,7 @@ export default function QuickQuiz() {
                   <div>
                     <p className="text-base font-semibold text-ink">{result.supplier.name}</p>
                     <p className="text-xs text-ink/60">
-                      {result.supplier.termMonths} months · {result.supplier.rateType} · {result.supplier.renewablePercent}% renewable
+                      {result.supplier.termMonths === 1 ? "1 month" : `${result.supplier.termMonths} months`} · {result.supplier.rateType} · {result.supplier.renewablePercent}% renewable
                     </p>
                   </div>
                   <div className="text-right">
