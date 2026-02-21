@@ -8,7 +8,7 @@ export const utilities: Utility[] = [
     priceToCompare: 0.1049
   },
   {
-    id: 'duke-energy-ohio',
+    id: 'duke-energy',
     name: 'Duke Energy Ohio',
     serviceArea: 'Cincinnati area',
     priceToCompare: 0.0912
@@ -32,7 +32,7 @@ export const utilities: Utility[] = [
     priceToCompare: 0.1011
   },
   {
-    id: 'illuminating-company',
+    id: 'illuminating',
     name: 'The Illuminating Company / FirstEnergy',
     serviceArea: 'Cleveland area',
     priceToCompare: 0.1034
