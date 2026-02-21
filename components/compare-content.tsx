@@ -1,15 +1,13 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import Link from 'next/link';
+import { useMemo, useState } from 'react';
 import HomeProfile from '@/components/home-profile';
 import SupplierTable from '@/components/supplier-table';
-import AIRecommendation from '@/components/ai-recommendation';
 import AIChat from '@/components/ai-chat';
-import SupplierCompare from '@/components/supplier-compare';
 import ScamShield from '@/components/scam-shield';
+import TopPicks from '@/components/top-picks';
 import { Supplier } from '@/lib/types';
-import { formatCurrency, formatRate } from '@/lib/utils';
+import { formatRate } from '@/lib/utils';
 
 type UtilityInfo = {
   id: string;
@@ -22,15 +20,17 @@ type Props = {
   utility: UtilityInfo;
   rawSuppliers: Supplier[];
   zip: string;
-  allUtilities: { id: string; name: string }[];
 };
 
-export default function CompareContent({ utility, rawSuppliers, zip, allUtilities }: Props) {
+export default function CompareContent({ utility, rawSuppliers, zip }: Props) {
   const [estimatedKwh, setEstimatedKwh] = useState(1000);
+  const [hasProfileSet, setHasProfileSet] = useState(false);
+  const [profileCollapsed, setProfileCollapsed] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
 
   const suppliers = useMemo(() => {
     return rawSuppliers
-      .filter((s) => s.termMonths > 0) // Exclude Standard Offer (default utility rate)
+      .filter((s) => s.termMonths > 0)
       .map((supplier) => {
         const yearlySavings = (utility.priceToCompare - supplier.ratePerKwh) * estimatedKwh * 12;
         return { ...supplier, yearlySavings };
@@ -38,116 +38,161 @@ export default function CompareContent({ utility, rawSuppliers, zip, allUtilitie
       .sort((a, b) => b.yearlySavings - a.yearlySavings);
   }, [rawSuppliers, utility.priceToCompare, estimatedKwh]);
 
-  const bestSavings = suppliers[0]?.yearlySavings ?? 0;
+  const handleEstimateChange = (kwh: number) => {
+    setEstimatedKwh(kwh);
+    setHasProfileSet(true);
+  };
 
   return (
     <>
-      <section className="px-5 pt-10 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <HomeProfile onEstimateChange={setEstimatedKwh} />
-        </div>
-      </section>
-
-      <section className="px-5 pt-6 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-3xl border border-white/60 bg-white/70 p-6 shadow-card backdrop-blur">
-              <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Results</p>
-              <h1 className="mt-3 text-3xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
-                {utility.name}
-              </h1>
-              <p className="mt-2 text-sm text-ink/70">
-                {utility.serviceArea} · Zip {zip || 'not provided'}
-              </p>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+      <section className="px-5 pt-8 md:px-10">
+        <div className="mx-auto max-w-6xl space-y-4">
+          <div className="rounded-3xl border border-white/60 bg-white/70 p-6 shadow-card backdrop-blur">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Your Home</p>
+                <h1 className="mt-2 text-3xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
+                  {utility.name}
+                </h1>
+                <p className="mt-1 text-sm text-ink/70">
+                  {utility.serviceArea} · Zip {zip || 'not provided'}
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
                 <div className="rounded-2xl bg-sky/60 p-4">
                   <p className="text-xs uppercase text-ink/50">Price to Compare</p>
-                  <p className="mt-2 text-2xl font-semibold text-ink">{formatRate(utility.priceToCompare)}</p>
+                  <p className="mt-2 text-3xl font-semibold text-ink">{formatRate(utility.priceToCompare)}</p>
                   <p className="mt-1 text-xs text-ink/60">Default utility supply rate</p>
                 </div>
                 <div className="rounded-2xl bg-leaf/10 p-4">
-                  <p className="text-xs uppercase text-ink/50">Best Estimated Savings</p>
-                  <p className="mt-2 text-2xl font-semibold text-leaf">
-                    {bestSavings > 0 ? formatCurrency(bestSavings) : '$0'} / yr
-                  </p>
-                  <p className="mt-1 text-xs text-ink/60">Based on {estimatedKwh.toLocaleString()} kWh/month</p>
+                  <p className="text-xs uppercase text-ink/50">Estimated Usage</p>
+                  <p className="mt-2 text-2xl font-semibold text-ink">{estimatedKwh.toLocaleString()} kWh/mo</p>
+                  <p className="mt-1 text-xs text-ink/60">Based on your home profile</p>
                 </div>
               </div>
             </div>
+            {hasProfileSet && (
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-ink/60">
+                <span>Adjust your profile to refine savings estimates.</span>
+                <button
+                  type="button"
+                  onClick={() => setProfileCollapsed((prev) => !prev)}
+                  className="rounded-full bg-mist px-4 py-2 text-xs font-semibold text-ink transition hover:bg-sky/60"
+                >
+                  {profileCollapsed ? 'Edit home profile' : 'Minimize profile'}
+                </button>
+              </div>
+            )}
+          </div>
+
+          {!profileCollapsed && (
+            <HomeProfile onEstimateChange={handleEstimateChange} />
+          )}
+          {profileCollapsed && (
+            <div className="rounded-2xl border border-sea/10 bg-mist p-4 text-sm text-ink/70">
+              Profile saved. Tap "Edit home profile" to make changes.
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="px-5 pt-8 md:px-10">
+        <div className="mx-auto max-w-6xl">
+          <TopPicks suppliers={suppliers} priceToCompare={utility.priceToCompare} estimatedKwh={estimatedKwh} />
+        </div>
+      </section>
+
+      <section className="px-5 pt-10 md:px-10">
+        <div className="mx-auto max-w-6xl">
+          {!chatOpen ? (
             <div className="rounded-3xl border border-white/60 bg-white/70 p-6 shadow-card backdrop-blur">
-              <h2 className="text-xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
-                How it works
-              </h2>
-              <div className="mt-4 grid gap-3 text-sm text-ink/70">
-                <div className="rounded-2xl bg-leaf/10 p-4">
-                  <p className="font-semibold text-ink">✅ Green = saves money</p>
-                  <p className="mt-1">Supplier rate is below your utility&apos;s Price to Compare ({formatRate(utility.priceToCompare)}).</p>
-                </div>
-                <div className="rounded-2xl bg-danger/10 p-4">
-                  <p className="font-semibold text-ink">🔴 Red = costs more</p>
-                  <p className="mt-1">You&apos;d pay more than sticking with the default rate.</p>
-                </div>
-                <div className="rounded-2xl bg-sky/60 p-4">
-                  <p className="font-semibold text-ink">📊 Personalized estimates</p>
-                  <p className="mt-1">Based on your home profile: {estimatedKwh.toLocaleString()} kWh/month. Adjust above to refine.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 pt-10 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <SupplierTable suppliers={suppliers} priceToCompare={utility.priceToCompare} estimatedKwh={estimatedKwh} />
-        </div>
-      </section>
-
-      <section className="px-5 pt-10 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <AIRecommendation
-            utilityName={utility.name}
-            priceToCompare={utility.priceToCompare}
-            suppliers={suppliers}
-            zip={zip || null}
-          />
-        </div>
-      </section>
-
-      <section className="px-5 pt-10 md:px-10">
-        <div className="mx-auto max-w-6xl grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <SupplierCompare suppliers={suppliers} priceToCompare={utility.priceToCompare} />
-          <div className="lg:sticky lg:top-24 h-fit">
-            <AIChat
-              utilityName={utility.name}
-              priceToCompare={utility.priceToCompare}
-              suppliers={suppliers}
-              zip={zip || null}
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 pt-10 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <ScamShield priceToCompare={utility.priceToCompare} suppliers={suppliers} />
-        </div>
-      </section>
-
-      <section className="px-5 pt-10 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-3xl border border-white/60 bg-white/70 p-6 text-sm text-ink/70 shadow-card backdrop-blur">
-          <p>Want to compare another utility?</p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {allUtilities.map((item) => (
-              <Link
-                key={item.id}
-                href={`/compare?utility=${item.id}&zip=${zip}`}
-                className={`rounded-full px-4 py-2 text-xs font-semibold transition ${item.id === utility.id ? 'bg-sea text-white' : 'bg-white text-ink'}`}
+              <p className="text-xs uppercase tracking-[0.2em] text-ink/50">AI Assistant</p>
+              <h3 className="mt-2 text-xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
+                Not sure? Ask our AI assistant.
+              </h3>
+              <p className="mt-2 text-sm text-ink/70">
+                Get plain-English help on rates, fees, and risk before you switch.
+              </p>
+              <button
+                type="button"
+                onClick={() => setChatOpen(true)}
+                className="mt-4 rounded-full bg-sea px-5 py-2 text-sm font-semibold text-white transition hover:bg-leaf"
               >
-                {item.name}
-              </Link>
-            ))}
-          </div>
+                Ask a question
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => setChatOpen(false)}
+                  className="rounded-full bg-mist px-4 py-2 text-xs font-semibold text-ink"
+                >
+                  Hide assistant
+                </button>
+              </div>
+              <AIChat
+                utilityName={utility.name}
+                priceToCompare={utility.priceToCompare}
+                suppliers={suppliers}
+                zip={zip || null}
+              />
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="px-5 pt-10 md:px-10">
+        <div className="mx-auto max-w-6xl">
+          <details className="group">
+            <summary className="list-none cursor-pointer rounded-3xl border border-white/60 bg-white/70 p-6 shadow-card backdrop-blur [&::-webkit-details-marker]:hidden">
+              <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-ink/50">All Suppliers</p>
+                  <h3 className="mt-2 text-xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
+                    See all {suppliers.length} suppliers
+                  </h3>
+                  <p className="mt-2 text-sm text-ink/70">Full comparison table sorted by estimated savings.</p>
+                </div>
+                <span className="mt-3 inline-flex rounded-full bg-mist px-4 py-2 text-xs font-semibold text-ink md:mt-0">
+                  Expand
+                </span>
+              </div>
+            </summary>
+            <div className="mt-4">
+              <SupplierTable
+                suppliers={suppliers}
+                priceToCompare={utility.priceToCompare}
+                estimatedKwh={estimatedKwh}
+                initialShowAll
+              />
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section className="px-5 pt-10 md:px-10">
+        <div className="mx-auto max-w-6xl">
+          <details className="group">
+            <summary className="list-none cursor-pointer rounded-3xl border border-white/60 bg-white/70 p-6 shadow-card backdrop-blur [&::-webkit-details-marker]:hidden">
+              <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Protect Yourself</p>
+                  <h3 className="mt-2 text-xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
+                    Scam shield tips & warnings
+                  </h3>
+                  <p className="mt-2 text-sm text-ink/70">Quick red flags to avoid costly surprises.</p>
+                </div>
+                <span className="mt-3 inline-flex rounded-full bg-mist px-4 py-2 text-xs font-semibold text-ink md:mt-0">
+                  Expand
+                </span>
+              </div>
+            </summary>
+            <div className="mt-4">
+              <ScamShield priceToCompare={utility.priceToCompare} suppliers={suppliers} />
+            </div>
+          </details>
         </div>
       </section>
     </>

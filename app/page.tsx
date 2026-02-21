@@ -7,7 +7,18 @@ import { supplierData } from '@/lib/data';
 import { utilities } from '@/lib/utilities';
 import { formatRate } from '@/lib/utils';
 
-export default function HomePage() {
+export default function HomePage({
+  searchParams
+}: {
+  searchParams?: { zip?: string; utility?: string };
+}) {
+  const zip = searchParams?.zip ? searchParams.zip.trim() : '';
+  const utilityId = searchParams?.utility ?? '';
+  const compareQuery = new URLSearchParams();
+  if (zip) compareQuery.set('zip', zip);
+  if (utilityId) compareQuery.set('utility', utilityId);
+  const compareHref = compareQuery.toString() ? `/compare?${compareQuery.toString()}` : '/compare';
+
   const utilityComparison = utilities.map((utility) => {
     const availableSuppliers = supplierData.filter((supplier) =>
       supplier.utilityTerritories.includes(utility.id)
@@ -25,7 +36,7 @@ export default function HomePage() {
 
   return (
     <main className="pb-16">
-      <SiteHeader />
+      <SiteHeader zip={zip} utility={utilityId} />
       <section className="px-5 pt-10 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-3xl border border-white/60 bg-white/70 p-8 shadow-card backdrop-blur">
@@ -65,6 +76,7 @@ export default function HomePage() {
                   inputMode="numeric"
                   pattern="[0-9]{5}"
                   placeholder="43215"
+                  defaultValue={zip}
                   className="rounded-2xl border border-sea/20 bg-white px-4 py-3 text-base text-ink shadow-sm focus:border-sea focus:outline-none"
                   required
                 />
@@ -73,6 +85,7 @@ export default function HomePage() {
                 Utility
                 <select
                   name="utility"
+                  defaultValue={utilityId}
                   className="rounded-2xl border border-sea/20 bg-white px-4 py-3 text-base text-ink shadow-sm focus:border-sea focus:outline-none"
                   required
                 >
@@ -104,6 +117,40 @@ export default function HomePage() {
       </section>
 
       <section className="px-5 pt-10 md:px-10">
+        <div className="mx-auto max-w-6xl">
+          <QuickQuiz />
+        </div>
+      </section>
+
+      <section className="px-5 pt-10 md:px-10">
+        <div className="mx-auto max-w-6xl">
+          <ScamShield variant="compact" />
+        </div>
+      </section>
+
+      <section className="px-5 pt-12 md:px-10">
+        <div className="mx-auto max-w-6xl rounded-3xl border border-white/60 bg-white/70 p-8 shadow-card backdrop-blur">
+          <div className="grid gap-6 md:grid-cols-3">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Step 1</p>
+              <h3 className="mt-3 text-lg font-semibold text-ink">Enter zip + utility</h3>
+              <p className="mt-2 text-sm text-ink/70">We match you to suppliers serving your territory.</p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Step 2</p>
+              <h3 className="mt-3 text-lg font-semibold text-ink">Compare savings</h3>
+              <p className="mt-2 text-sm text-ink/70">See how every plan stacks up against the default rate.</p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Step 3</p>
+              <h3 className="mt-3 text-lg font-semibold text-ink">Pick confidently</h3>
+              <p className="mt-2 text-sm text-ink/70">AI flags variable rates, fees, and best value.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 pt-12 md:px-10">
         <div className="mx-auto max-w-6xl rounded-3xl border border-white/60 bg-white/70 p-8 shadow-card backdrop-blur">
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <div>
@@ -116,7 +163,7 @@ export default function HomePage() {
               </p>
             </div>
             <Link
-              href="/compare"
+              href={compareHref}
               className="inline-flex items-center justify-center rounded-full bg-sea px-5 py-2 text-sm font-semibold text-white"
             >
               Compare suppliers
@@ -147,40 +194,6 @@ export default function HomePage() {
               </tbody>
             </table>
           </div>
-        </div>
-      </section>
-
-      <section className="px-5 pt-12 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-3xl border border-white/60 bg-white/70 p-8 shadow-card backdrop-blur">
-          <div className="grid gap-6 md:grid-cols-3">
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Step 1</p>
-              <h3 className="mt-3 text-lg font-semibold text-ink">Enter zip + utility</h3>
-              <p className="mt-2 text-sm text-ink/70">We match you to suppliers serving your territory.</p>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Step 2</p>
-              <h3 className="mt-3 text-lg font-semibold text-ink">Compare savings</h3>
-              <p className="mt-2 text-sm text-ink/70">See how every plan stacks up against the default rate.</p>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Step 3</p>
-              <h3 className="mt-3 text-lg font-semibold text-ink">Pick confidently</h3>
-              <p className="mt-2 text-sm text-ink/70">AI flags variable rates, fees, and best value.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 pt-12 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <ScamShield variant="compact" />
-        </div>
-      </section>
-
-      <section className="px-5 pt-12 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <QuickQuiz />
         </div>
       </section>
 

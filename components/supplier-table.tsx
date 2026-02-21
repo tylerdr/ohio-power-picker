@@ -9,6 +9,7 @@ type Props = {
   suppliers: Supplier[];
   priceToCompare: number;
   estimatedKwh?: number;
+  initialShowAll?: boolean;
 };
 
 const getYearlySavings = (priceToCompare: number, supplier: Supplier, kwh: number) =>
@@ -21,9 +22,9 @@ type SortKey = 'savings' | 'rate' | 'term' | 'type';
 
 const INITIAL_SHOW = 8;
 
-export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh = 900 }: Props) {
+export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh = 900, initialShowAll = false }: Props) {
   const [sortKey, setSortKey] = useState<SortKey>('savings');
-  const [showAll, setShowAll] = useState(false);
+  const [showAll, setShowAll] = useState(initialShowAll);
 
   const sortLabel = useMemo(() => {
     switch (sortKey) {

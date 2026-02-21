@@ -3,7 +3,7 @@ import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
 import CompareContent from '@/components/compare-content';
 import { getSuppliersForUtility } from '@/lib/data';
-import { utilities, utilityMap } from '@/lib/utilities';
+import { utilityMap } from '@/lib/utilities';
 
 export default function ComparePage({
   searchParams
@@ -17,7 +17,7 @@ export default function ComparePage({
   if (!utility) {
     return (
       <main className="pb-16">
-        <SiteHeader />
+        <SiteHeader zip={zip} utility={utilityId} />
         <section className="px-5 pt-12 md:px-10">
           <div className="mx-auto max-w-3xl rounded-3xl border border-white/60 bg-white/70 p-8 text-center shadow-card backdrop-blur">
             <h1 className="text-2xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
@@ -43,7 +43,7 @@ export default function ComparePage({
 
   return (
     <main className="pb-16">
-      <SiteHeader />
+      <SiteHeader zip={zip} utility={utilityId} />
       <CompareContent
         utility={{
           id: utility.id,
@@ -53,7 +53,6 @@ export default function ComparePage({
         }}
         rawSuppliers={rawSuppliers}
         zip={zip}
-        allUtilities={utilities.map((u) => ({ id: u.id, name: u.name }))}
       />
       <SiteFooter />
     </main>

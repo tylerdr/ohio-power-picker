@@ -2,10 +2,17 @@ import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
 import { utilities } from '@/lib/utilities';
 
-export default function AboutPage() {
+export default function AboutPage({
+  searchParams
+}: {
+  searchParams?: { zip?: string; utility?: string };
+}) {
+  const zip = searchParams?.zip ? searchParams.zip.trim() : '';
+  const utilityId = searchParams?.utility ?? '';
+
   return (
     <main className="pb-16">
-      <SiteHeader />
+      <SiteHeader zip={zip} utility={utilityId} />
       <section className="px-5 pt-10 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-3xl border border-white/60 bg-white/70 p-8 shadow-card backdrop-blur">
