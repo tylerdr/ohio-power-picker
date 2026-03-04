@@ -166,10 +166,12 @@ export default function TopPicks({ suppliers, priceToCompare, estimatedKwh }: Pr
               <Link
                 href={supplier.website}
                 target="_blank"
-                rel="noreferrer"
+                rel="nofollow sponsored noreferrer"
+                data-supplier={supplier.id}
+                data-action="switch_supplier"
                 className="mt-5 flex w-full items-center justify-center rounded-full bg-sea py-3 text-sm font-bold text-white transition hover:bg-leaf"
               >
-                View Plan →
+                Switch to This Supplier
               </Link>
             </article>
           );
