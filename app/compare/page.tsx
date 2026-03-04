@@ -2,6 +2,7 @@ import Link from 'next/link';
 import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
 import CompareContent from '@/components/compare-content';
+import EmailCapture from '@/components/email-capture';
 import { getSuppliersForUtility } from '@/lib/data';
 import { utilityMap } from '@/lib/utilities';
 
@@ -34,6 +35,11 @@ export default function ComparePage({
             </Link>
           </div>
         </section>
+        <section className="px-5 pt-10 md:px-10">
+          <div className="mx-auto max-w-6xl">
+            <EmailCapture />
+          </div>
+        </section>
         <SiteFooter />
       </main>
     );
@@ -54,6 +60,11 @@ export default function ComparePage({
         rawSuppliers={rawSuppliers}
         zip={zip}
       />
+      <section className="px-5 pt-10 md:px-10">
+        <div className="mx-auto max-w-6xl">
+          <EmailCapture />
+        </div>
+      </section>
       <SiteFooter />
     </main>
   );

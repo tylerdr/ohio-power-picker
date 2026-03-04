@@ -3,6 +3,7 @@ import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
 import ScamShield from '@/components/scam-shield';
 import QuickQuiz from '@/components/quick-quiz';
+import EmailCapture from '@/components/email-capture';
 import { supplierData } from '@/lib/data';
 import { utilities } from '@/lib/utilities';
 import { formatRate } from '@/lib/utils';
@@ -216,6 +217,12 @@ export default function HomePage({
               </tbody>
             </table>
           </div>
+        </div>
+      </section>
+
+      <section className="px-5 pt-12 md:px-10">
+        <div className="mx-auto max-w-6xl">
+          <EmailCapture />
         </div>
       </section>
 
