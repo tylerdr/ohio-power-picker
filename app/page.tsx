@@ -12,6 +12,24 @@ export default function HomePage({
 }: {
   searchParams?: { zip?: string; utility?: string };
 }) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ohiopowerpicker.com';
+  const webApplicationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Ohio Power Picker',
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'Web',
+    url: siteUrl,
+    description:
+      'Compare Ohio electricity suppliers against your utility default rate. 72% of offers cost more — we find the ones that actually save you money.',
+    areaServed: 'Ohio',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    }
+  };
+
   const zip = searchParams?.zip ? searchParams.zip.trim() : '';
   const utilityId = searchParams?.utility ?? '';
   const compareQuery = new URLSearchParams();
@@ -36,6 +54,10 @@ export default function HomePage({
 
   return (
     <main className="pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
+      />
       <SiteHeader zip={zip} utility={utilityId} />
       <section className="px-5 pt-10 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1.1fr_0.9fr]">

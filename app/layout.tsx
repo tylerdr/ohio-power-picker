@@ -2,6 +2,11 @@ import type { Metadata } from 'next';
 import { Fraunces, Manrope } from 'next/font/google';
 import './globals.css';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ohiopowerpicker.com';
+const siteTitle = 'Ohio Power Picker — Find Cheaper Electricity Rates in Ohio';
+const siteDescription =
+  'Compare Ohio electricity suppliers against your utility default rate. 72% of offers cost more — we find the ones that actually save you money.';
+
 const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-manrope',
@@ -15,8 +20,24 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: 'Ohio Power Picker',
-  description: 'Compare Ohio electricity suppliers and find lower rates in minutes.'
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  alternates: {
+    canonical: '/'
+  },
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    type: 'website',
+    url: siteUrl,
+    siteName: 'Ohio Power Picker'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription
+  }
 };
 
 export default function RootLayout({
