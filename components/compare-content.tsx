@@ -8,6 +8,7 @@ import ScamShield from '@/components/scam-shield';
 import TopPicks from '@/components/top-picks';
 import { Supplier } from '@/lib/types';
 import { formatRate } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 type UtilityInfo = {
   id: string;
@@ -74,13 +75,14 @@ export default function CompareContent({ utility, rawSuppliers, zip }: Props) {
             {hasProfileSet && (
               <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-ink/60">
                 <span>Adjust your profile to refine savings estimates.</span>
-                <button
+                <Button
                   type="button"
+                  variant="ghost"
                   onClick={() => setProfileCollapsed((prev) => !prev)}
-                  className="rounded-full bg-mist px-4 py-2 text-xs font-semibold text-ink transition hover:bg-sky/60"
+                  className="h-auto rounded-full bg-mist px-4 py-2 text-xs font-semibold text-ink transition hover:bg-sky/60 hover:text-ink"
                 >
                   {profileCollapsed ? 'Edit home profile' : 'Minimize profile'}
-                </button>
+                </Button>
               </div>
             )}
           </div>
@@ -113,24 +115,26 @@ export default function CompareContent({ utility, rawSuppliers, zip }: Props) {
               <p className="mt-2 text-sm text-ink/70">
                 Get plain-English help on rates, fees, and risk before you switch.
               </p>
-              <button
+              <Button
                 type="button"
+                variant="ghost"
                 onClick={() => setChatOpen(true)}
-                className="mt-4 rounded-full bg-sea px-5 py-2 text-sm font-semibold text-white transition hover:bg-leaf"
+                className="mt-4 h-auto rounded-full bg-sea px-5 py-2 text-sm font-semibold text-white transition hover:bg-leaf hover:text-white"
               >
                 Ask a question
-              </button>
+              </Button>
             </div>
           ) : (
             <div className="space-y-3">
               <div className="flex justify-end">
-                <button
+                <Button
                   type="button"
+                  variant="ghost"
                   onClick={() => setChatOpen(false)}
-                  className="rounded-full bg-mist px-4 py-2 text-xs font-semibold text-ink"
+                  className="h-auto rounded-full bg-mist px-4 py-2 text-xs font-semibold text-ink hover:bg-sky/60 hover:text-ink"
                 >
                   Hide assistant
-                </button>
+                </Button>
               </div>
               <AIChat
                 utilityName={utility.name}

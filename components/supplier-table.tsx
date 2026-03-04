@@ -4,6 +4,15 @@ import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { Supplier } from '@/lib/types';
 import { formatCurrency, formatRate } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/select';
 
 type Props = {
   suppliers: Supplier[];
@@ -77,19 +86,25 @@ export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh 
         </div>
         <div className="flex flex-wrap items-center gap-3 text-xs text-ink/60">
           <span>Usage: {estimatedKwh.toLocaleString()} kWh/month</span>
-          <label className="flex items-center gap-2 text-xs text-ink/70">
-            Sort by
-            <select
-              value={sortKey}
-              onChange={(event) => setSortKey(event.target.value as SortKey)}
-              className="rounded-full border border-sea/20 bg-white px-3 py-1 text-xs text-ink"
-            >
-              <option value="savings">Savings</option>
-              <option value="rate">Rate</option>
-              <option value="term">Term length</option>
-              <option value="type">Rate type</option>
-            </select>
-          </label>
+          <div className="flex items-center gap-2 text-xs text-ink/70">
+            <Label htmlFor="sort-suppliers" className="text-xs font-medium text-ink/70">
+              Sort by
+            </Label>
+            <Select value={sortKey} onValueChange={(value) => setSortKey(value as SortKey)}>
+              <SelectTrigger
+                id="sort-suppliers"
+                className="h-auto w-[140px] rounded-full border-sea/20 bg-white px-3 py-1 text-xs text-ink shadow-none"
+              >
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="savings">Savings</SelectItem>
+                <SelectItem value="rate">Rate</SelectItem>
+                <SelectItem value="term">Term length</SelectItem>
+                <SelectItem value="type">Rate type</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
       </div>
 
@@ -202,12 +217,14 @@ export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh 
 
       {hasMore && !showAll && (
         <div className="mt-4 text-center">
-          <button
+          <Button
+            type="button"
+            variant="ghost"
             onClick={() => setShowAll(true)}
-            className="rounded-full bg-mist px-6 py-2 text-sm font-semibold text-ink transition hover:bg-sky/60"
+            className="h-auto rounded-full bg-mist px-6 py-2 text-sm font-semibold text-ink transition hover:bg-sky/60 hover:text-ink"
           >
             Show all {sortedSuppliers.length} suppliers
-          </button>
+          </Button>
         </div>
       )}
     </section>

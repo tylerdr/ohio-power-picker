@@ -7,6 +7,16 @@ import EmailCapture from '@/components/email-capture';
 import { supplierData } from '@/lib/data';
 import { utilities } from '@/lib/utilities';
 import { formatRate } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/select';
 
 export default function HomePage({
   searchParams
@@ -92,40 +102,52 @@ export default function HomePage({
             </p>
 
             <form action="/compare" method="get" className="mt-6 grid gap-4">
-              <label className="grid gap-2 text-sm font-medium text-ink">
-                Zip code
-                <input
+              <div className="grid gap-2 text-sm font-medium text-ink">
+                <Label htmlFor="zip-input" className="text-sm font-medium text-ink">
+                  Zip code
+                </Label>
+                <Input
+                  id="zip-input"
                   name="zip"
                   inputMode="numeric"
                   pattern="[0-9]{5}"
                   placeholder="43215"
                   defaultValue={zip}
-                  className="rounded-2xl border border-sea/20 bg-white px-4 py-3 text-base text-ink shadow-sm focus:border-sea focus:outline-none"
+                  className="h-auto rounded-2xl border-sea/20 bg-white px-4 py-3 text-base text-ink shadow-sm focus-visible:ring-sea"
                   required
                 />
-              </label>
-              <label className="grid gap-2 text-sm font-medium text-ink">
-                Utility
-                <select
+              </div>
+              <div className="grid gap-2 text-sm font-medium text-ink">
+                <Label htmlFor="utility-select" className="text-sm font-medium text-ink">
+                  Utility
+                </Label>
+                <Select
                   name="utility"
-                  defaultValue={utilityId}
-                  className="rounded-2xl border border-sea/20 bg-white px-4 py-3 text-base text-ink shadow-sm focus:border-sea focus:outline-none"
+                  defaultValue={utilityId || undefined}
                   required
                 >
-                  <option value="">Select your utility</option>
+                  <SelectTrigger
+                    id="utility-select"
+                    className="h-auto rounded-2xl border-sea/20 bg-white px-4 py-3 text-base text-ink shadow-sm focus:ring-sea data-[placeholder]:text-ink/50"
+                  >
+                    <SelectValue placeholder="Select your utility" />
+                  </SelectTrigger>
+                  <SelectContent>
                   {utilities.map((utility) => (
-                    <option key={utility.id} value={utility.id}>
+                    <SelectItem key={utility.id} value={utility.id}>
                       {utility.name}
-                    </option>
+                    </SelectItem>
                   ))}
-                </select>
-              </label>
-              <button
+                  </SelectContent>
+                </Select>
+              </div>
+              <Button
                 type="submit"
-                className="rounded-full bg-sea px-5 py-3 text-sm font-semibold text-white transition hover:bg-leaf"
+                variant="ghost"
+                className="h-auto rounded-full bg-sea px-5 py-3 text-sm font-semibold text-white transition hover:bg-leaf hover:text-white"
               >
                 Compare suppliers
-              </button>
+              </Button>
             </form>
 
             <div className="mt-6 rounded-2xl bg-mist p-4 text-sm text-ink/70">

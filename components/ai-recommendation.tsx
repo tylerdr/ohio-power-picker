@@ -5,6 +5,7 @@ import { useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Supplier } from '@/lib/types';
 import { formatCurrency, formatCurrencyPrecise, formatRate } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 const AVG_KWH = 900;
 
@@ -63,13 +64,15 @@ export default function AIRecommendation({
             Tailored guidance based on rate, terms, and risk factors.
           </p>
         </div>
-        <button
+        <Button
+          type="button"
+          variant="ghost"
           onClick={() => complete(prompt)}
           disabled={isLoading}
-          className="rounded-full bg-sea px-5 py-2 text-sm font-semibold text-white transition hover:bg-leaf disabled:opacity-60"
+          className="h-auto rounded-full bg-sea px-5 py-2 text-sm font-semibold text-white transition hover:bg-leaf hover:text-white disabled:opacity-60"
         >
           {isLoading ? 'Analyzing...' : 'Generate recommendation'}
-        </button>
+        </Button>
       </div>
 
       <div className="mt-5 rounded-2xl border border-sea/10 bg-mist p-4 text-sm text-ink/80">

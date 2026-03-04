@@ -5,6 +5,9 @@ import { Supplier } from '@/lib/types';
 import { supplierData } from '@/lib/data';
 import { utilities } from '@/lib/utilities';
 import { formatCurrency, formatRate } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
 const usageMap = {
   low: 600,
@@ -99,72 +102,81 @@ export default function QuickQuiz() {
       <div className="mt-6 grid gap-5">
         <div className="rounded-2xl border border-sea/10 bg-mist p-4">
           <p className="text-sm font-semibold text-ink">1. What matters most?</p>
-          <div className="mt-3 grid gap-2 text-sm text-ink/70 sm:grid-cols-2">
+          <RadioGroup
+            value={answers.priority}
+            onValueChange={(value) => updateAnswer('priority', value as Priority)}
+            className="mt-3 grid gap-2 text-sm text-ink/70 sm:grid-cols-2"
+          >
             {[
               { value: 'price', label: 'Lowest price' },
               { value: 'stable', label: 'Stable rate' },
               { value: 'green', label: 'Green energy' },
               { value: 'short', label: 'Short commitment' }
             ].map((option) => (
-              <label key={option.value} className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="priority"
+              <div key={option.value} className="flex items-center gap-2">
+                <RadioGroupItem
+                  id={`priority-${option.value}`}
                   value={option.value}
-                  checked={answers.priority === option.value}
-                  onChange={() => updateAnswer('priority', option.value as Priority)}
-                  className="h-4 w-4 text-sea"
+                  className="border-sea text-sea"
                 />
-                <span>{option.label}</span>
-              </label>
+                <Label htmlFor={`priority-${option.value}`} className="font-normal text-ink/70">
+                  {option.label}
+                </Label>
+              </div>
             ))}
-          </div>
+          </RadioGroup>
         </div>
 
         <div className="rounded-2xl border border-sea/10 bg-mist p-4">
           <p className="text-sm font-semibold text-ink">2. How much electricity do you use?</p>
-          <div className="mt-3 grid gap-2 text-sm text-ink/70 sm:grid-cols-3">
+          <RadioGroup
+            value={answers.usage}
+            onValueChange={(value) => updateAnswer('usage', value as UsageLevel)}
+            className="mt-3 grid gap-2 text-sm text-ink/70 sm:grid-cols-3"
+          >
             {[
               { value: 'low', label: 'Low (600 kWh)' },
               { value: 'average', label: 'Average (900 kWh)' },
               { value: 'high', label: 'High (1,400 kWh)' }
             ].map((option) => (
-              <label key={option.value} className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="usage"
+              <div key={option.value} className="flex items-center gap-2">
+                <RadioGroupItem
+                  id={`usage-${option.value}`}
                   value={option.value}
-                  checked={answers.usage === option.value}
-                  onChange={() => updateAnswer('usage', option.value as UsageLevel)}
-                  className="h-4 w-4 text-sea"
+                  className="border-sea text-sea"
                 />
-                <span>{option.label}</span>
-              </label>
+                <Label htmlFor={`usage-${option.value}`} className="font-normal text-ink/70">
+                  {option.label}
+                </Label>
+              </div>
             ))}
-          </div>
+          </RadioGroup>
         </div>
 
         <div className="rounded-2xl border border-sea/10 bg-mist p-4">
           <p className="text-sm font-semibold text-ink">3. How long do you want to commit?</p>
-          <div className="mt-3 grid gap-2 text-sm text-ink/70 sm:grid-cols-3">
+          <RadioGroup
+            value={answers.commitment}
+            onValueChange={(value) => updateAnswer('commitment', value as Commitment)}
+            className="mt-3 grid gap-2 text-sm text-ink/70 sm:grid-cols-3"
+          >
             {[
               { value: 'month', label: 'Month-to-month' },
               { value: 'six', label: '6 months' },
               { value: 'year', label: '12+ months' }
             ].map((option) => (
-              <label key={option.value} className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="commitment"
+              <div key={option.value} className="flex items-center gap-2">
+                <RadioGroupItem
+                  id={`commitment-${option.value}`}
                   value={option.value}
-                  checked={answers.commitment === option.value}
-                  onChange={() => updateAnswer('commitment', option.value as Commitment)}
-                  className="h-4 w-4 text-sea"
+                  className="border-sea text-sea"
                 />
-                <span>{option.label}</span>
-              </label>
+                <Label htmlFor={`commitment-${option.value}`} className="font-normal text-ink/70">
+                  {option.label}
+                </Label>
+              </div>
             ))}
-          </div>
+          </RadioGroup>
         </div>
       </div>
 
@@ -175,13 +187,14 @@ export default function QuickQuiz() {
               <h4 className="text-lg font-semibold text-ink">Top matches</h4>
               <p className="text-sm text-ink/70">Based on your answers and statewide supplier data.</p>
             </div>
-            <button
+            <Button
               type="button"
+              variant="ghost"
               onClick={resetQuiz}
-              className="rounded-full bg-mist px-4 py-2 text-xs font-semibold text-ink"
+              className="h-auto rounded-full bg-mist px-4 py-2 text-xs font-semibold text-ink hover:bg-sky/60 hover:text-ink"
             >
               Reset quiz
-            </button>
+            </Button>
           </div>
           <div className="mt-4 grid gap-3">
             {results.map((result) => (
