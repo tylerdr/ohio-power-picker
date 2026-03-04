@@ -3,6 +3,10 @@
 import { useMemo } from 'react';
 import { formatCurrency, formatCurrencyPrecise, formatRate } from '@/lib/utils';
 import type { HistoricalRate } from '@/lib/types';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Slider } from '@/components/ui/slider';
 
 const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -71,14 +75,15 @@ export default function ScenarioCalculator({
         <div className="rounded-2xl border border-sea/10 bg-mist p-4">
           <p className="text-xs uppercase text-ink/60">Monthly usage</p>
           <p className="mt-2 text-2xl font-semibold text-ink">{usageKwh.toLocaleString()} kWh</p>
-          <input
-            type="range"
+          <Slider
             min={500}
             max={2000}
             step={50}
-            value={usageKwh}
-            onChange={(event) => onUsageChange(Number(event.target.value))}
-            className="mt-4 w-full accent-sea"
+            value={[usageKwh]}
+            onValueChange={([value]) => {
+              if (value !== undefined) onUsageChange(value);
+            }}
+            className="mt-4 w-full [&>span]:bg-sea/20 [&>span>span]:bg-sea [&_[role=slider]]:border-sea/50"
           />
           <div className="mt-2 flex justify-between text-xs text-ink/50">
             <span>500 kWh</span>
@@ -89,10 +94,11 @@ export default function ScenarioCalculator({
         <div className="rounded-2xl border border-sea/10 bg-mist p-4">
           <p className="text-xs uppercase text-ink/60">Plan selection</p>
           <div className="mt-3 flex gap-2">
-            <button
+            <Button
               type="button"
+              variant="ghost"
               onClick={() => onPlanTypeChange('fixed')}
-              className={`flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
+              className={`h-auto flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
                 planType === 'fixed'
                   ? 'bg-sea text-white'
                   : 'bg-white text-ink/70 hover:bg-sky/60'
@@ -100,11 +106,12 @@ export default function ScenarioCalculator({
               aria-pressed={planType === 'fixed'}
             >
               Fixed
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
+              variant="ghost"
               onClick={() => onPlanTypeChange('variable')}
-              className={`flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
+              className={`h-auto flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
                 planType === 'variable'
                   ? 'bg-sea text-white'
                   : 'bg-white text-ink/70 hover:bg-sky/60'
@@ -112,11 +119,14 @@ export default function ScenarioCalculator({
               aria-pressed={planType === 'variable'}
             >
               Variable
-            </button>
+            </Button>
           </div>
-          <label className="mt-4 block text-xs uppercase text-ink/60">
-            Fixed rate (¢/kWh)
-            <input
+          <div className="mt-4">
+            <Label htmlFor="fixed-rate-input" className="text-xs uppercase text-ink/60">
+              Fixed rate (¢/kWh)
+            </Label>
+            <Input
+              id="fixed-rate-input"
               type="number"
               min={4}
               max={15}
@@ -128,9 +138,9 @@ export default function ScenarioCalculator({
                   onFixedRateChange(Math.min(15, Math.max(4, next)));
                 }
               }}
-              className="mt-2 w-full rounded-2xl border border-sea/20 bg-white px-3 py-2 text-sm text-ink shadow-sm focus:border-sea focus:outline-none"
+              className="mt-2 h-auto w-full rounded-2xl border-sea/20 bg-white px-3 py-2 text-sm text-ink shadow-sm focus-visible:ring-sea"
             />
-          </label>
+          </div>
         </div>
       </div>
 

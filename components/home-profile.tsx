@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import { Button } from '@/components/ui/button';
 
 type HomeSize = 'apartment' | 'small' | 'medium' | 'large' | 'xl';
 type HeatingType = 'gas' | 'electric' | 'heatpump';
@@ -78,13 +79,15 @@ export default function HomeProfile({ onEstimateChange }: Props) {
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-ink/50">Home Size</p>
           <div className="flex flex-wrap gap-2">
             {HOME_SIZES.map((s) => (
-              <button
+              <Button
                 key={s.key}
+                type="button"
+                variant="ghost"
                 onClick={() => {
                   setHomeSize(s.key);
                   calculate(s.key, heating, household);
                 }}
-                className={`flex flex-col items-center rounded-2xl px-3 py-2 text-xs transition ${
+                className={`h-auto flex flex-col items-center rounded-2xl px-3 py-2 text-xs transition ${
                   homeSize === s.key
                     ? 'bg-sea text-white shadow-md'
                     : 'bg-mist text-ink/70 hover:bg-sky/60'
@@ -92,7 +95,7 @@ export default function HomeProfile({ onEstimateChange }: Props) {
               >
                 <span className="text-lg">{s.emoji}</span>
                 <span className="mt-0.5 font-medium">{s.label}</span>
-              </button>
+              </Button>
             ))}
           </div>
         </div>
@@ -102,13 +105,15 @@ export default function HomeProfile({ onEstimateChange }: Props) {
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-ink/50">Heating</p>
           <div className="flex flex-wrap gap-2">
             {HEATING_TYPES.map((t) => (
-              <button
+              <Button
                 key={t.key}
+                type="button"
+                variant="ghost"
                 onClick={() => {
                   setHeating(t.key);
                   calculate(homeSize, t.key, household);
                 }}
-                className={`flex flex-col items-center rounded-2xl px-3 py-2 text-xs transition ${
+                className={`h-auto flex flex-col items-center rounded-2xl px-3 py-2 text-xs transition ${
                   heating === t.key
                     ? 'bg-sea text-white shadow-md'
                     : 'bg-mist text-ink/70 hover:bg-sky/60'
@@ -116,7 +121,7 @@ export default function HomeProfile({ onEstimateChange }: Props) {
               >
                 <span className="text-lg">{t.emoji}</span>
                 <span className="mt-0.5 font-medium">{t.label}</span>
-              </button>
+              </Button>
             ))}
           </div>
         </div>
@@ -126,13 +131,15 @@ export default function HomeProfile({ onEstimateChange }: Props) {
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-ink/50">Household</p>
           <div className="flex flex-wrap gap-2">
             {HOUSEHOLD_SIZES.map((s) => (
-              <button
+              <Button
                 key={s.key}
+                type="button"
+                variant="ghost"
                 onClick={() => {
                   setHousehold(s.key);
                   calculate(homeSize, heating, s.key);
                 }}
-                className={`flex flex-col items-center rounded-2xl px-3 py-2 text-xs transition ${
+                className={`h-auto flex flex-col items-center rounded-2xl px-3 py-2 text-xs transition ${
                   household === s.key
                     ? 'bg-sea text-white shadow-md'
                     : 'bg-mist text-ink/70 hover:bg-sky/60'
@@ -140,7 +147,7 @@ export default function HomeProfile({ onEstimateChange }: Props) {
               >
                 <span className="text-lg">{s.emoji}</span>
                 <span className="mt-0.5 font-medium">{s.label}</span>
-              </button>
+              </Button>
             ))}
           </div>
         </div>

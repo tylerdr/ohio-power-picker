@@ -5,6 +5,9 @@ import { useChat } from 'ai/react';
 import ReactMarkdown from 'react-markdown';
 import { Supplier } from '@/lib/types';
 import { formatCurrencyPrecise, formatRate } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 const AVG_KWH = 900;
 
@@ -81,22 +84,26 @@ export default function AIChat({ utilityName, priceToCompare, suppliers, zip }: 
       </div>
 
       <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-3 sm:flex-row">
-        <label className="flex-1">
-          <span className="sr-only">Ask a question</span>
-          <input
+        <div className="flex-1">
+          <Label htmlFor="ai-chat-input" className="sr-only">
+            Ask a question
+          </Label>
+          <Input
+            id="ai-chat-input"
             value={input}
             onChange={handleInputChange}
             placeholder="Ask about savings, term length, or risk..."
-            className="w-full rounded-2xl border border-sea/20 bg-white px-4 py-3 text-sm text-ink shadow-sm focus:border-sea focus:outline-none"
+            className="h-auto w-full rounded-2xl border-sea/20 bg-white px-4 py-3 text-sm text-ink shadow-sm focus-visible:ring-sea"
           />
-        </label>
-        <button
+        </div>
+        <Button
           type="submit"
+          variant="ghost"
           disabled={isLoading || !input.trim()}
-          className="rounded-full bg-sea px-5 py-3 text-sm font-semibold text-white transition hover:bg-leaf disabled:opacity-60"
+          className="h-auto rounded-full bg-sea px-5 py-3 text-sm font-semibold text-white transition hover:bg-leaf hover:text-white disabled:opacity-60"
         >
           {isLoading ? 'Thinking...' : 'Send'}
-        </button>
+        </Button>
       </form>
 
       {error && (

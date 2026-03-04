@@ -4,6 +4,16 @@ import { useEffect, useMemo, useState, type FormEvent } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { utilities } from '@/lib/utilities';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/select';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -97,49 +107,63 @@ export default function SiteHeader({ zip, utility }: Props) {
             ))}
           </nav>
           <div className="relative">
-            <button
+            <Button
               type="button"
+              variant="ghost"
               onClick={() => setMenuOpen((prev) => !prev)}
-              className="rounded-full border border-sea/20 bg-white px-4 py-2 text-xs font-semibold text-ink shadow-sm transition hover:border-sea"
+              className="h-auto rounded-full border border-sea/20 bg-white px-4 py-2 text-xs font-semibold text-ink shadow-sm transition hover:border-sea hover:bg-white"
               aria-expanded={menuOpen}
             >
               {selectionLabel}
-            </button>
+            </Button>
             {menuOpen && (
               <div className="absolute right-0 z-50 mt-3 w-64 overflow-hidden rounded-3xl border border-white/60 bg-white p-5 shadow-card sm:w-72">
                 <form onSubmit={handleSubmit} className="grid gap-3 text-sm text-ink">
-                  <label className="grid gap-2 text-xs font-semibold uppercase tracking-wider text-ink/50">
-                    Zip code
-                    <input
+                  <div className="grid gap-2 text-xs font-semibold uppercase tracking-wider text-ink/50">
+                    <Label htmlFor="header-zip" className="text-xs font-semibold uppercase tracking-wider text-ink/50">
+                      Zip code
+                    </Label>
+                    <Input
+                      id="header-zip"
                       value={draftZip}
                       onChange={(event) => setDraftZip(event.target.value)}
                       inputMode="numeric"
                       pattern="[0-9]{5}"
                       placeholder="43215"
-                      className="w-full rounded-2xl border border-sea/20 bg-white px-3 py-2 text-sm text-ink shadow-sm focus:border-sea focus:outline-none"
+                      className="h-auto w-full rounded-2xl border-sea/20 bg-white px-3 py-2 text-sm text-ink shadow-sm focus-visible:ring-sea"
                     />
-                  </label>
-                  <label className="grid gap-2 text-xs font-semibold uppercase tracking-wider text-ink/50">
-                    Utility
-                    <select
-                      value={draftUtility}
-                      onChange={(event) => setDraftUtility(event.target.value)}
-                      className="w-full rounded-2xl border border-sea/20 bg-white px-3 py-2 text-sm text-ink shadow-sm focus:border-sea focus:outline-none"
+                  </div>
+                  <div className="grid gap-2 text-xs font-semibold uppercase tracking-wider text-ink/50">
+                    <Label htmlFor="header-utility" className="text-xs font-semibold uppercase tracking-wider text-ink/50">
+                      Utility
+                    </Label>
+                    <Select
+                      value={draftUtility || '__none'}
+                      onValueChange={(value) => setDraftUtility(value === '__none' ? '' : value)}
                     >
-                      <option value="">Select utility</option>
+                      <SelectTrigger
+                        id="header-utility"
+                        className="h-auto w-full rounded-2xl border-sea/20 bg-white px-3 py-2 text-sm text-ink shadow-sm focus:ring-sea"
+                      >
+                        <SelectValue placeholder="Select utility" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="__none">Select utility</SelectItem>
                       {utilities.map((item) => (
-                        <option key={item.id} value={item.id}>
+                        <SelectItem key={item.id} value={item.id}>
                           {item.name}
-                        </option>
+                        </SelectItem>
                       ))}
-                    </select>
-                  </label>
-                  <button
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <Button
                     type="submit"
-                    className="rounded-full bg-sea px-4 py-2 text-sm font-semibold text-white transition hover:bg-leaf"
+                    variant="ghost"
+                    className="h-auto rounded-full bg-sea px-4 py-2 text-sm font-semibold text-white transition hover:bg-leaf hover:text-white"
                   >
                     Update
-                  </button>
+                  </Button>
                 </form>
               </div>
             )}

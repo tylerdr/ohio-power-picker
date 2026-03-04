@@ -3,6 +3,8 @@
 import { useMemo, useState } from 'react';
 import { Supplier } from '@/lib/types';
 import { formatCurrency, formatRate } from '@/lib/utils';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Slider } from '@/components/ui/slider';
 
 const MIN_USAGE = 500;
 const MAX_USAGE = 2000;
@@ -95,12 +97,11 @@ export default function SupplierCompare({ suppliers, priceToCompare }: Props) {
                   isSelected ? 'bg-sea/10 ring-1 ring-sea' : 'hover:bg-mist'
                 } ${isDisabled ? 'cursor-not-allowed opacity-40' : ''}`}
               >
-                <input
-                  type="checkbox"
+                <Checkbox
                   checked={isSelected}
                   disabled={isDisabled}
-                  onChange={() => toggleSupplier(supplier.id)}
-                  className="h-3.5 w-3.5 rounded border-sea/40 text-sea"
+                  onCheckedChange={() => toggleSupplier(supplier.id)}
+                  className="h-3.5 w-3.5 rounded border-sea/40 data-[state=checked]:border-sea data-[state=checked]:bg-sea data-[state=checked]:text-white"
                 />
                 <span className="truncate font-medium text-ink">{supplier.name}</span>
                 <span className="ml-auto shrink-0 text-xs text-ink/50">{formatRate(supplier.ratePerKwh)}</span>
@@ -116,14 +117,15 @@ export default function SupplierCompare({ suppliers, priceToCompare }: Props) {
           <p className="text-sm text-ink/70">Monthly usage</p>
           <span className="rounded-full bg-leaf/15 px-3 py-1 text-sm font-bold text-ink">{usage.toLocaleString()} kWh</span>
         </div>
-        <input
-          type="range"
+        <Slider
           min={MIN_USAGE}
           max={MAX_USAGE}
           step={50}
-          value={usage}
-          onChange={(event) => setUsage(Number(event.target.value))}
-          className="mt-3 w-full accent-sea"
+          value={[usage]}
+          onValueChange={([value]) => {
+            if (value !== undefined) setUsage(value);
+          }}
+          className="mt-3 w-full [&>span]:bg-sea/20 [&>span>span]:bg-sea [&_[role=slider]]:border-sea/50"
         />
         <div className="mt-1 flex justify-between text-[11px] text-ink/40">
           <span>500</span>
