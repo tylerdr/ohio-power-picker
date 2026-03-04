@@ -13,7 +13,7 @@ export default function HomePage({
 }: {
   searchParams?: { zip?: string; utility?: string };
 }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ohiopowerpicker.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ohioelectricityrates.com';
   const webApplicationSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',

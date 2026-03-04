@@ -3,7 +3,7 @@ import { Fraunces, Manrope } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ohiopowerpicker.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ohioelectricityrates.com';
 const siteTitle = 'Ohio Power Picker — Find Cheaper Electricity Rates in Ohio';
 const siteDescription =
   'Compare Ohio electricity suppliers against your utility default rate. 72% of offers cost more — we find the ones that actually save you money.';
