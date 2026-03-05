@@ -1,379 +1,4859 @@
 [
   {
-    "id": "energy-harbor-fixed-12-aep",
-    "name": "Energy Harbor - Fixed 12",
-    "utilityTerritories": ["aep-ohio", "ohio-edison", "toledo-edison", "illuminating"],
-    "ratePerKwh": 0.0649,
-    "termMonths": 12,
-    "rateType": "fixed",
-    "renewablePercent": 5,
-    "earlyTerminationFee": 75,
-    "introRateMonths": null,
-    "website": "https://www.energyharbor.com/en/residential",
-    "notes": "One of Ohio's largest PUCO-certified suppliers. Formerly FirstEnergy Solutions."
-  },
-  {
-    "id": "energy-harbor-fixed-24-aep",
-    "name": "Energy Harbor - Fixed 24",
-    "utilityTerritories": ["aep-ohio", "ohio-edison", "toledo-edison", "illuminating"],
-    "ratePerKwh": 0.0679,
-    "termMonths": 24,
-    "rateType": "fixed",
-    "renewablePercent": 5,
-    "earlyTerminationFee": 75,
-    "introRateMonths": null,
-    "website": "https://www.energyharbor.com/en/residential",
-    "notes": "Longer term lock for rate stability."
-  },
-  {
-    "id": "energy-harbor-green-12",
-    "name": "Energy Harbor - Green 12",
-    "utilityTerritories": ["aep-ohio", "ohio-edison", "toledo-edison", "illuminating"],
+    "id": "american-power-gas-of-ohio-llc-variable-0.0699-1",
+    "name": "American Power & Gas of Ohio, LLC - Variable 1mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "ohio-edison"
+    ],
     "ratePerKwh": 0.0699,
-    "termMonths": 12,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0699-9",
+    "name": "Clearview Electric Inc - Fixed 9mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0699,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-variable-0.0711-1",
+    "name": "American Power & Gas of Ohio, LLC - Variable 1mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0711,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0718-3",
+    "name": "APG&E - Fixed 3mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0718,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-fixed-0.0719-3",
+    "name": "American Power & Gas of Ohio, LLC - Fixed 3mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0719,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-variable-0.0733-1",
+    "name": "American Power & Gas of Ohio, LLC - Variable 1mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0733,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "town-square-energy-fixed-0.0743-4",
+    "name": "Town Square Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0743,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-fixed-0.0745-3",
+    "name": "American Power & Gas of Ohio, LLC - Fixed 3mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0745,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "ecoplus-power-llc-variable-0.0745-1",
+    "name": "EcoPlus Power LLC - Variable 1mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0745,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "town-square-energy-fixed-0.0747-4",
+    "name": "Town Square Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0747,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0748-3",
+    "name": "APG&E - Fixed 3mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0748,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "provision-power-gas-llcpo-box-variable-0.0749-1",
+    "name": "Provision Power & Gas LLCPO Box - Variable 1mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0749,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-fixed-0.0749-3",
+    "name": "American Power & Gas of Ohio, LLC - Fixed 3mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0749,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "santanna-energy-fixed-0.0755-3",
+    "name": "Santanna Energy - Fixed 3mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0755,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-fixed-0.0769-3",
+    "name": "American Power & Gas of Ohio, LLC - Fixed 3mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0769,
+    "termMonths": 3,
     "rateType": "fixed",
     "renewablePercent": 100,
-    "earlyTerminationFee": 75,
+    "earlyTerminationFee": 0,
     "introRateMonths": null,
-    "website": "https://www.energyharbor.com/en/residential",
-    "notes": "100% renewable energy option."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "igs-energy-fixed-12",
-    "name": "IGS Energy - Fixed 12",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "aes-ohio", "ohio-edison", "toledo-edison", "illuminating"],
-    "ratePerKwh": 0.0689,
+    "id": "clearview-electric-inc-fixed-0.0769-9",
+    "name": "Clearview Electric Inc - Fixed 9mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0769,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-fixed-0.0795-3",
+    "name": "American Power & Gas of Ohio, LLC - Fixed 3mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0795,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.0799-3",
+    "name": "Inspire Energy - Fixed 3mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0799,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-fixed-0.0799-3",
+    "name": "American Power & Gas of Ohio, LLC - Fixed 3mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0799,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "santanna-energy-fixed-0.0808-3",
+    "name": "Santanna Energy - Fixed 3mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0808,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0809-9",
+    "name": "Clearview Electric Inc - Fixed 9mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0809,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "santanna-energy-fixed-0.081-3",
+    "name": "Santanna Energy - Fixed 3mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.081,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "provision-power-gas-llcp-o-box-variable-0.0829-1",
+    "name": "Provision Power & Gas LLCP.O Box - Variable 1mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0829,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0839-9",
+    "name": "Clearview Electric Inc - Fixed 9mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0839,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0845-3",
+    "name": "APG&E - Fixed 3mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0845,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "town-square-energy-fixed-0.0847-4",
+    "name": "Town Square Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0847,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "just-energy-fixed-0.0849-12",
+    "name": "Just Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "duke-energy",
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0849,
     "termMonths": 12,
     "rateType": "fixed",
     "renewablePercent": 0,
     "earlyTerminationFee": 50,
     "introRateMonths": null,
-    "website": "https://www.igsenergy.com/residential/electricity",
-    "notes": "Columbus-based supplier serving most of Ohio."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "igs-energy-fixed-24",
-    "name": "IGS Energy - Fixed 24",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "aes-ohio", "ohio-edison", "toledo-edison", "illuminating"],
-    "ratePerKwh": 0.0719,
-    "termMonths": 24,
-    "rateType": "fixed",
-    "renewablePercent": 0,
-    "earlyTerminationFee": 75,
-    "introRateMonths": null,
-    "website": "https://www.igsenergy.com/residential/electricity",
-    "notes": "Long-term rate lock."
-  },
-  {
-    "id": "igs-energy-variable",
-    "name": "IGS Energy - Variable",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "aes-ohio", "ohio-edison", "toledo-edison", "illuminating"],
-    "ratePerKwh": 0.0599,
+    "id": "american-power-gas-of-ohio-llc-variable-0.0849-1",
+    "name": "American Power & Gas of Ohio, LLC - Variable 1mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0849,
     "termMonths": 1,
     "rateType": "variable",
-    "renewablePercent": 0,
+    "renewablePercent": 100,
     "earlyTerminationFee": 0,
-    "introRateMonths": null,
-    "website": "https://www.igsenergy.com/residential/electricity",
-    "notes": "Month-to-month variable. Rate can change each billing cycle."
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "constellation-fixed-12",
-    "name": "Constellation - Fixed 12",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "aes-ohio", "ohio-edison", "toledo-edison", "illuminating"],
-    "ratePerKwh": 0.0659,
+    "id": "santanna-energy-fixed-0.085-12",
+    "name": "Santanna Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.085,
     "termMonths": 12,
     "rateType": "fixed",
     "renewablePercent": 0,
     "earlyTerminationFee": 100,
     "introRateMonths": null,
-    "website": "https://www.constellation.com/solutions/for-your-home/electricity-plans.html",
-    "notes": "National provider with Ohio presence. Higher ETF."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "constellation-fixed-24",
-    "name": "Constellation - Fixed 24",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "aes-ohio", "ohio-edison", "toledo-edison", "illuminating"],
-    "ratePerKwh": 0.0689,
+    "id": "nordic-energy-variable-0.085-2",
+    "name": "Nordic Energy - Variable 2mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.085,
+    "termMonths": 2,
+    "rateType": "variable",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "santanna-energy-fixed-0.0851-12",
+    "name": "Santanna Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0851,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0858-3",
+    "name": "APG&E - Fixed 3mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0858,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-variable-0.0861-1",
+    "name": "American Power & Gas of Ohio, LLC - Variable 1mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0861,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0868-3",
+    "name": "APG&E - Fixed 3mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0868,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0869-9",
+    "name": "Clearview Electric Inc - Fixed 9mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0869,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "residents-energy-fixed-0.0878-4",
+    "name": "Residents Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0878,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0879-24",
+    "name": "Clearview Electric Inc - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0879,
     "termMonths": 24,
     "rateType": "fixed",
     "renewablePercent": 0,
     "earlyTerminationFee": 150,
     "introRateMonths": null,
-    "website": "https://www.constellation.com/solutions/for-your-home/electricity-plans.html",
-    "notes": "Longer lock but higher ETF at $150."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "constellation-green-12",
-    "name": "Constellation - Green 12",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "ohio-edison", "illuminating"],
-    "ratePerKwh": 0.0729,
+    "id": "cleansky-energy-fixed-0.0879-6",
+    "name": "CleanSky Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0879,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.0879-5",
+    "name": "Inspire Energy - Fixed 5mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0879,
+    "termMonths": 5,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-variable-0.0883-1",
+    "name": "American Power & Gas of Ohio, LLC - Variable 1mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0883,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "santanna-energy-fixed-0.0886-3",
+    "name": "Santanna Energy - Fixed 3mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0886,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "provision-power-gas-llcp-o-boxaustin-tx-variable-0.0889-1",
+    "name": "Provision Power & Gas LLCP.O.BoxAustin,TX - Variable 1mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0889,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "utility-gas-and-power-fixed-0.0899-12",
+    "name": "Utility Gas and Power - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "duke-energy",
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0899,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "sfe-energy-fixed-0.0899-6",
+    "name": "SFE Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "duke-energy",
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0899,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 7,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "just-energy-fixed-0.0899-24",
+    "name": "Just Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "duke-energy",
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0899,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 50,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0899-6",
+    "name": "Clearview Electric Inc - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0899,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "frontier-utilities-northeast-llc-fixed-0.0899-6",
+    "name": "Frontier Utilities Northeast, LLC - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0899,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.0899-3",
+    "name": "Inspire Energy - Fixed 3mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0899,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "shipley-choice-llc-fixed-0.0899-6",
+    "name": "Shipley Choice, LLC - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0899,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.0899-9",
+    "name": "AEP Energy - Fixed 9mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0899,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "provision-power-gas-llcpo-box-variable-0.0899-1",
+    "name": "Provision Power & Gas LLCPO Box - Variable 1mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0899,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "greenlight-energy-fixed-0.09-6",
+    "name": "Greenlight Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.09,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "nordic-energy-variable-0.09-2",
+    "name": "Nordic Energy - Variable 2mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.09,
+    "termMonths": 2,
+    "rateType": "variable",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0909-12",
+    "name": "Clearview Electric Inc - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0909,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "shipley-choice-llc-fixed-0.0918-6",
+    "name": "Shipley Choice, LLC - Fixed 6mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0918,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0918-3",
+    "name": "APG&E - Fixed 3mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0918,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "frontier-utilities-northeast-llc-fixed-0.0919-12",
+    "name": "Frontier Utilities Northeast, LLC - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0919,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "santanna-energy-fixed-0.0922-12",
+    "name": "Santanna Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0922,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "town-square-energy-fixed-0.0927-9",
+    "name": "Town Square Energy - Fixed 9mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0927,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0928-6",
+    "name": "APG&E - Fixed 6mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0928,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleansky-energy-fixed-0.0929-6",
+    "name": "CleanSky Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0929,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0929-24",
+    "name": "Clearview Electric Inc - Fixed 24mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0929,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleansky-energy-fixed-0.0929-12",
+    "name": "CleanSky Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0929,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleansky-energy-fixed-0.0934-24",
+    "name": "CleanSky Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0934,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "shipley-choice-llc-fixed-0.0934-12",
+    "name": "Shipley Choice, LLC - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0934,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "shipley-choice-llc-fixed-0.0934-6",
+    "name": "Shipley Choice, LLC - Fixed 6mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0934,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.0935-12",
+    "name": "AEP Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0935,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0938-9",
+    "name": "APG&E - Fixed 9mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0938,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0938-8",
+    "name": "APG&E - Fixed 8mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0938,
+    "termMonths": 8,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "eligo-energy-fixed-0.0939-6",
+    "name": "Eligo Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0939,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.0939-12",
+    "name": "Inspire Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0939,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0939-9",
+    "name": "Clearview Electric Inc - Fixed 9mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0939,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "shipley-choice-llc-fixed-0.0944-12",
+    "name": "Shipley Choice, LLC - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0944,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.0945-12",
+    "name": "AEP Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0945,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0948-15",
+    "name": "APG&E - Fixed 15mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0948,
+    "termMonths": 15,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0948-9",
+    "name": "APG&E - Fixed 9mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0948,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "shipley-choice-llc-fixed-0.0949-12",
+    "name": "Shipley Choice, LLC - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0949,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "eligo-energy-fixed-0.0949-6",
+    "name": "Eligo Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0949,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "ntherm-llc-variable-0.0949-1",
+    "name": "nTherm, LLC - Variable 1mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0949,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleanchoice-energy-fixed-0.095-12",
+    "name": "CleanChoice Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.095,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "shipley-choice-llc-fixed-0.0958-6",
+    "name": "Shipley Choice, LLC - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0958,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0958-12",
+    "name": "APG&E - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0958,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0958-15",
+    "name": "APG&E - Fixed 15mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0958,
+    "termMonths": 15,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "eligo-energy-fixed-0.0959-12",
+    "name": "Eligo Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0959,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "eligo-energy-fixed-0.0959-6",
+    "name": "Eligo Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0959,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0968-15",
+    "name": "APG&E - Fixed 15mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0968,
+    "termMonths": 15,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "shipley-choice-llc-fixed-0.0968-6",
+    "name": "Shipley Choice, LLC - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0968,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0968-12",
+    "name": "APG&E - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0968,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "eligo-energy-fixed-0.0969-12",
+    "name": "Eligo Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0969,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0969-6",
+    "name": "Clearview Electric Inc - Fixed 6mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0969,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0969-12",
+    "name": "Clearview Electric Inc - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0969,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "renaissance-power-gas-inc-fixed-0.097-7",
+    "name": "Renaissance Power & Gas, Inc - Fixed 7mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.097,
+    "termMonths": 7,
+    "rateType": "fixed",
+    "renewablePercent": 7,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0977-20",
+    "name": "APG&E - Fixed 20mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0977,
+    "termMonths": 20,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0978-18",
+    "name": "APG&E - Fixed 18mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0978,
+    "termMonths": 18,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0978-12",
+    "name": "APG&E - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0978,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.0979-3",
+    "name": "Inspire Energy - Fixed 3mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0979,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleansky-energy-fixed-0.0979-12",
+    "name": "CleanSky Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0979,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "eligo-energy-fixed-0.0979-12",
+    "name": "Eligo Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0979,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "shipley-choice-llc-fixed-0.098-12",
+    "name": "Shipley Choice, LLC - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.098,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0984-24",
+    "name": "APG&E - Fixed 24mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0984,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.0985-24",
+    "name": "AEP Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0985,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleansky-energy-fixed-0.0987-6",
+    "name": "CleanSky Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0987,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0987-20",
+    "name": "APG&E - Fixed 20mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0987,
+    "termMonths": 20,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0988-20",
+    "name": "APG&E - Fixed 20mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0988,
+    "termMonths": 20,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0988-18",
+    "name": "APG&E - Fixed 18mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0988,
+    "termMonths": 18,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "santanna-energy-fixed-0.0988-12",
+    "name": "Santanna Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0988,
     "termMonths": 12,
     "rateType": "fixed",
     "renewablePercent": 100,
     "earlyTerminationFee": 100,
     "introRateMonths": null,
-    "website": "https://www.constellation.com/solutions/for-your-home/green-energy.html",
-    "notes": "100% renewable plan."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "direct-energy-fixed-12",
-    "name": "Direct Energy - Fixed 12",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "aes-ohio", "ohio-edison", "toledo-edison", "illuminating"],
-    "ratePerKwh": 0.0669,
+    "id": "shipley-choice-llc-fixed-0.0988-12",
+    "name": "Shipley Choice, LLC - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0988,
     "termMonths": 12,
     "rateType": "fixed",
-    "renewablePercent": 0,
-    "earlyTerminationFee": 75,
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
     "introRateMonths": null,
-    "website": "https://www.directenergy.com/ohio",
-    "notes": "Major national supplier active in Ohio."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "direct-energy-variable",
-    "name": "Direct Energy - Variable",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "aes-ohio", "ohio-edison", "toledo-edison", "illuminating"],
-    "ratePerKwh": 0.0579,
+    "id": "eligo-energy-fixed-0.0989-12",
+    "name": "Eligo Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0989,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0989-9",
+    "name": "Clearview Electric Inc - Fixed 9mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0989,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleansky-energy-fixed-0.0989-24",
+    "name": "CleanSky Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0989,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "major-energy-fixed-0.0989-6",
+    "name": "Major Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0989,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.0989-5",
+    "name": "Inspire Energy - Fixed 5mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0989,
+    "termMonths": 5,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.0989-24",
+    "name": "AEP Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0989,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "ntherm-llc-variable-0.0997-1",
+    "name": "nTherm, LLC - Variable 1mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0997,
     "termMonths": 1,
     "rateType": "variable",
     "renewablePercent": 0,
     "earlyTerminationFee": 0,
-    "introRateMonths": 3,
-    "website": "https://www.directenergy.com/ohio",
-    "notes": "Low intro rate for 3 months, then market rate. Common door-to-door offer."
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "clearview-energy-fixed-12",
-    "name": "Clearview Energy - Fixed 12",
-    "utilityTerritories": ["toledo-edison", "ohio-edison", "illuminating", "aep-ohio"],
-    "ratePerKwh": 0.0619,
-    "termMonths": 12,
+    "id": "shipley-choice-llc-fixed-0.0998-6",
+    "name": "Shipley Choice, LLC - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0998,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0998-24",
+    "name": "APG&E - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0998,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.0998-4",
+    "name": "APG&E - Fixed 4mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0998,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleansky-energy-fixed-0.0998-6",
+    "name": "CleanSky Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0998,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.0999-24",
+    "name": "Clearview Electric Inc - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0999,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.0999-9",
+    "name": "AEP Energy - Fixed 9mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0999,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "eligo-energy-fixed-0.0999-6",
+    "name": "Eligo Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.0999,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "major-energy-fixed-0.0999-8",
+    "name": "Major Energy - Fixed 8mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0999,
+    "termMonths": 8,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.0999-6",
+    "name": "XOOM Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.0999,
+    "termMonths": 6,
     "rateType": "fixed",
     "renewablePercent": 0,
     "earlyTerminationFee": 50,
     "introRateMonths": null,
-    "website": "https://clearviewenergy.com/residential/ohio/",
-    "notes": "Among the lowest fixed rates in Ohio."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "clearview-energy-variable",
-    "name": "Clearview Energy - Variable",
-    "utilityTerritories": ["toledo-edison", "ohio-edison", "illuminating", "aep-ohio"],
-    "ratePerKwh": 0.0549,
-    "termMonths": 1,
+    "id": "inspire-energy-fixed-0.0999-18",
+    "name": "Inspire Energy - Fixed 18mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.0999,
+    "termMonths": 18,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "major-energy-fixed-0.0999-6",
+    "name": "Major Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.0999,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "nordic-energy-variable-0.1-2",
+    "name": "Nordic Energy - Variable 2mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1,
+    "termMonths": 2,
     "rateType": "variable",
     "renewablePercent": 0,
     "earlyTerminationFee": 0,
     "introRateMonths": null,
-    "website": "https://clearviewenergy.com/residential/ohio/",
-    "notes": "Lowest variable rate but can spike seasonally."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "santanna-energy-fixed-12",
-    "name": "SantaFe Natural Gas/Santanna Energy - Fixed 12",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "ohio-edison", "illuminating"],
-    "ratePerKwh": 0.0709,
+    "id": "cleanchoice-energy-fixed-0.1-12",
+    "name": "CleanChoice Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "smartenergy-fixed-0.1-6",
+    "name": "SmartEnergy - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "greenlight-energy-variable-0.1-1",
+    "name": "Greenlight Energy - Variable 1mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "nrg-homep-o-box-fixed-0.1-6",
+    "name": "NRG HomeP.O. Box - Fixed 6mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "town-square-energy-fixed-0.1005-9",
+    "name": "Town Square Energy - Fixed 9mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1005,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "shipley-choice-llc-fixed-0.1005-12",
+    "name": "Shipley Choice, LLC - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1005,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.1008-24",
+    "name": "APG&E - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1008,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "shipley-choice-llc-fixed-0.1008-12",
+    "name": "Shipley Choice, LLC - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1008,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1009-6",
+    "name": "Clearview Electric Inc - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1009,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1009-12",
+    "name": "XOOM Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1009,
     "termMonths": 12,
     "rateType": "fixed",
     "renewablePercent": 0,
-    "earlyTerminationFee": 50,
-    "introRateMonths": null,
-    "website": "https://www.santannaenergy.com/ohio-electricity",
-    "notes": "Smaller supplier, competitive in some territories."
-  },
-  {
-    "id": "xoom-energy-fixed-12",
-    "name": "XOOM Energy - Fixed 12",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "aes-ohio", "ohio-edison", "toledo-edison", "illuminating"],
-    "ratePerKwh": 0.0699,
-    "termMonths": 12,
-    "rateType": "fixed",
-    "renewablePercent": 10,
     "earlyTerminationFee": 100,
     "introRateMonths": null,
-    "website": "https://www.xoomenergy.com/en/ohio",
-    "notes": "Subsidiary of ACN. MLM referral model — watch for pressure tactics."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "xoom-energy-green-12",
-    "name": "XOOM Energy - SureLock Green 12",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "ohio-edison", "illuminating"],
-    "ratePerKwh": 0.0749,
+    "id": "eligo-energy-fixed-0.1009-12",
+    "name": "Eligo Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1009,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.1009-24",
+    "name": "AEP Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1009,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1009-12",
+    "name": "Clearview Electric Inc - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1009,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "major-energy-fixed-0.1009-8",
+    "name": "Major Energy - Fixed 8mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1009,
+    "termMonths": 8,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1009-9",
+    "name": "Clearview Electric Inc - Fixed 9mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1009,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "nrg-homep-o-box-fixed-0.101-6",
+    "name": "NRG HomeP.O. Box - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.101,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleanchoice-energy-fixed-0.101-12",
+    "name": "CleanChoice Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.101,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.1018-9",
+    "name": "APG&E - Fixed 9mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1018,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1019-12",
+    "name": "Clearview Electric Inc - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1019,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.1019-24",
+    "name": "Inspire Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1019,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleanchoice-energy-fixed-0.102-12",
+    "name": "CleanChoice Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.102,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "4-choice-energy-variable-0.1025-12",
+    "name": "4 Choice Energy - Variable 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1025,
+    "termMonths": 12,
+    "rateType": "variable",
+    "renewablePercent": 2,
+    "earlyTerminationFee": 5,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.1028-30",
+    "name": "APG&E - Fixed 30mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1028,
+    "termMonths": 30,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1029-24",
+    "name": "Clearview Electric Inc - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1029,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleansky-energy-fixed-0.1029-12",
+    "name": "CleanSky Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1029,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1029-9",
+    "name": "Clearview Electric Inc - Fixed 9mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1029,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "eligo-energy-fixed-0.1029-12",
+    "name": "Eligo Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1029,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1029-6",
+    "name": "XOOM Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1029,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 50,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.1035-12",
+    "name": "AEP Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1035,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.1035-36",
+    "name": "AEP Energy - Fixed 36mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1035,
+    "termMonths": 36,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleansky-energy-fixed-0.1039-24",
+    "name": "CleanSky Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1039,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "santanna-energy-fixed-0.1039-12",
+    "name": "Santanna Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1039,
     "termMonths": 12,
     "rateType": "fixed",
     "renewablePercent": 100,
     "earlyTerminationFee": 100,
     "introRateMonths": null,
-    "website": "https://www.xoomenergy.com/en/ohio",
-    "notes": "100% renewable but higher rate and ETF."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "green-mountain-fixed-12",
-    "name": "Green Mountain Energy - Pollution Free 12",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "ohio-edison", "illuminating"],
-    "ratePerKwh": 0.0759,
+    "id": "direct-energy-fixed-0.1039-6",
+    "name": "Direct Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1039,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "santanna-energy-fixed-0.1042-12",
+    "name": "Santanna Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1042,
     "termMonths": 12,
     "rateType": "fixed",
     "renewablePercent": 100,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.1045-36",
+    "name": "AEP Energy - Fixed 36mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1045,
+    "termMonths": 36,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.1048-12",
+    "name": "APG&E - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1048,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1049-6",
+    "name": "Clearview Electric Inc - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1049,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "major-energy-fixed-0.1049-6",
+    "name": "Major Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1049,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.1049-12",
+    "name": "Inspire Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1049,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1049-6",
+    "name": "Direct Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1049,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1049-6",
+    "name": "XOOM Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1049,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
     "earlyTerminationFee": 50,
     "introRateMonths": null,
-    "website": "https://www.greenmountainenergy.com/ohio/",
-    "notes": "Premium 100% renewable. Lower ETF than competitors."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "northeast-ohio-public-energy-council",
-    "name": "NOPEC - Government Aggregation",
-    "utilityTerritories": ["ohio-edison", "illuminating"],
-    "ratePerKwh": 0.0639,
-    "termMonths": 12,
-    "rateType": "fixed",
-    "renewablePercent": 5,
-    "earlyTerminationFee": 0,
-    "introRateMonths": null,
-    "website": "https://www.nopec.org/",
-    "notes": "Government aggregation program. No ETF. Auto-enrolled if your community participates."
-  },
-  {
-    "id": "apg-and-e-fixed-12",
-    "name": "AP Gas & Electric - Fixed 12",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "aes-ohio", "ohio-edison", "toledo-edison", "illuminating"],
-    "ratePerKwh": 0.0739,
-    "termMonths": 12,
-    "rateType": "fixed",
-    "renewablePercent": 0,
-    "earlyTerminationFee": 75,
-    "introRateMonths": null,
-    "website": "https://www.apge.com/residential/ohio",
-    "notes": "Competitive in some areas. Check current offers."
-  },
-  {
-    "id": "volunteer-energy-fixed-12",
-    "name": "Volunteer Energy - Fixed 12",
-    "utilityTerritories": ["aep-ohio", "ohio-edison", "illuminating"],
-    "ratePerKwh": 0.0719,
-    "termMonths": 12,
+    "id": "apg-e-fixed-0.1058-18",
+    "name": "APG&E - Fixed 18mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1058,
+    "termMonths": 18,
     "rateType": "fixed",
     "renewablePercent": 0,
     "earlyTerminationFee": 0,
     "introRateMonths": null,
-    "website": "https://www.volunteerenergy.com/ohio-electricity",
-    "notes": "No early termination fee — flexible option."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "spark-energy-variable",
-    "name": "Spark Energy - Variable",
-    "utilityTerritories": ["aep-ohio", "duke-energy", "ohio-edison", "illuminating"],
-    "ratePerKwh": 0.0569,
-    "termMonths": 1,
-    "rateType": "variable",
-    "renewablePercent": 0,
-    "earlyTerminationFee": 0,
-    "introRateMonths": 2,
-    "website": "https://www.sparkenergy.com/ohio/",
-    "notes": "Low intro variable rate for 2 months, then market rate."
-  },
-  {
-    "id": "aps-ohio-variable",
-    "name": "AEP Energy - Variable",
-    "utilityTerritories": ["aep-ohio"],
-    "ratePerKwh": 0.0829,
-    "termMonths": 1,
-    "rateType": "variable",
+    "id": "major-energy-fixed-0.1059-8",
+    "name": "Major Energy - Fixed 8mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1059,
+    "termMonths": 8,
+    "rateType": "fixed",
     "renewablePercent": 0,
     "earlyTerminationFee": 0,
     "introRateMonths": null,
-    "website": "https://www.aepenergy.com/residential/",
-    "notes": "AEP's own competitive arm. Rate often near or above Price to Compare."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "aep-energy-fixed-12",
-    "name": "AEP Energy - Fixed 12",
-    "utilityTerritories": ["aep-ohio", "ohio-edison", "illuminating"],
-    "ratePerKwh": 0.0769,
+    "id": "xoom-energy-fixed-0.1059-6",
+    "name": "XOOM Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1059,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 50,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1059-12",
+    "name": "Clearview Electric Inc - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1059,
     "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.1059-5",
+    "name": "Inspire Energy - Fixed 5mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1059,
+    "termMonths": 5,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1059-6",
+    "name": "Direct Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1059,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "major-energy-fixed-0.1059-12",
+    "name": "Major Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1059,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.1059-36",
+    "name": "AEP Energy - Fixed 36mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1059,
+    "termMonths": 36,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "shipley-choice-llc-fixed-0.1064-12",
+    "name": "Shipley Choice, LLC - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1064,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.1065-36",
+    "name": "AEP Energy - Fixed 36mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1065,
+    "termMonths": 36,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.1068-36",
+    "name": "APG&E - Fixed 36mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1068,
+    "termMonths": 36,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.1069-18",
+    "name": "Inspire Energy - Fixed 18mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1069,
+    "termMonths": 18,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "major-energy-fixed-0.1069-12",
+    "name": "Major Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1069,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "constellation-newenergy-fixed-0.1069-7",
+    "name": "Constellation NewEnergy - Fixed 7mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1069,
+    "termMonths": 7,
     "rateType": "fixed",
     "renewablePercent": 0,
     "earlyTerminationFee": 25,
     "introRateMonths": null,
-    "website": "https://www.aepenergy.com/residential/",
-    "notes": "AEP's competitive supply arm. Low ETF but higher rate."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "duke-energy-ohio-sso",
-    "name": "Duke Energy Ohio - Standard Offer",
-    "utilityTerritories": ["duke-energy"],
-    "ratePerKwh": 0.0912,
+    "id": "renaissance-power-gas-inc-fixed-0.107-19",
+    "name": "Renaissance Power & Gas, Inc - Fixed 19mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.107,
+    "termMonths": 19,
+    "rateType": "fixed",
+    "renewablePercent": 7,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "nrg-homep-o-box-fixed-0.107-6",
+    "name": "NRG HomeP.O. Box - Fixed 6mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.107,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "idt-energy-fixed-0.1076-4",
+    "name": "IDT Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1076,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "residents-energy-fixed-0.1076-4",
+    "name": "Residents Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1076,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-fixed-0.1079-6",
+    "name": "American Power & Gas of Ohio, LLC - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1079,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.1079-24",
+    "name": "Inspire Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1079,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1079-12",
+    "name": "XOOM Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1079,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 50,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1079-24",
+    "name": "XOOM Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1079,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 200,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleansky-energy-fixed-0.1079-24",
+    "name": "CleanSky Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1079,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "cleansky-energy-fixed-0.1079-12",
+    "name": "CleanSky Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1079,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "nrg-homep-o-box-fixed-0.108-6",
+    "name": "NRG HomeP.O. Box - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.108,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "smartenergy-fixed-0.108-6",
+    "name": "SmartEnergy - Fixed 6mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.108,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "idt-energy-fixed-0.1087-4",
+    "name": "IDT Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1087,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "residents-energy-fixed-0.1087-4",
+    "name": "Residents Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1087,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.1088-24",
+    "name": "APG&E - Fixed 24mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1088,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.1089-12",
+    "name": "Inspire Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1089,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "wgl-energy-variable-0.1089-0",
+    "name": "WGL Energy - Variable 0mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1089,
     "termMonths": 0,
     "rateType": "variable",
     "renewablePercent": 5,
     "earlyTerminationFee": 0,
     "introRateMonths": null,
-    "website": "https://www.duke-energy.com/ohio",
-    "notes": "Default utility rate (Price to Compare). No signup needed — this is what you pay if you don't switch."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "aep-ohio-sso",
-    "name": "AEP Ohio - Standard Offer",
-    "utilityTerritories": ["aep-ohio"],
-    "ratePerKwh": 0.0847,
-    "termMonths": 0,
-    "rateType": "variable",
-    "renewablePercent": 5,
+    "id": "aep-energy-fixed-0.1089-36",
+    "name": "AEP Energy - Fixed 36mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1089,
+    "termMonths": 36,
+    "rateType": "fixed",
+    "renewablePercent": 100,
     "earlyTerminationFee": 0,
     "introRateMonths": null,
-    "website": "https://www.aepohio.com/",
-    "notes": "Default utility rate (Price to Compare). No signup needed."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "firstenergy-ohio-sso",
-    "name": "Ohio Edison - Standard Offer",
-    "utilityTerritories": ["ohio-edison"],
-    "ratePerKwh": 0.0789,
-    "termMonths": 0,
-    "rateType": "variable",
-    "renewablePercent": 5,
-    "earlyTerminationFee": 0,
+    "id": "xoom-energy-fixed-0.1089-12",
+    "name": "XOOM Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1089,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 100,
     "introRateMonths": null,
-    "website": "https://www.firstenergycorp.com/ohio_edison.html",
-    "notes": "Default utility rate (Price to Compare). No signup needed."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "toledo-edison-sso",
-    "name": "Toledo Edison - Standard Offer",
-    "utilityTerritories": ["toledo-edison"],
-    "ratePerKwh": 0.0756,
-    "termMonths": 0,
-    "rateType": "variable",
-    "renewablePercent": 5,
+    "id": "shipley-choice-llc-fixed-0.109-6",
+    "name": "Shipley Choice, LLC - Fixed 6mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.109,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
     "earlyTerminationFee": 0,
     "introRateMonths": null,
-    "website": "https://www.firstenergycorp.com/toledo_edison.html",
-    "notes": "Default utility rate (Price to Compare). No signup needed."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "illuminating-sso",
-    "name": "Cleveland Illuminating - Standard Offer",
-    "utilityTerritories": ["illuminating"],
-    "ratePerKwh": 0.0802,
-    "termMonths": 0,
-    "rateType": "variable",
-    "renewablePercent": 5,
+    "id": "aep-energy-fixed-0.1095-24",
+    "name": "AEP Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1095,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
     "earlyTerminationFee": 0,
     "introRateMonths": null,
-    "website": "https://www.firstenergycorp.com/illuminating.html",
-    "notes": "Default utility rate (Price to Compare). No signup needed."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   },
   {
-    "id": "aes-ohio-sso",
-    "name": "AES Ohio (Dayton P&L) - Standard Offer",
-    "utilityTerritories": ["aes-ohio"],
-    "ratePerKwh": 0.0883,
-    "termMonths": 0,
-    "rateType": "variable",
-    "renewablePercent": 5,
+    "id": "town-square-energy-fixed-0.1097-9",
+    "name": "Town Square Energy - Fixed 9mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1097,
+    "termMonths": 9,
+    "rateType": "fixed",
+    "renewablePercent": 0,
     "earlyTerminationFee": 0,
     "introRateMonths": null,
-    "website": "https://www.aes-ohio.com/",
-    "notes": "Default utility rate (Price to Compare). No signup needed."
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.1098-36",
+    "name": "APG&E - Fixed 36mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1098,
+    "termMonths": 36,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "igs-energy-fixed-0.1099-12",
+    "name": "IGS Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "duke-energy",
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1099,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 99,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "constellation-newenergy-fixed-0.1099-7",
+    "name": "Constellation NewEnergy - Fixed 7mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "duke-energy",
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1099,
+    "termMonths": 7,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 25,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1099-12",
+    "name": "Direct Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1099,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1099-12",
+    "name": "XOOM Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1099,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.1109-18",
+    "name": "Inspire Energy - Fixed 18mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1109,
+    "termMonths": 18,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "major-energy-fixed-0.1109-12",
+    "name": "Major Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1109,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1109-12",
+    "name": "XOOM Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1109,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "smartenergy-fixed-0.111-6",
+    "name": "SmartEnergy - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.111,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "santanna-energy-fixed-0.1113-12",
+    "name": "Santanna Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1113,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1119-24",
+    "name": "XOOM Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1119,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 200,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "constellation-newenergy-fixed-0.1119-18",
+    "name": "Constellation NewEnergy - Fixed 18mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1119,
+    "termMonths": 18,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 25,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1119-12",
+    "name": "XOOM Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1119,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 50,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1119-12",
+    "name": "Direct Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1119,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.1125-24",
+    "name": "AEP Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1125,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-fixed-0.1129-6",
+    "name": "American Power & Gas of Ohio, LLC - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1129,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "constellation-newenergy-fixed-0.1129-18",
+    "name": "Constellation NewEnergy - Fixed 18mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1129,
+    "termMonths": 18,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 25,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1139-18",
+    "name": "Direct Energy - Fixed 18mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1139,
+    "termMonths": 18,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "inspire-energy-fixed-0.1139-24",
+    "name": "Inspire Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1139,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "4-choice-energy-fixed-0.1139-12",
+    "name": "4 Choice Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1139,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 2,
+    "earlyTerminationFee": 5,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1139-12",
+    "name": "XOOM Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1139,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1139-12",
+    "name": "Direct Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1139,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "constellation-newenergy-fixed-0.1139-18",
+    "name": "Constellation NewEnergy - Fixed 18mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1139,
+    "termMonths": 18,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 25,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1139-24",
+    "name": "XOOM Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1139,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 200,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "smartenergy-fixed-0.114-6",
+    "name": "SmartEnergy - Fixed 6mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.114,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "aep-energy-fixed-0.1149-36",
+    "name": "AEP Energy - Fixed 36mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1149,
+    "termMonths": 36,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1149-12",
+    "name": "XOOM Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1149,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1149-24",
+    "name": "Direct Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1149,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "constellation-newenergy-fixed-0.1149-18",
+    "name": "Constellation NewEnergy - Fixed 18mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1149,
+    "termMonths": 18,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 25,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "nrg-homep-o-box-fixed-0.115-12",
+    "name": "NRG HomeP.O. Box - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.115,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "residents-energy-fixed-0.1152-4",
+    "name": "Residents Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1152,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1159-12",
+    "name": "Direct Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1159,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1159-18",
+    "name": "Direct Energy - Fixed 18mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1159,
+    "termMonths": 18,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "wgl-energy-fixed-0.1161-24",
+    "name": "WGL Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1161,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 5,
+    "earlyTerminationFee": 10,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1169-24",
+    "name": "Direct Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1169,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1169-24",
+    "name": "Clearview Electric Inc - Fixed 24mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1169,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "wgl-energy-fixed-0.1175-12",
+    "name": "WGL Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1175,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 5,
+    "earlyTerminationFee": 10,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1179-12",
+    "name": "XOOM Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1179,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 50,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1179-18",
+    "name": "Direct Energy - Fixed 18mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1179,
+    "termMonths": 18,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "north-american-power-and-gas-llc-fixed-0.1179-8",
+    "name": "North American Power and Gas LLC - Fixed 8mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1179,
+    "termMonths": 8,
+    "rateType": "fixed",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 10,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "idt-energy-fixed-0.1181-4",
+    "name": "IDT Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1181,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "residents-energy-fixed-0.1181-4",
+    "name": "Residents Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1181,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "apg-e-fixed-0.1188-36",
+    "name": "APG&E - Fixed 36mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1188,
+    "termMonths": 36,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1189-24",
+    "name": "XOOM Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1189,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 200,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1189-24",
+    "name": "Direct Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1189,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1189-12",
+    "name": "Clearview Electric Inc - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1189,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "north-american-power-and-gas-llc-fixed-0.1189-10",
+    "name": "North American Power and Gas LLC - Fixed 10mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1189,
+    "termMonths": 10,
+    "rateType": "fixed",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 10,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "nrg-homep-o-box-fixed-0.119-12",
+    "name": "NRG HomeP.O. Box - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.119,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "north-american-power-and-gas-llc-fixed-0.1199-8",
+    "name": "North American Power and Gas LLC - Fixed 8mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1199,
+    "termMonths": 8,
+    "rateType": "fixed",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 10,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "north-american-power-and-gas-llc-fixed-0.1199-12",
+    "name": "North American Power and Gas LLC - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1199,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 10,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "north-american-power-and-gas-llc-fixed-0.1199-10",
+    "name": "North American Power and Gas LLC - Fixed 10mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1199,
+    "termMonths": 10,
+    "rateType": "fixed",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 10,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "igs-energy-fixed-0.1199-24",
+    "name": "IGS Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1199,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 149,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "nrg-homep-o-box-fixed-0.12-12",
+    "name": "NRG HomeP.O. Box - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.12,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "xoom-energy-fixed-0.1209-12",
+    "name": "XOOM Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1209,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 100,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "wgl-energy-fixed-0.121-24",
+    "name": "WGL Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.121,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 10,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1216-6",
+    "name": "Powervine Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1216,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1219-12",
+    "name": "Clearview Electric Inc - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1219,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "north-american-power-and-gas-llc-fixed-0.1219-10",
+    "name": "North American Power and Gas LLC - Fixed 10mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1219,
+    "termMonths": 10,
+    "rateType": "fixed",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 10,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "north-american-power-and-gas-llc-fixed-0.1219-12",
+    "name": "North American Power and Gas LLC - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1219,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 10,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-fixed-0.1219-6",
+    "name": "American Power & Gas of Ohio, LLC - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1219,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 25,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1219-6",
+    "name": "Clearview Electric Inc - Fixed 6mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1219,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "nrg-homep-o-box-fixed-0.122-12",
+    "name": "NRG HomeP.O. Box - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.122,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "wgl-energy-fixed-0.1221-12",
+    "name": "WGL Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1221,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 10,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1237-12",
+    "name": "Powervine Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1237,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1243-3",
+    "name": "Powervine Energy - Fixed 3mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1243,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "igs-energy-fixed-0.1249-24",
+    "name": "IGS Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1249,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 149,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1259-24",
+    "name": "Powervine Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1259,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1269-12",
+    "name": "Clearview Electric Inc - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1269,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "american-power-gas-of-ohio-llc-fixed-0.1269-6",
+    "name": "American Power & Gas of Ohio, LLC - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1269,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "igs-energy-fixed-0.1279-36",
+    "name": "IGS Energy - Fixed 36mo",
+    "utilityTerritories": [
+      "duke-energy",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1279,
+    "termMonths": 36,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 199,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "igs-energy-fixed-0.1299-36",
+    "name": "IGS Energy - Fixed 36mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1299,
+    "termMonths": 36,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 199,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "interstate-gas-supply-llc-fixed-0.1299-24",
+    "name": "Interstate Gas Supply LLC - Fixed 24mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1299,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 149,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "median-energy-variable-0.13-0",
+    "name": "Median Energy - Variable 0mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "duke-energy",
+      "ohio-edison",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.13,
+    "termMonths": 0,
+    "rateType": "variable",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1311-6",
+    "name": "Powervine Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1311,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1313-3",
+    "name": "Powervine Energy - Fixed 3mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1313,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1319-24",
+    "name": "Direct Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio",
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1319,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1325-6",
+    "name": "Powervine Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1325,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1329-24",
+    "name": "Direct Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1329,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1339-3",
+    "name": "Powervine Energy - Fixed 3mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1339,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "clearview-electric-inc-fixed-0.1339-12",
+    "name": "Clearview Electric Inc - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1339,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 150,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1339-12",
+    "name": "Powervine Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1339,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "direct-energy-fixed-0.1349-24",
+    "name": "Direct Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1349,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "idt-energy-fixed-0.135-4",
+    "name": "IDT Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.135,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "residents-energy-fixed-0.135-4",
+    "name": "Residents Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.135,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1359-12",
+    "name": "Powervine Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1359,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "residents-energy-fixed-0.1361-4",
+    "name": "Residents Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1361,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "idt-energy-fixed-0.1361-4",
+    "name": "IDT Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1361,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1364-24",
+    "name": "Powervine Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.1364,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1365-12",
+    "name": "Powervine Energy - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1365,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1369-24",
+    "name": "Powervine Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1369,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "kiwi-energy-variable-0.1369-36",
+    "name": "Kiwi Energy - Variable 36mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1369,
+    "termMonths": 36,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "igs-energy-fixed-0.1379-36",
+    "name": "IGS Energy - Fixed 36mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1379,
+    "termMonths": 36,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 199,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1388-24",
+    "name": "Powervine Energy - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1388,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.139-6",
+    "name": "Powervine Energy - Fixed 6mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.139,
+    "termMonths": 6,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "provision-power-gas-llcpo-box-fixed-0.1399-12",
+    "name": "Provision Power & Gas LLCPO Box - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1399,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "provision-power-gas-llcpo-box-fixed-0.14-12",
+    "name": "Provision Power & Gas LLCPO Box - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.14,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "powervine-energy-fixed-0.1408-3",
+    "name": "Powervine Energy - Fixed 3mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1408,
+    "termMonths": 3,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "ambit-northeast-llcp-o-box-fixed-0.1425-12",
+    "name": "Ambit Northeast, LLCP.O. Box - Fixed 12mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1425,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "kiwi-energy-variable-0.1449-36",
+    "name": "Kiwi Energy - Variable 36mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1449,
+    "termMonths": 36,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "ambit-northeast-llcp-o-box-fixed-0.145-12",
+    "name": "Ambit Northeast, LLCP.O. Box - Fixed 12mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.145,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "idt-energy-fixed-0.1455-4",
+    "name": "IDT Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1455,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "residents-energy-fixed-0.1455-4",
+    "name": "Residents Energy - Fixed 4mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1455,
+    "termMonths": 4,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "ambit-northeast-llcp-o-box-fixed-0.1475-24",
+    "name": "Ambit Northeast, LLCP.O. Box - Fixed 24mo",
+    "utilityTerritories": [
+      "ohio-edison"
+    ],
+    "ratePerKwh": 0.1475,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "provision-power-gas-llcp-o-boxaustin-tx-fixed-0.15-12",
+    "name": "Provision Power & Gas LLCP.O.BoxAustin,TX - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.15,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "provision-power-gas-llcp-o-box-fixed-0.15-12",
+    "name": "Provision Power & Gas LLCP.O Box - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.15,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "ambit-northeast-llcp-o-box-fixed-0.15-24",
+    "name": "Ambit Northeast, LLCP.O. Box - Fixed 24mo",
+    "utilityTerritories": [
+      "toledo-edison"
+    ],
+    "ratePerKwh": 0.15,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "ambit-northeast-llcp-o-box-fixed-0.1519-12",
+    "name": "Ambit Northeast, LLCP.O. Box - Fixed 12mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1519,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "ambit-northeast-llcp-o-box-fixed-0.1525-12",
+    "name": "Ambit Northeast, LLCP.O. Box - Fixed 12mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1525,
+    "termMonths": 12,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "ambit-northeast-llcp-o-box-fixed-0.1559-24",
+    "name": "Ambit Northeast, LLCP.O. Box - Fixed 24mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.1559,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "ambit-northeast-llcp-o-box-fixed-0.1575-24",
+    "name": "Ambit Northeast, LLCP.O. Box - Fixed 24mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1575,
+    "termMonths": 24,
+    "rateType": "fixed",
+    "renewablePercent": 0,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "kiwi-energy-variable-0.1629-36",
+    "name": "Kiwi Energy - Variable 36mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.1629,
+    "termMonths": 36,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "south-bay-energy-variable-0.2091-1",
+    "name": "South Bay Energy - Variable 1mo",
+    "utilityTerritories": [
+      "aep-ohio"
+    ],
+    "ratePerKwh": 0.2091,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "all-american-power-gas-oh-llc-variable-0.23-1",
+    "name": "All American Power & Gas OH, LLC - Variable 1mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.23,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "pure-energy-variable-0.23-1",
+    "name": "Pure Energy - Variable 1mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.23,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "south-bay-energy-variable-0.289-1",
+    "name": "South Bay Energy - Variable 1mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.289,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": null,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "all-american-power-gas-oh-llc-variable-0.31-1",
+    "name": "All American Power & Gas OH, LLC - Variable 1mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.31,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
+  },
+  {
+    "id": "pure-energy-variable-0.31-1",
+    "name": "Pure Energy - Variable 1mo",
+    "utilityTerritories": [
+      "duke-energy"
+    ],
+    "ratePerKwh": 0.31,
+    "termMonths": 1,
+    "rateType": "variable",
+    "renewablePercent": 100,
+    "earlyTerminationFee": 0,
+    "introRateMonths": 1,
+    "website": "",
+    "notes": "PUCO-certified. Scraped 2026-03-05."
   }
 ]
