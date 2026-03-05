@@ -1,6 +1,8 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
+const RESEND_API_URL = 'https://api.resend.com/emails';
+
 const LEADS_FILE = path.join(process.cwd(), 'data', 'leads.json');
 
 type LeadRecord = {
@@ -37,6 +39,52 @@ async function readLeads(): Promise<LeadRecord[]> {
     return [];
   } catch {
     return [];
+  }
+}
+
+async function sendLeadNotification(lead: LeadRecord) {
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.LEAD_ALERT_TO;
+  const from = process.env.LEAD_ALERT_FROM || 'Ohio Electricity Rates <leads@ohioelectricityrates.com>';
+
+  if (!apiKey || !to) {
+    return;
+  }
+
+  const subject = `New Ohio lead: ${lead.firstName} ${lead.lastName} (${lead.utility})`;
+  const html = `
+    <h2>New Lead Submitted</h2>
+    <p><strong>Name:</strong> ${lead.firstName} ${lead.lastName}</p>
+    <p><strong>Email:</strong> ${lead.email}</p>
+    <p><strong>Phone:</strong> ${lead.phone}</p>
+    <p><strong>Address:</strong> ${lead.address}, ${lead.city}, OH ${lead.zip}</p>
+    <p><strong>Utility:</strong> ${lead.utility}</p>
+    <p><strong>Supplier:</strong> ${lead.supplierName} (${lead.supplierRate}/kWh)</p>
+    <p><strong>Estimated Usage:</strong> ${lead.estimatedKwh} kWh/month</p>
+    <p><strong>Estimated Savings:</strong> $${lead.yearlySavings}/year</p>
+    <p><strong>Submitted:</strong> ${lead.submittedAt}</p>
+    <hr />
+    <p><strong>Lead ID:</strong> ${lead.id}</p>
+  `;
+
+  const response = await fetch(RESEND_API_URL, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from,
+      to: [to],
+      subject,
+      html,
+      reply_to: lead.email,
+    }),
+  });
+
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(`Resend email failed (${response.status}): ${body}`);
   }
 }
 
@@ -109,6 +157,12 @@ export async function POST(request: Request) {
 
     await fs.mkdir(path.dirname(LEADS_FILE), { recursive: true });
     await fs.writeFile(LEADS_FILE, JSON.stringify(updatedLeads, null, 2));
+
+    try {
+      await sendLeadNotification(newLead);
+    } catch (emailError) {
+      console.error('Lead notification email failed:', emailError);
+    }
 
     return Response.json({
       message: 'Your switching request has been submitted successfully.',

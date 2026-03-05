@@ -64,6 +64,20 @@ Leads are stored in `data/leads.json` with this structure:
 4. **Negotiate payout**: Start at $30/qualified lead or 15% revenue share
 5. **Automate delivery**: Build webhook to send new leads in real-time OR export CSV weekly
 
+## Resend Lead Alerts (Live)
+Lead submissions now trigger email notifications via Resend when env vars are present.
+
+Required env vars:
+- `RESEND_API_KEY` — API key from Resend
+- `LEAD_ALERT_TO` — inbox to receive new lead alerts
+
+Optional:
+- `LEAD_ALERT_FROM` — verified sender (default: `Ohio Electricity Rates <leads@ohioelectricityrates.com>`)
+
+Behavior:
+- Lead is always saved to `data/leads.json`
+- Email send is best-effort (submission does not fail if notification fails)
+
 ## Accessing Leads
 
 ### Via File
