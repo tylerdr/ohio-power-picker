@@ -1,6 +1,9 @@
-import Link from 'next/link';
+'use client';
+
+import { useState } from 'react';
 import { Supplier } from '@/lib/types';
 import { formatCurrency, formatRate } from '@/lib/utils';
+import LeadCaptureModal from '@/components/lead-capture-modal';
 
 const getRiskScore = (supplier: Supplier) => {
   let score = 1;
@@ -86,9 +89,11 @@ type Props = {
   suppliers: Supplier[];
   priceToCompare: number;
   estimatedKwh: number;
+  utility?: string;
 };
 
-export default function TopPicks({ suppliers, priceToCompare, estimatedKwh }: Props) {
+export default function TopPicks({ suppliers, priceToCompare, estimatedKwh, utility = 'Ohio' }: Props) {
+  const [selectedSupplier, setSelectedSupplier] = useState<{ supplier: Supplier; yearlySavings: number } | null>(null);
   const picks = selectTopPicks(suppliers, priceToCompare, estimatedKwh);
 
   return (
@@ -163,20 +168,26 @@ export default function TopPicks({ suppliers, priceToCompare, estimatedKwh }: Pr
               )}
 
               {/* CTA */}
-              <Link
-                href={supplier.website}
-                target="_blank"
-                rel="nofollow sponsored noreferrer"
-                data-supplier={supplier.id}
-                data-action="switch_supplier"
+              <button
+                onClick={() => setSelectedSupplier({ supplier, yearlySavings })}
                 className="mt-5 flex w-full items-center justify-center rounded-full bg-sea py-3 text-sm font-bold text-white transition hover:bg-leaf"
               >
-                Switch to This Supplier
-              </Link>
+                Get This Plan
+              </button>
             </article>
           );
         })}
       </div>
+
+      {selectedSupplier && (
+        <LeadCaptureModal
+          supplier={selectedSupplier.supplier}
+          utility={utility}
+          estimatedKwh={estimatedKwh}
+          yearlySavings={selectedSupplier.yearlySavings}
+          onClose={() => setSelectedSupplier(null)}
+        />
+      )}
     </section>
   );
 }

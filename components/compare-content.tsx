@@ -100,7 +100,7 @@ export default function CompareContent({ utility, rawSuppliers, zip }: Props) {
 
       <section className="px-5 pt-8 md:px-10">
         <div className="mx-auto max-w-6xl">
-          <TopPicks suppliers={suppliers} priceToCompare={utility.priceToCompare} estimatedKwh={estimatedKwh} />
+          <TopPicks suppliers={suppliers} priceToCompare={utility.priceToCompare} estimatedKwh={estimatedKwh} utility={utility.name} />
         </div>
       </section>
 
@@ -170,6 +170,7 @@ export default function CompareContent({ utility, rawSuppliers, zip }: Props) {
                 priceToCompare={utility.priceToCompare}
                 estimatedKwh={estimatedKwh}
                 initialShowAll
+                utility={utility.name}
               />
             </div>
           </details>

@@ -13,12 +13,14 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
+import LeadCaptureModal from '@/components/lead-capture-modal';
 
 type Props = {
   suppliers: Supplier[];
   priceToCompare: number;
   estimatedKwh?: number;
   initialShowAll?: boolean;
+  utility?: string;
 };
 
 const getYearlySavings = (priceToCompare: number, supplier: Supplier, kwh: number) =>
@@ -31,9 +33,10 @@ type SortKey = 'savings' | 'rate' | 'term' | 'type';
 
 const INITIAL_SHOW = 8;
 
-export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh = 900, initialShowAll = false }: Props) {
+export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh = 900, initialShowAll = false, utility = 'Ohio' }: Props) {
   const [sortKey, setSortKey] = useState<SortKey>('savings');
   const [showAll, setShowAll] = useState(initialShowAll);
+  const [selectedSupplier, setSelectedSupplier] = useState<Supplier | null>(null);
 
   const sortLabel = useMemo(() => {
     switch (sortKey) {
@@ -139,16 +142,12 @@ export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh 
                   <span className="rounded-full bg-sun/20 px-3 py-1 text-[11px] font-semibold text-ink">Intro rate {supplier.introRateMonths} months</span>
                 )}
               </div>
-              <Link
-                href={supplier.website}
-                target="_blank"
-                rel="nofollow sponsored noreferrer"
-                data-supplier={supplier.id}
-                data-action="visit_supplier"
-                className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white"
+              <button
+                onClick={() => setSelectedSupplier(supplier)}
+                className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-sea px-4 py-2 text-sm font-semibold text-white transition hover:bg-leaf"
               >
-                Visit Supplier
-              </Link>
+                Get This Plan
+              </button>
             </article>
           );
         })}
@@ -197,16 +196,12 @@ export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh 
                     {getSavingsLabel(yearlySavings)}
                   </td>
                   <td className="py-4">
-                    <Link
-                      href={supplier.website}
-                      target="_blank"
-                      rel="nofollow sponsored noreferrer"
-                      data-supplier={supplier.id}
-                      data-action="visit_supplier"
-                      className="inline-flex items-center justify-center rounded-full bg-ink px-4 py-2 text-xs font-semibold text-white"
+                    <button
+                      onClick={() => setSelectedSupplier(supplier)}
+                      className="inline-flex items-center justify-center rounded-full bg-sea px-4 py-2 text-xs font-semibold text-white transition hover:bg-leaf"
                     >
-                      Visit Supplier
-                    </Link>
+                      Get This Plan
+                    </button>
                   </td>
                 </tr>
               );
@@ -226,6 +221,16 @@ export default function SupplierTable({ suppliers, priceToCompare, estimatedKwh 
             Show all {sortedSuppliers.length} suppliers
           </Button>
         </div>
+      )}
+
+      {selectedSupplier && (
+        <LeadCaptureModal
+          supplier={selectedSupplier}
+          utility={utility}
+          estimatedKwh={estimatedKwh}
+          yearlySavings={getYearlySavings(priceToCompare, selectedSupplier, estimatedKwh)}
+          onClose={() => setSelectedSupplier(null)}
+        />
       )}
     </section>
   );
