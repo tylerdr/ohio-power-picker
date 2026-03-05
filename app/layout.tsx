@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Fraunces, Manrope } from 'next/font/google';
+import { GoogleAnalytics } from '@/components/google-analytics';
 import './globals.css';
 
 const manrope = Manrope({
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.variable} ${fraunces.variable} font-sans`}
         style={{ fontFamily: 'var(--font-manrope), ui-sans-serif, system-ui' }}>
+        <GoogleAnalytics />
         <div className="min-h-screen">
           {children}
         </div>
