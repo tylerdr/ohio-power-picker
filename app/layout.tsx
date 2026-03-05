@@ -20,6 +20,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: 'Ohio Power Picker',
   description: 'Compare Ohio electricity suppliers and find lower rates in minutes.',
+  openGraph: {
+    type: 'website',
+    title: 'Ohio Power Picker',
+    description: 'Compare Ohio electricity suppliers and find lower rates in minutes.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ohio Power Picker',
+    description: 'Compare Ohio electricity suppliers and find lower rates in minutes.',
+    images: ['/og-image.png'],
+  },
   verification: {
     google: 'google-site-verification-placeholder'
   }
