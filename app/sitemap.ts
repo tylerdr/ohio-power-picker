@@ -1,14 +1,55 @@
 import type { MetadataRoute } from 'next';
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ohioelectricityrates.com';
+import { blogPosts } from '@/lib/blog';
+import { SITE_URL } from '@/lib/site';
+import { utilityPageConfigs } from '@/lib/utility-pages';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ['/', '/compare', '/analytics', '/about'];
+  const staticPages: MetadataRoute.Sitemap = [
+    {
+      url: SITE_URL,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: `${SITE_URL}/compare`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.95,
+    },
+    {
+      url: `${SITE_URL}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${SITE_URL}/analytics`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.55,
+    },
+  ];
 
-  return routes.map((route) => ({
-    url: `${siteUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === '/' ? 'daily' : 'weekly',
-    priority: route === '/' ? 1 : 0.8
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly',
+    priority: 0.75,
   }));
+
+  const utilityPages: MetadataRoute.Sitemap = utilityPageConfigs.map((utility) => ({
+    url: `${SITE_URL}/rates/${utility.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...blogPages, ...utilityPages];
 }

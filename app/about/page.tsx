@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
 import { utilities } from '@/lib/utilities';
+import { utilityPageConfigs } from '@/lib/utility-pages';
 
 export default function AboutPage({
   searchParams
@@ -9,6 +11,9 @@ export default function AboutPage({
 }) {
   const zip = searchParams?.zip ? searchParams.zip.trim() : '';
   const utilityId = searchParams?.utility ?? '';
+  const routeByUtilityId = Object.fromEntries(
+    utilityPageConfigs.map((config) => [config.utilityId, config.slug])
+  );
 
   return (
     <main className="pb-16">
@@ -37,7 +42,15 @@ export default function AboutPage({
             <ul className="mt-4 grid gap-3 text-sm text-ink/80">
               {utilities.map((utility) => (
                 <li key={utility.id} className="rounded-2xl bg-mist p-4">
-                  <p className="font-semibold text-ink">{utility.name}</p>
+                  <p className="font-semibold text-ink">
+                    {routeByUtilityId[utility.id] ? (
+                      <Link href={`/rates/${routeByUtilityId[utility.id]}`} className="hover:text-sea">
+                        {utility.name}
+                      </Link>
+                    ) : (
+                      utility.name
+                    )}
+                  </p>
                   <p className="text-xs text-ink/60">{utility.serviceArea}</p>
                 </li>
               ))}

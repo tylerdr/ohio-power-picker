@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Fraunces, Manrope } from 'next/font/google';
 import { GoogleAnalytics } from '@/components/google-analytics';
+import { SITE_URL } from '@/lib/site';
 import './globals.css';
 
 const manrope = Manrope({
@@ -16,8 +17,12 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'Ohio Power Picker',
-  description: 'Compare Ohio electricity suppliers and find lower rates in minutes.'
+  description: 'Compare Ohio electricity suppliers and find lower rates in minutes.',
+  verification: {
+    google: 'google-site-verification-placeholder'
+  }
 };
 
 export default function RootLayout({
