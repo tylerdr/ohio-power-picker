@@ -3,7 +3,7 @@ import path from 'path';
 
 const RESEND_API_URL = 'https://api.resend.com/emails';
 
-const LEADS_FILE = process.env.LEADS_FILE_PATH || (process.env.VERCEL
+const LEADS_FILE = process.env.LEADS_FILE_PATH || ((process.env.NODE_ENV === 'production' || process.env.VERCEL_ENV)
   ? path.join('/tmp', 'ohio-electricity-rates-leads.json')
   : path.join(process.cwd(), 'data', 'leads.json'));
 
