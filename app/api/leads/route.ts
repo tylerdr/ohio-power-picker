@@ -3,7 +3,9 @@ import path from 'path';
 
 const RESEND_API_URL = 'https://api.resend.com/emails';
 
-const LEADS_FILE = path.join(process.cwd(), 'data', 'leads.json');
+const LEADS_FILE = process.env.LEADS_FILE_PATH || (process.env.VERCEL
+  ? path.join('/tmp', 'ohio-electricity-rates-leads.json')
+  : path.join(process.cwd(), 'data', 'leads.json'));
 
 type LeadRecord = {
   id: string;
