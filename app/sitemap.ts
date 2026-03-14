@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { blogPosts } from '@/lib/blog';
+import { cityPageConfigs } from '@/lib/city-pages';
 import { SITE_URL } from '@/lib/site';
 import { utilityPageConfigs } from '@/lib/utility-pages';
 
@@ -51,5 +52,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...blogPages, ...utilityPages];
+  const cityPages: MetadataRoute.Sitemap = cityPageConfigs.map((city) => ({
+    url: `${SITE_URL}/cities/${city.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...blogPages, ...utilityPages, ...cityPages];
 }
