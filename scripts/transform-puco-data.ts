@@ -6,7 +6,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 const INPUT = path.join(process.cwd(), 'data', 'suppliers.scraped.json');
-const PUCO_INPUT = path.join(process.cwd(), 'data', 'suppliers.json');
+const PUCO_INPUT = path.join(process.cwd(), 'data', 'suppliers.scraped.json');
 const OUTPUT = path.join(process.cwd(), 'data', 'suppliers.json');
 
 function slugify(name: string): string {
@@ -73,16 +73,19 @@ async function main() {
     notes: `PUCO-certified. Scraped ${raw.scrapedAt.split('T')[0]}.`,
   }));
 
-  // Sort by rate (cheapest first)
-  suppliers.sort((a, b) => a.ratePerKwh - b.ratePerKwh);
+  // Filter out bad data (zero or negative rates are scraping artifacts)
+  const cleanSuppliers = suppliers.filter(s => s.ratePerKwh > 0);
 
-  await fs.writeFile(OUTPUT, JSON.stringify(suppliers, null, 2));
-  console.log(`Transformed ${allOffers.length} raw offers → ${suppliers.length} unique supplier entries`);
+  // Sort by rate (cheapest first)
+  cleanSuppliers.sort((a, b) => a.ratePerKwh - b.ratePerKwh);
+
+  await fs.writeFile(OUTPUT, JSON.stringify(cleanSuppliers, null, 2));
+  console.log(`Transformed ${allOffers.length} raw offers → ${cleanSuppliers.length} clean supplier entries (${suppliers.length - cleanSuppliers.length} zero-rate artifacts removed)`);
   console.log(`Territories covered: ${new Set(allOffers.map(o => o.territory)).size}`);
   
   // Show top 10 cheapest
   console.log('\nTop 10 cheapest:');
-  for (const s of suppliers.slice(0, 10)) {
+  for (const s of cleanSuppliers.slice(0, 10)) {
     console.log(`  $${s.ratePerKwh}/kWh ${s.rateType} ${s.termMonths}mo — ${s.name} (${s.utilityTerritories.join(', ')})`);
   }
 }

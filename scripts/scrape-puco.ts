@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { load } from 'cheerio';
 
-const OUTPUT_PATH = path.join(process.cwd(), 'data', 'suppliers.json');
+const OUTPUT_PATH = path.join(process.cwd(), 'data', 'suppliers.scraped.json');
 
 interface Offer {
   supplier: string;
@@ -22,9 +22,9 @@ const TERRITORIES: Record<string, { id: number; name: string; rateCode: number; 
   'aep-ohio':        { id: 2, name: 'AEP Ohio',                   rateCode: 1, ptc: 0.1065 },
   'duke-energy':     { id: 4, name: 'Duke Energy Ohio',           rateCode: 1, ptc: 0.1006 },
   'ohio-edison':     { id: 7, name: 'Ohio Edison',                rateCode: 1, ptc: 0.0933 },
-  'dayton-pl':       { id: 5, name: 'AES Ohio (Dayton P&L)',      rateCode: 1, ptc: 0.0889 },
+  'aes-ohio':        { id: 3, name: 'AES Ohio (Dayton P&L)',      rateCode: 1, ptc: 0.0889 },
   'toledo-edison':   { id: 9, name: 'Toledo Edison',              rateCode: 1, ptc: 0.0933 },
-  'illuminating':    { id: 8, name: 'The Illuminating Company',   rateCode: 1, ptc: 0.0933 },
+  'illuminating':    { id: 6, name: 'The Illuminating Company',   rateCode: 1, ptc: 0.0933 },
 };
 
 async function fetchTerritory(key: string): Promise<Offer[]> {
