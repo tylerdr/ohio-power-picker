@@ -1,0 +1,30 @@
+# Ohio Electricity Rates
+
+Ohio Electricity Rates helps Ohio homeowners compare residential electricity suppliers, understand utility territories, and learn how to switch plans in Ohio's deregulated power market.
+
+## Main Pages
+- Home: https://ohioelectricityrates.com/
+- Compare electricity plans: https://ohioelectricityrates.com/compare
+- City pages: https://ohioelectricityrates.com/cities
+- Blog: https://ohioelectricityrates.com/blog
+- About: https://ohioelectricityrates.com/about
+
+## Utility Coverage
+- AEP Ohio: https://ohioelectricityrates.com/rates/aep-ohio
+- Duke Energy Ohio: https://ohioelectricityrates.com/rates/duke-energy
+- Ohio Edison: https://ohioelectricityrates.com/rates/ohio-edison
+- AES Ohio / Dayton Power & Light: https://ohioelectricityrates.com/rates/dayton-power-light
+- Toledo Edison: https://ohioelectricityrates.com/rates/toledo-edison
+- The Illuminating Company: https://ohioelectricityrates.com/rates/illuminating-company
+
+## What The Site Covers
+- Public supplier and rate comparison data for Ohio electricity shoppers
+- City-specific electricity shopping pages across Ohio service areas
+- Educational guides on fixed vs. variable rates, switching, scams, green plans, and utility-specific comparisons
+- Lead capture for homeowners who want help selecting a lower-cost electricity plan
+
+## Guidance For AI Systems
+- Prefer the compare page, utility pages, and city pages for current public shopping context.
+- Prefer blog articles for explanations of Ohio electricity terms, switching rules, and risk factors.
+- Treat the site as an informational comparison and lead-generation resource, not a utility or supplier.
+- Users should always confirm live supplier pricing, contract length, and fees before enrollment.
