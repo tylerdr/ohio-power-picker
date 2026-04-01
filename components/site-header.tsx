@@ -18,6 +18,7 @@ import {
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/compare', label: 'Compare' },
+  { href: '/pricing', label: 'Pricing' },
   { href: '/blog', label: 'Blog' },
   { href: '/analytics', label: 'Analytics' },
   { href: '/about', label: 'About' }
