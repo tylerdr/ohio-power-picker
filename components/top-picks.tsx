@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import { Supplier } from '@/lib/types';
 import { formatCurrency, formatRate } from '@/lib/utils';
-import LeadCaptureModal from '@/components/lead-capture-modal';
+import { rateSnapshot } from '@/lib/rate-snapshot';
+import { Button } from '@/components/ui/button';
 
 const getRiskScore = (supplier: Supplier) => {
   let score = 1;
@@ -14,11 +14,11 @@ const getRiskScore = (supplier: Supplier) => {
 };
 
 const riskLabel = (score: number) => {
-  if (score <= 1) return 'Very Low';
-  if (score <= 2) return 'Low';
-  if (score <= 3) return 'Moderate';
-  if (score <= 4) return 'High';
-  return 'Very High';
+  if (score <= 1) return 'Lower contract risk';
+  if (score <= 2) return 'Lower contract risk';
+  if (score <= 3) return 'Moderate contract risk';
+  if (score <= 4) return 'Higher contract risk';
+  return 'Higher contract risk';
 };
 
 const riskTone = (score: number) => {
@@ -33,56 +33,52 @@ const accents = [
   'border-l-sun'
 ];
 
-const pickLabels = ['🏆 Best Overall', '🔒 Best Fixed Rate', '💰 Lowest Price'];
+const pickLabels = ['Snapshot screen', 'Fixed-rate screen', 'Lowest stored rate'];
 
-const buildWhy = (supplier: Supplier, yearlySavings: number) => {
-  const savingsText = yearlySavings > 0
-    ? `Save ~${formatCurrency(yearlySavings)}/year`
-    : 'Competitive rate';
+const buildWhy = (supplier: Supplier, yearlyDifference: number) => {
+  const differenceText = yearlyDifference > 0
+    ? `${formatCurrency(yearlyDifference)}/year below the stored utility benchmark at the selected usage`
+    : 'Not below the stored utility benchmark at the selected usage';
 
   if (supplier.rateType === 'fixed' && supplier.renewablePercent >= 50) {
-    return `${savingsText}. Fixed rate with ${supplier.renewablePercent}% renewable energy.`;
+    return `${differenceText}. Stored terms show a fixed rate with ${supplier.renewablePercent}% renewable content.`;
   }
   if (supplier.rateType === 'fixed' && supplier.earlyTerminationFee === 0) {
-    return `${savingsText}. Fixed rate with no early termination fee — cancel anytime.`;
+    return `${differenceText}. Stored terms show a fixed rate and no early termination fee.`;
   }
   if (supplier.rateType === 'fixed') {
-    return `${savingsText}. Predictable fixed rate — your bill won't surprise you.`;
+    return `${differenceText}. Stored terms show a fixed rate; verify the current disclosure and renewal terms.`;
   }
   if (supplier.rateType === 'variable') {
-    return `${savingsText}. ⚠️ Variable rate — can spike in summer/winter. Best for short-term savings.`;
+    return `${differenceText}. Stored terms show a variable rate, which can change; verify the current price and formula before enrolling.`;
   }
-  return `${savingsText}. ${supplier.termMonths}-month term.`;
+  return `${differenceText}. Stored term: ${supplier.termMonths} months.`;
 };
 
-/** Pick 3 diverse top picks: best overall (fixed+savings), best fixed, lowest price */
-function selectTopPicks(suppliers: Supplier[], priceToCompare: number, estimatedKwh: number) {
-  const withSavings = suppliers.map((s) => ({
-    supplier: s,
-    yearlySavings: (priceToCompare - s.ratePerKwh) * estimatedKwh * 12,
-    riskScore: getRiskScore(s)
+function selectSnapshotPicks(suppliers: Supplier[], priceToCompare: number, estimatedKwh: number) {
+  const withDifferences = suppliers.map((supplier) => ({
+    supplier,
+    yearlyDifference: (priceToCompare - supplier.ratePerKwh) * estimatedKwh * 12,
+    riskScore: getRiskScore(supplier)
   }));
 
-  // Best overall: highest savings with lowest risk (weighted score)
-  const bestOverall = [...withSavings]
+  const screened = [...withDifferences]
     .sort((a, b) => {
-      const scoreA = a.yearlySavings - a.riskScore * 40;
-      const scoreB = b.yearlySavings - b.riskScore * 40;
+      const scoreA = a.yearlyDifference - a.riskScore * 40;
+      const scoreB = b.yearlyDifference - b.riskScore * 40;
       return scoreB - scoreA;
     })[0];
 
-  // Best fixed: highest savings among fixed-rate plans
-  const bestFixed = [...withSavings]
-    .filter((s) => s.supplier.rateType === 'fixed' && s.supplier.id !== bestOverall?.supplier.id)
-    .sort((a, b) => b.yearlySavings - a.yearlySavings)[0];
+  const fixed = [...withDifferences]
+    .filter((item) => item.supplier.rateType === 'fixed' && item.supplier.id !== screened?.supplier.id)
+    .sort((a, b) => b.yearlyDifference - a.yearlyDifference)[0];
 
-  // Lowest price: cheapest rate regardless of type (different from above picks)
-  const usedIds = new Set([bestOverall?.supplier.id, bestFixed?.supplier.id]);
-  const lowestPrice = [...withSavings]
-    .filter((s) => !usedIds.has(s.supplier.id))
+  const usedIds = new Set([screened?.supplier.id, fixed?.supplier.id]);
+  const lowestStoredRate = [...withDifferences]
+    .filter((item) => !usedIds.has(item.supplier.id))
     .sort((a, b) => a.supplier.ratePerKwh - b.supplier.ratePerKwh)[0];
 
-  return [bestOverall, bestFixed, lowestPrice].filter(Boolean);
+  return [screened, fixed, lowestStoredRate].filter(Boolean);
 }
 
 type Props = {
@@ -92,36 +88,34 @@ type Props = {
   utility?: string;
 };
 
-export default function TopPicks({ suppliers, priceToCompare, estimatedKwh, utility = 'Ohio' }: Props) {
-  const [selectedSupplier, setSelectedSupplier] = useState<{ supplier: Supplier; yearlySavings: number } | null>(null);
-  const picks = selectTopPicks(suppliers, priceToCompare, estimatedKwh);
+export default function TopPicks({ suppliers, priceToCompare, estimatedKwh }: Props) {
+  const picks = selectSnapshotPicks(suppliers, priceToCompare, estimatedKwh);
 
   return (
     <section className="space-y-5">
       <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Top 3 Picks</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Snapshot Screening</p>
           <h2 className="mt-2 text-2xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
-            The best options for your home
+            Three plans worth re-checking
           </h2>
           <p className="mt-2 text-sm text-ink/70">
-            Based on {estimatedKwh.toLocaleString()} kWh/month usage.
+            Based on {estimatedKwh.toLocaleString()} kWh/month, supplier data scraped {rateSnapshot.supplierOffersLabel}, and a stored utility benchmark. These are not live offers or enrollment recommendations.
           </p>
         </div>
       </div>
 
       <div className="grid gap-5 md:grid-cols-3">
         {picks.map((pick, index) => {
-          const { supplier, yearlySavings, riskScore } = pick;
-          const monthlyCost = supplier.ratePerKwh * estimatedKwh;
-          const savingsPositive = yearlySavings >= 0;
+          const { supplier, yearlyDifference, riskScore } = pick;
+          const monthlySupplyCost = supplier.ratePerKwh * estimatedKwh;
+          const differencePositive = yearlyDifference >= 0;
 
           return (
             <article
               key={supplier.id}
               className={`relative rounded-3xl border border-white/60 border-l-4 ${accents[index]} bg-white/80 p-6 shadow-card backdrop-blur`}
             >
-              {/* Header */}
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0 flex-1">
                   <p className="text-xs font-bold text-sea">{pickLabels[index]}</p>
@@ -137,57 +131,42 @@ export default function TopPicks({ suppliers, priceToCompare, estimatedKwh, util
                 </span>
               </div>
 
-              {/* Key metrics */}
               <div className="mt-5 flex items-end gap-4">
                 <div>
-                  <p className="text-[11px] uppercase tracking-wider text-ink/40">Rate</p>
+                  <p className="text-[11px] uppercase tracking-wider text-ink/40">Stored rate</p>
                   <p className="text-2xl font-bold text-ink">{formatRate(supplier.ratePerKwh)}</p>
                 </div>
                 <div>
-                  <p className="text-[11px] uppercase tracking-wider text-ink/40">Monthly</p>
-                  <p className="text-xl font-bold text-ink">{formatCurrency(monthlyCost)}</p>
+                  <p className="text-[11px] uppercase tracking-wider text-ink/40">Supply-only / mo</p>
+                  <p className="text-xl font-bold text-ink">{formatCurrency(monthlySupplyCost)}</p>
                 </div>
                 <div className="ml-auto text-right">
-                  <p className="text-[11px] uppercase tracking-wider text-ink/40">Yearly</p>
-                  <p className={`text-xl font-bold ${savingsPositive ? 'text-leaf' : 'text-danger'}`}>
-                    {savingsPositive ? `+${formatCurrency(yearlySavings)}` : `-${formatCurrency(Math.abs(yearlySavings))}`}
+                  <p className="text-[11px] uppercase tracking-wider text-ink/40">Stored annual diff.</p>
+                  <p className={`text-xl font-bold ${differencePositive ? 'text-leaf' : 'text-danger'}`}>
+                    {differencePositive ? `-${formatCurrency(yearlyDifference)}` : `+${formatCurrency(Math.abs(yearlyDifference))}`}
                   </p>
                 </div>
               </div>
 
-              {/* Why this pick */}
               <p className="mt-4 text-sm leading-relaxed text-ink/60">
-                {buildWhy(supplier, yearlySavings)}
+                {buildWhy(supplier, yearlyDifference)}
               </p>
 
-              {/* ETF warning if applicable */}
               {supplier.earlyTerminationFee > 0 && (
                 <p className="mt-2 text-xs text-ink/40">
-                  Early termination fee: ${supplier.earlyTerminationFee}
+                  Stored early termination fee: ${supplier.earlyTerminationFee}
                 </p>
               )}
 
-              {/* CTA */}
-              <button
-                onClick={() => setSelectedSupplier({ supplier, yearlySavings })}
-                className="mt-5 flex w-full items-center justify-center rounded-full bg-sea py-3 text-sm font-bold text-white transition hover:bg-leaf"
-              >
-                Get This Plan
-              </button>
+              <Button asChild className="mt-5 w-full rounded-full bg-sea text-white hover:bg-leaf">
+                <a href={rateSnapshot.sourceUrl} target="_blank" rel="noreferrer">
+                  Verify current offer at PUCO
+                </a>
+              </Button>
             </article>
           );
         })}
       </div>
-
-      {selectedSupplier && (
-        <LeadCaptureModal
-          supplier={selectedSupplier.supplier}
-          utility={utility}
-          estimatedKwh={estimatedKwh}
-          yearlySavings={selectedSupplier.yearlySavings}
-          onClose={() => setSelectedSupplier(null)}
-        />
-      )}
     </section>
   );
 }
