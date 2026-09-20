@@ -5,6 +5,7 @@ import { useChat } from 'ai/react';
 import ReactMarkdown from 'react-markdown';
 import { Supplier } from '@/lib/types';
 import { formatCurrencyPrecise, formatRate } from '@/lib/utils';
+import { rateSnapshot } from '@/lib/rate-snapshot';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -22,11 +23,11 @@ export default function AIChat({ utilityName, priceToCompare, suppliers, zip }: 
   const context = useMemo(() => {
     const supplierLines = suppliers
       .map((supplier) => {
-        return `- ${supplier.name} | rate ${formatRate(supplier.ratePerKwh)} | ${supplier.termMonths} months | ${supplier.rateType} | ${supplier.renewablePercent}% renewable | ETF ${formatCurrencyPrecise(supplier.earlyTerminationFee)} | intro ${supplier.introRateMonths ?? 'none'} months | territories ${supplier.utilityTerritories.join(', ')} | notes: ${supplier.notes}`;
+        return `- ${supplier.name} | stored rate ${formatRate(supplier.ratePerKwh)} | ${supplier.termMonths} months | ${supplier.rateType} | ${supplier.renewablePercent}% renewable | stored ETF ${formatCurrencyPrecise(supplier.earlyTerminationFee)} | intro ${supplier.introRateMonths ?? 'none'} months | territories ${supplier.utilityTerritories.join(', ')} | notes: ${supplier.notes}`;
       })
       .join('\n');
 
-    return `Utility: ${utilityName}\nZip: ${zip ?? 'unknown'}\nPrice to Compare: ${formatRate(priceToCompare)}\nAverage usage: ${AVG_KWH} kWh/month\nSuppliers:\n${supplierLines}`;
+    return `DATA STATUS: archived screening context only. Supplier offers were scraped ${rateSnapshot.supplierOffersLabel}. The utility Price to Compare is a static repository value and has not been verified live. Do not represent any plan, rate, savings estimate, availability, or utility benchmark as current. Direct users to PUCO Apples to Apples and the supplier to verify current terms before enrollment.\nUtility: ${utilityName}\nZip: ${zip ?? 'unknown'}\nStored Price to Compare: ${formatRate(priceToCompare)}\nUsage assumption: ${AVG_KWH} kWh/month\nArchived suppliers:\n${supplierLines}`;
   }, [suppliers, utilityName, priceToCompare, zip]);
 
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
@@ -37,19 +38,19 @@ export default function AIChat({ utilityName, priceToCompare, suppliers, zip }: 
   return (
     <section className="rounded-3xl border border-white/60 bg-white/70 p-6 shadow-card backdrop-blur">
       <div className="flex flex-col gap-2">
-        <p className="text-xs uppercase tracking-[0.2em] text-ink/50">AI Chat</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-ink/50">AI Snapshot Explainer</p>
         <h3 className="text-xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
-          Ask a neighbor about Ohio rates
+          Ask about the stored plan terms
         </h3>
         <p className="text-sm text-ink/70">
-          Ask anything about suppliers, fees, or how the rates compare for your usage.
+          The assistant can explain this {rateSnapshot.supplierOffersLabel} snapshot, but it cannot verify current rates or enrollment availability.
         </p>
       </div>
 
       <div className="mt-5 flex h-[420px] flex-col gap-4 overflow-y-auto rounded-2xl border border-sea/10 bg-white p-4">
         {messages.length === 0 && (
           <div className="rounded-2xl border border-sea/10 bg-mist p-4 text-sm text-ink/70">
-            Try questions like “Which plan is safest for a renter?” or “What if I move in 6 months?”
+            Try questions like “What does this early termination fee mean?” or “Which stored plans are variable?”
           </div>
         )}
         {messages.map((message) => {
@@ -92,7 +93,7 @@ export default function AIChat({ utilityName, priceToCompare, suppliers, zip }: 
             id="ai-chat-input"
             value={input}
             onChange={handleInputChange}
-            placeholder="Ask about savings, term length, or risk..."
+            placeholder="Ask about stored rate type, term, or fees..."
             className="h-auto w-full rounded-2xl border-sea/20 bg-white px-4 py-3 text-sm text-ink shadow-sm focus-visible:ring-sea"
           />
         </div>
