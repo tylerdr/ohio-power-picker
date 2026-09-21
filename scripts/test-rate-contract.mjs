@@ -52,6 +52,7 @@ assert(!table.includes('LeadCaptureModal'), 'Archived supplier table must not ro
 assert(!picks.includes('LeadCaptureModal'), 'Archived top picks must not route stale offers into enrollment lead capture.');
 assert(chat.includes('Never describe a stored rate'), 'AI system boundary must prohibit presenting stored rates as current.');
 assert(!layout.includes('google-site-verification-placeholder'), 'HTML metadata must not emit a fake Google verification token.');
+assert(layout.includes('canonical: SITE_URL'), 'Primary metadata must declare the canonical production URL.');
 
 if (failures.length) {
   console.error(`Rate-contract checks failed (${failures.length}):`);
