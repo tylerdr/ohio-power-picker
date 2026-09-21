@@ -13,6 +13,7 @@ const chat = read('app/api/chat/route.ts');
 const llms = read('public/llms.txt');
 const suppliers = read('data/suppliers.json');
 const snapshot = read('lib/rate-snapshot.ts');
+const layout = read('app/layout.tsx');
 
 const failures = [];
 const assert = (condition, message) => {
@@ -50,6 +51,7 @@ assert(picks.includes('Verify current offer at PUCO'), 'Snapshot picks must rout
 assert(!table.includes('LeadCaptureModal'), 'Archived supplier table must not route stale offers into enrollment lead capture.');
 assert(!picks.includes('LeadCaptureModal'), 'Archived top picks must not route stale offers into enrollment lead capture.');
 assert(chat.includes('Never describe a stored rate'), 'AI system boundary must prohibit presenting stored rates as current.');
+assert(!layout.includes('google-site-verification-placeholder'), 'HTML metadata must not emit a fake Google verification token.');
 
 if (failures.length) {
   console.error(`Rate-contract checks failed (${failures.length}):`);
