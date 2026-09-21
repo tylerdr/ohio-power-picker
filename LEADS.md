@@ -1,5 +1,12 @@
 # Lead Management — ohioelectricityrates.com
 
+> **Current status (September 2026): disabled.** The public lead and rate-alert
+> endpoints fail closed with HTTP 503 because this deployment has no durable
+> storage, Resend account configuration, or verified broker/affiliate delivery
+> destination. The public UI discloses the unavailable alert path and offers a
+> manual rate-question email link. Do not treat the legacy schema or examples
+> below as active customer capture.
+
 ## How Leads Work
 When users click "Get This Plan" on any supplier, they fill out a lead capture form that collects:
 - Full name (first + last)
@@ -9,7 +16,7 @@ When users click "Get This Plan" on any supplier, they fill out a lead capture f
 - Current usage estimate (kWh/month)
 - Supplier choice + rate + estimated savings
 
-## Data Storage
+## Legacy Data Shape (Reference Only)
 Leads are stored in `data/leads.json` with this structure:
 ```json
 {
@@ -64,41 +71,24 @@ Leads are stored in `data/leads.json` with this structure:
 4. **Negotiate payout**: Start at $30/qualified lead or 15% revenue share
 5. **Automate delivery**: Build webhook to send new leads in real-time OR export CSV weekly
 
-## Resend Lead Alerts (Live)
-Lead submissions now trigger email notifications via Resend when env vars are present.
+## Legacy Lead Alerts (Disabled)
+The former file-backed implementation and optional Resend notification path
+were removed from the public API. `POST /api/leads`, `GET /api/leads`, and
+`POST /api/subscribe` return HTTP 503 with a no-store response; they do not
+write files, send email, or claim that a lead was accepted. Re-enable this
+surface only after a durable store, verified delivery provider, consent copy,
+and an actual broker or affiliate destination are configured and tested.
 
-Required env vars:
-- `RESEND_API_KEY` — API key from Resend
-- `LEAD_ALERT_TO` — inbox to receive new lead alerts
+## Accessing Historical Leads
 
-Optional:
-- `LEAD_ALERT_FROM` — verified sender (default: `Ohio Electricity Rates <leads@ohioelectricityrates.com>`)
-
-Behavior:
-- Lead is always saved to `data/leads.json`
-- Email send is best-effort (submission does not fail if notification fails)
-
-## Accessing Leads
-
-### Via File
+### Via File (if an explicitly retained local fixture exists)
 ```bash
 cat data/leads.json | jq '.[] | select(.status == "new")'
 ```
 
 ### Via API
-```bash
-# Get lead stats
-curl https://ohioelectricityrates.com/api/leads
-
-# Returns:
-# {
-#   "total": 42,
-#   "new": 30,
-#   "contacted": 8,
-#   "converted": 3,
-#   "lost": 1
-# }
-```
+The public API is intentionally unavailable until the prerequisites above are
+met; it does not expose lead statistics.
 
 ### Future: Admin Dashboard
 Create `/admin/leads` page (password-protected) to:

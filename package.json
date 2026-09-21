@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/test-rate-contract.mjs && node scripts/test-public-ai-contract.mjs",
+    "prebuild": "node scripts/test-rate-contract.mjs && node scripts/test-public-ai-contract.mjs && node scripts/test-funnel-contract.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
