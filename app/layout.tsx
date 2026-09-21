@@ -31,9 +31,6 @@ export const metadata: Metadata = {
     title: 'Ohio Power Picker',
     description: 'Compare Ohio electricity suppliers and find lower rates in minutes.',
     images: ['/og-image.png'],
-  },
-  verification: {
-    google: 'google-site-verification-placeholder'
   }
 };
 
