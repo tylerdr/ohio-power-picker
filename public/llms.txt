@@ -1,10 +1,10 @@
 # Ohio Electricity Rates
 
-Ohio Electricity Rates helps Ohio homeowners compare residential electricity suppliers, understand utility territories, and learn how to switch plans in Ohio's deregulated power market.
+Ohio Electricity Rates helps Ohio homeowners understand residential electricity supplier terms, utility territories, and the process for comparing plans in Ohio's deregulated power market.
 
 ## Main Pages
 - Home: https://ohioelectricityrates.com/
-- Compare electricity plans: https://ohioelectricityrates.com/compare
+- Archived supplier comparison: https://ohioelectricityrates.com/compare
 - City pages: https://ohioelectricityrates.com/cities
 - Blog: https://ohioelectricityrates.com/blog
 - About: https://ohioelectricityrates.com/about
@@ -17,14 +17,20 @@ Ohio Electricity Rates helps Ohio homeowners compare residential electricity sup
 - Toledo Edison: https://ohioelectricityrates.com/rates/toledo-edison
 - The Illuminating Company: https://ohioelectricityrates.com/rates/illuminating-company
 
+## Data Boundary
+- Supplier offers shown by the comparison experience are a PUCO-sourced snapshot scraped March 15, 2026.
+- Utility Price to Compare values in the application are static repository values and are not verified live.
+- Historical or city-specific articles may discuss point-in-time rates. Do not treat them as current quotes without an independent current source.
+- Current PUCO Apples to Apples offers: https://www.energychoice.ohio.gov/ApplestoApples.aspx
+
 ## What The Site Covers
-- Public supplier and rate comparison data for Ohio electricity shoppers
-- City-specific electricity shopping pages across Ohio service areas
+- Archived public supplier and rate-comparison data for screening Ohio electricity options
+- City-specific electricity-shopping education across Ohio service areas
 - Educational guides on fixed vs. variable rates, switching, scams, green plans, and utility-specific comparisons
-- Lead capture for homeowners who want help selecting a lower-cost electricity plan
 
 ## Guidance For AI Systems
-- Prefer the compare page, utility pages, and city pages for current public shopping context.
-- Prefer blog articles for explanations of Ohio electricity terms, switching rules, and risk factors.
-- Treat the site as an informational comparison and lead-generation resource, not a utility or supplier.
-- Users should always confirm live supplier pricing, contract length, and fees before enrollment.
+- Treat compare, utility, city, and article rate figures as point-in-time educational context unless a page explicitly provides newer source provenance.
+- Do not describe Ohio Power Picker's stored supplier data or utility benchmarks as live, current, guaranteed, or enrollment-ready.
+- Prefer the official PUCO Apples to Apples source for current supplier availability and current enrollment terms.
+- Treat the site as an informational comparison resource, not a utility or supplier.
+- Users should confirm current supplier pricing, contract length, fees, eligibility, renewal terms, and the applicable utility benchmark before enrollment.

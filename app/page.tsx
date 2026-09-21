@@ -7,6 +7,7 @@ import EmailCapture from '@/components/email-capture';
 import { supplierData } from '@/lib/data';
 import { utilities } from '@/lib/utilities';
 import { formatRate } from '@/lib/utils';
+import { rateSnapshot, rateSnapshotNotice } from '@/lib/rate-snapshot';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -32,7 +33,7 @@ export default function HomePage({
     operatingSystem: 'Web',
     url: siteUrl,
     description:
-      'Compare Ohio electricity suppliers against your utility default rate. 72% of offers cost more — we find the ones that actually save you money.',
+      'Compare an archived Ohio electricity supplier snapshot against static utility benchmarks, then verify current terms with PUCO before enrolling.',
     areaServed: 'Ohio',
     offers: {
       '@type': 'Offer',
@@ -75,20 +76,20 @@ export default function HomePage({
           <div className="rounded-3xl border border-white/60 bg-white/70 p-8 shadow-card backdrop-blur">
             <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Ohio Power Picker</p>
             <h1 className="mt-4 text-4xl font-semibold text-ink md:text-5xl" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
-              Find a lower electricity rate in minutes.
+              Screen electricity offers before you switch.
             </h1>
             <p className="mt-4 text-base text-ink/70">
-              Ohio is deregulated, which means you can choose your electricity supplier. Most offers cost more than the default rate. We surface the best options without the fine print.
+              Ohio is deregulated, which means you can choose your electricity supplier. Use our archived PUCO-sourced snapshot to compare plan structure and estimated savings, then verify the current offer before enrolling.
             </p>
 
             <div className="mt-6 grid gap-3 text-sm text-ink/70">
               <div className="rounded-2xl bg-sky/60 p-4">
-                <p className="font-semibold text-ink">72% of offers are more expensive</p>
-                <p>We highlight which suppliers actually save you money.</p>
+                <p className="font-semibold text-ink">Archived PUCO supplier snapshot</p>
+                <p>Supplier offers in the app were scraped {rateSnapshot.supplierOffersLabel}; they are not represented as live quotes.</p>
               </div>
               <div className="rounded-2xl bg-leaf/10 p-4">
-                <p className="font-semibold text-ink">Plain-English recommendations</p>
-                <p>AI summarizes rate type, term length, and risk factors.</p>
+                <p className="font-semibold text-ink">Plain-English screening</p>
+                <p>Compare rate type, term length, fees, and estimated savings before checking the current contract.</p>
               </div>
             </div>
           </div>
@@ -146,7 +147,7 @@ export default function HomePage({
                 variant="ghost"
                 className="h-auto rounded-full bg-sea px-5 py-3 text-sm font-semibold text-white transition hover:bg-leaf hover:text-white"
               >
-                Compare suppliers
+                Compare snapshot
               </Button>
             </form>
 
@@ -179,17 +180,17 @@ export default function HomePage({
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Step 1</p>
               <h3 className="mt-3 text-lg font-semibold text-ink">Enter zip + utility</h3>
-              <p className="mt-2 text-sm text-ink/70">We match you to suppliers serving your territory.</p>
+              <p className="mt-2 text-sm text-ink/70">We match you to offers in the archived supplier dataset for that territory.</p>
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Step 2</p>
-              <h3 className="mt-3 text-lg font-semibold text-ink">Compare savings</h3>
-              <p className="mt-2 text-sm text-ink/70">See how every plan stacks up against the default rate.</p>
+              <h3 className="mt-3 text-lg font-semibold text-ink">Screen the snapshot</h3>
+              <p className="mt-2 text-sm text-ink/70">Compare rate type, term, fees, and estimated savings using the stored snapshot.</p>
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Step 3</p>
-              <h3 className="mt-3 text-lg font-semibold text-ink">Pick confidently</h3>
-              <p className="mt-2 text-sm text-ink/70">AI flags variable rates, fees, and best value.</p>
+              <h3 className="mt-3 text-lg font-semibold text-ink">Verify before enrolling</h3>
+              <p className="mt-2 text-sm text-ink/70">Confirm the current PTC and complete supplier terms with PUCO and the supplier.</p>
             </div>
           </div>
         </div>
@@ -199,19 +200,19 @@ export default function HomePage({
         <div className="mx-auto max-w-6xl rounded-3xl border border-white/60 bg-white/70 p-8 shadow-card backdrop-blur">
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Statewide Snapshot</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Archived Statewide Snapshot</p>
               <h2 className="mt-2 text-2xl font-semibold text-ink" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
                 Ohio utility comparison at a glance
               </h2>
               <p className="mt-2 text-sm text-ink/70">
-                See every utility’s Price to Compare and the best supplier rate available right now.
+                Supplier offers are from {rateSnapshot.supplierOffersLabel}; utility Price to Compare values are static repository values and may have changed.
               </p>
             </div>
             <Link
               href={compareHref}
               className="inline-flex items-center justify-center rounded-full bg-sea px-5 py-2 text-sm font-semibold text-white"
             >
-              Compare suppliers
+              Screen snapshot
             </Link>
           </div>
 
@@ -220,9 +221,9 @@ export default function HomePage({
               <thead className="text-xs uppercase text-ink/60">
                 <tr>
                   <th className="pb-3">Utility</th>
-                  <th className="pb-3">Price to Compare</th>
-                  <th className="pb-3">Best available rate</th>
-                  <th className="pb-3">Best supplier</th>
+                  <th className="pb-3">Stored Price to Compare</th>
+                  <th className="pb-3">Lowest rate in snapshot</th>
+                  <th className="pb-3">Snapshot supplier</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-sea/10">
@@ -238,6 +239,18 @@ export default function HomePage({
                 ))}
               </tbody>
             </table>
+          </div>
+
+          <div className="mt-5 rounded-2xl bg-amber-50 p-4 text-sm text-amber-950">
+            <p>{rateSnapshotNotice}</p>
+            <a
+              href={rateSnapshot.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 inline-flex font-semibold underline underline-offset-2"
+            >
+              Check current PUCO Apples to Apples offers →
+            </a>
           </div>
         </div>
       </section>
