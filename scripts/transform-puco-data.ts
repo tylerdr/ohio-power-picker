@@ -8,6 +8,7 @@ import path from 'node:path';
 const INPUT = path.join(process.cwd(), 'data', 'suppliers.scraped.json');
 const PUCO_INPUT = path.join(process.cwd(), 'data', 'suppliers.scraped.json');
 const OUTPUT = path.join(process.cwd(), 'data', 'suppliers.json');
+const MIN_REASONABLE_RATE_PER_KWH = 0.05;
 
 function slugify(name: string): string {
   return name.toLowerCase()
@@ -32,6 +33,7 @@ interface RawOffer {
   territory: string;
   territoryName: string;
   priceToCompare: number;
+  supplierUrl?: string;
 }
 
 async function main() {
@@ -69,18 +71,20 @@ async function main() {
     renewablePercent: offer.renewablePercent,
     earlyTerminationFee: parseTermFee(offer.earlyTermFee),
     introRateMonths: offer.introductory ? 1 : null,
-    website: '',
-    notes: `PUCO-certified. Scraped ${raw.scrapedAt.split('T')[0]}.`,
+    website: offer.supplierUrl || '',
+    notes: `PUCO Energy Choice listing retrieved ${raw.scrapedAt.split('T')[0]}; verify current rate, terms, fees, and eligibility before enrolling.`,
   }));
 
   // Filter out bad data (zero or negative rates are scraping artifacts)
-  const cleanSuppliers = suppliers.filter(s => s.ratePerKwh > 0);
+  // PUCO has occasionally emitted malformed sub-five-cent rows. Keep those in
+  // the raw scrape for auditability, but do not present them as comparisons.
+  const cleanSuppliers = suppliers.filter(s => s.ratePerKwh >= MIN_REASONABLE_RATE_PER_KWH);
 
   // Sort by rate (cheapest first)
   cleanSuppliers.sort((a, b) => a.ratePerKwh - b.ratePerKwh);
 
   await fs.writeFile(OUTPUT, JSON.stringify(cleanSuppliers, null, 2));
-  console.log(`Transformed ${allOffers.length} raw offers → ${cleanSuppliers.length} clean supplier entries (${suppliers.length - cleanSuppliers.length} zero-rate artifacts removed)`);
+  console.log(`Transformed ${allOffers.length} raw offers → ${cleanSuppliers.length} clean supplier entries (${suppliers.length - cleanSuppliers.length} invalid sub-${MIN_REASONABLE_RATE_PER_KWH.toFixed(2)} rates removed)`);
   console.log(`Territories covered: ${new Set(allOffers.map(o => o.territory)).size}`);
   
   // Show top 10 cheapest

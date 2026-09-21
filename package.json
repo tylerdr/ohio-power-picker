@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/test-rate-contract.mjs && node scripts/test-public-ai-contract.mjs && node scripts/test-funnel-contract.mjs",
+    "prebuild": "node scripts/test-rate-contract.mjs && node scripts/test-public-ai-contract.mjs && node scripts/test-funnel-contract.mjs && node scripts/test-puco-scrape-contract.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "scrape": "ts-node scripts/scrape-energychoice.ts"
+    "scrape": "ts-node scripts/scrape-energychoice.ts",
+    "test:puco": "node scripts/test-puco-scrape-contract.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.38",
