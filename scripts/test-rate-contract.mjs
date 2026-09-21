@@ -14,6 +14,7 @@ const llms = read('public/llms.txt');
 const suppliers = read('data/suppliers.json');
 const snapshot = read('lib/rate-snapshot.ts');
 const layout = read('app/layout.tsx');
+const icon = read('app/icon.svg');
 
 const failures = [];
 const assert = (condition, message) => {
@@ -53,6 +54,7 @@ assert(!picks.includes('LeadCaptureModal'), 'Archived top picks must not route s
 assert(chat.includes('Never describe a stored rate'), 'AI system boundary must prohibit presenting stored rates as current.');
 assert(!layout.includes('google-site-verification-placeholder'), 'HTML metadata must not emit a fake Google verification token.');
 assert(layout.includes('canonical: SITE_URL'), 'Primary metadata must declare the canonical production URL.');
+assert(icon.includes('Ohio Power Picker'), 'Primary surface must ship a branded favicon asset.');
 
 if (failures.length) {
   console.error(`Rate-contract checks failed (${failures.length}):`);
