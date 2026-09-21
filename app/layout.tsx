@@ -18,6 +18,9 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: SITE_URL,
+  },
   title: 'Ohio Power Picker',
   description: 'Compare Ohio electricity suppliers and find lower rates in minutes.',
   openGraph: {
