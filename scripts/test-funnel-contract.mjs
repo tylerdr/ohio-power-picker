@@ -9,6 +9,9 @@ const subscribe = read('app/api/subscribe/route.ts');
 const leads = read('app/api/leads/route.ts');
 
 const failures = [];
+if (fs.existsSync(path.join(root, 'components/lead-capture-modal.tsx'))) {
+  failures.push('Retired enrollment capture modal must remain absent until a verified delivery path is approved.');
+}
 const assert = (condition, message) => {
   if (!condition) failures.push(message);
 };

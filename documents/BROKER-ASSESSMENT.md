@@ -80,8 +80,11 @@ server-side payment verification, idempotent fulfillment, failure/recovery tests
 support owner, monitoring and rollback must have evidence. Current disabled APIs
 must stay disabled until their prerequisites pass.
 
-October target: $10,000 collected by October 31, 2026 23:59 America/Los_Angeles;
-MRR reported separately. Actual cash, refunds, MRR and net cash per sale are unknown.
+Confirmed October target: $10,000 collected product revenue by October 31, 2026
+23:59 America/Los_Angeles, net of refunds, excluding sales tax and test transactions.
+MRR is separate. Processing fees and delivery costs are tracked separately from
+this revenue metric; contribution and owner-distributable cash are not revenue.
+Count only attributable Ohio product receipts, with no shared-bundle double counting. Actual qualifying collections, refunds, MRR and net cash per sale are unknown.
 Therefore actual gap and sale count cannot yet be calculated. Conditional scenario
 only: with no credited receipts and $500 net cash per sale, ceil(10000 / 500) = 20
 sales and up to 160 delivery hours. At a hypothesized 10% prospect-to-paid rate,
