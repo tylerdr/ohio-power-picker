@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Suspense } from 'react';
 import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
 import { Button } from '@/components/ui/button';
@@ -12,7 +13,7 @@ export const metadata = {
 export default function BrokerAssessmentPage() {
   return (
     <main className="pb-16">
-      <SiteHeader zip="" utility="" />
+      <Suspense fallback={<div className="h-20" />}><SiteHeader zip="" utility="" /></Suspense>
       <section className="mx-auto max-w-5xl px-5 py-12 md:px-10">
         <p className="text-sm font-semibold text-sea">For Ohio energy brokers · proposed pilot</p>
         <h1 className="mt-4 text-3xl font-semibold text-ink md:text-5xl">Decide whether a clearer comparison journey is worth building.</h1>

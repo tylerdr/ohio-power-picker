@@ -252,8 +252,9 @@ Manual invoice control table (requirements, not implemented provider proof):
 | Unknown or contradictory evidence | Pause paid-rights assertion and reconcile with issuer; browser redirect is insufficient |
 | Receipt or report access lost | Verify buyer identity privately; recover by engagement/receipt ID through agreed channel |
 
-Stripe is UNAUTHORIZED per the current human brief. No Stripe calls, live keys,
-invoice creation or sandbox authentication workaround are used. An appropriate
+Update: Stripe sandbox access is restored and verified for the separately named
+Sprinter sandbox acct_1Re4ltEQ7c58oLZ4, livemode:false. Only synthetic, unsent
+rehearsal resources are permitted; no live keys or real charges are used. An appropriate
 contract/invoice path still needs the actual issuing entity and payment method;
 this is an external configuration/business dependency, not a completed checkout.
 
