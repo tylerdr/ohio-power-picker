@@ -258,3 +258,34 @@ and mobile layouts, no automatic submissions, and absence of paid-access claims.
 Then obtain any production activation authority required by the original brief.
 Rollback: close unmerged PR or revert its commit after an approved release; no DB,
 credential or billing migrations exist. Live production remains unchanged.
+
+
+## Synthetic preparation/recovery implementation — successor to 44307bee
+
+Existing /broker-assessment now composes AssessmentPreparer, a browser-local
+synthetic intake -> sourced comparison -> measurement-gap report -> exported-file
+recovery flow. Source observations are dated 2026-10-22 from the Ravenna municipal
+page and PUCO Apples to Apples disclaimer. Neither is a supplied tariff/complete
+contract. No consumer advice, actual enrollment offer or verified customer baseline
+is produced. This is an unpaid demonstration, not the private paid delivery service.
+
+Configuration/support facts:
+- NEXT_PUBLIC_GA_MEASUREMENT_ID: existing optional page-view integration; no verified
+  report-conversion telemetry or operational dashboard is established.
+- Payment merchant: Sprinter; separate rehearsal sandbox acct_1Re4ltEQ7c58oLZ4,
+  livemode:false. Existing draft invoice only; no new financial fixture created.
+- Runtime Stripe secret/webhook binding: not configured by this change.
+- Hosted private report store, authoritative paid rights, server recovery and verified
+  buyer identity: absent. Export/import preserves local bytes only; digest is
+  accidental-corruption detection, not authentication or entitlement.
+- Advertised scope/support inbox: tai@sprinterconsulting.com; staffing, response
+  capacity and email receipt delivery are unverified. No new support promise.
+- Capacity: one proposed pilot, eight-hour ceiling; no booked slot or delivery owner
+  availability asserted. Browser preparation does not reserve capacity.
+
+Meaningful tests cover scope refusal, invalid/foreign-territory intake, unavailable
+baseline refusal, dated observations/arithmetic, original-byte recovery after changed
+inputs/template, tamper/schema/size failures and actual page composition. TypeScript
+and diff checks pass. Exact successor Vercel build and browser acceptance follow
+identity-correct publication; the parent's READY build is not successor acceptance.
+No new sends, charges, provisioning or shared-production writes occurred.

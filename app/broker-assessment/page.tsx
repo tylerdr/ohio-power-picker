@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import AssessmentPreparer from '@/components/assessment-preparer';
 import { Suspense } from 'react';
 import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
@@ -43,6 +44,7 @@ export default function BrokerAssessmentPage() {
             </ol>
           </article>
         </div>
+        <AssessmentPreparer />
         <section className="mt-8 rounded-3xl bg-mist p-6">
           <h2 className="text-xl font-semibold">Prepare a scope request</h2>
           <p className="mt-3">Include your business website, utility territory, the decision you need to make, and whether dated aggregate funnel counts are available. Do not send utility bills, customer lists, account numbers, credentials or payment details.</p>
