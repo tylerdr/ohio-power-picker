@@ -85,12 +85,7 @@ Confirmed October target: $10,000 collected product revenue by October 31, 2026
 MRR is separate. Processing fees and delivery costs are tracked separately from
 this revenue metric; contribution and owner-distributable cash are not revenue.
 Count only attributable Ohio product receipts, with no shared-bundle double counting. Actual qualifying collections, refunds, MRR and net cash per sale are unknown.
-Therefore actual gap and sale count cannot yet be calculated. Conditional scenario
-only: with no credited receipts and $500 net cash per sale, ceil(10000 / 500) = 20
-sales and up to 160 delivery hours. At a hypothesized 10% prospect-to-paid rate,
-that requires 200 qualified prospects. Fees/costs increase the required count.
-The one-pilot capacity ceiling permits only $500 gross in the initial test; the
-$10,000 October goal is unsupported by current pricing, demand and capacity evidence.
+With no credited October receipts, twenty $500 collections would reach the $10,000 collected-revenue target if none is refunded and the amounts exclude sales tax and tests. Processing fees and delivery costs reduce contribution, not that collected-revenue total; track them separately. Refunds reduce qualifying collections. The initial one-pilot capacity ceiling supports only $500 of gross collections. Nineteen additional sales and the associated delivery work are not supported by current capacity or demand evidence. Twenty full eight-hour assessments would require up to 160 delivery hours; this is workload arithmetic, not available capacity or a forecast.
 
 ## Evidence and next checkpoints
 
