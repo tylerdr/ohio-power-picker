@@ -187,3 +187,78 @@ then agreed scope/payment/delivery terms. Contact is explicitly prohibited in th
 cycle; no message, call or form submission is authorized. Internal research and
 proposal preparation require no new plan approval. Close draft PR to discard;
 no live commercial system was activated.
+
+## Reviewable first-contact campaign — unsent
+
+Audience: president or authorized operations lead at the source-verified Buckeye
+Energy Brokers business. Channel fit: its official site invites business contact
+and describes aggregation/commercial work. This establishes reachability, not
+permission to send, purchase intent or a prior relationship. One candidate, one
+initial message, one follow-up after five business days if separately authorized;
+no ads, automation or consumer data. Stop on refusal, wrong recipient or no fit.
+
+Subject: One-territory comparison feasibility assessment
+
+Hello Mr. Bellish,
+
+Your public services describe governmental aggregation and commercial energy buying.
+We have prepared a worked example of an Ohio comparison-data and attribution
+assessment. It identifies stale-offer boundaries and the evidence needed before
+investing in an embedded comparison tool or referral workflow.
+
+The proposed pilot is $500 once for one territory and one aggregate reporting
+period, capped at eight hours: source matrix, funnel gaps, commercial feasibility
+and a go/no-go memo. It does not include software development or promise savings
+or conversion lift. Is comparison-data maintenance or enrollment attribution a
+current decision for your team? If so, we can first confirm the scope and whether
+your aggregate reporting can support it. No customer records are needed.
+
+Follow-up draft:
+
+Following up on the one-territory feasibility assessment. If this is a live decision,
+we can use the worked sample to confirm fit before agreeing any payment or delivery
+terms. If it is not relevant, we will close the inquiry; no response is required.
+
+Primary experiment result: buyer confirms the problem, aggregate inputs and paid
+scope, then an attributable qualifying collection. Record delivered-message count,
+response, qualification, scope acceptance, payment and accepted report separately.
+One initial prospect cannot validate a conversion rate. Do not use the municipal
+rate illustration as an achievable-savings advertisement.
+
+## Intake → contract → invoice → report operations
+
+The implemented /broker-assessment page is a reviewable proposal surface with a
+public sample download and user-initiated scope email. It does not claim to accept
+payments or reserve capacity. It adds no consumer enrollment path. Existing GA,
+when configured, can measure page views; scope emails, invoices and delivery must
+be reconciled by engagement ID. No conversion counts are established by markup.
+
+Before accepting money, record privately: buyer legal entity and signer, exact
+scope/input completeness, eight-hour allocation, due date, named delivery owner,
+invoice issuer, support owner, refund/cancellation terms and private recovery path.
+Do not reuse the consumer lead endpoints for business intake or report storage.
+No generic approval is needed to prepare these fields; actual missing business
+facts must be supplied or confirmed before a paid contract exists.
+
+Manual invoice control table (requirements, not implemented provider proof):
+
+| Observed authoritative state | Required operator behavior |
+|---|---|
+| Draft/sent/unpaid or pending asynchronous payment | No paid rights or report-release claim; retain scope reference |
+| Failed/cancelled | No paid rights; allow a new verified invoice attempt without duplicating engagement |
+| Paid, verified with issuer and matching amount/currency/product | Mark one engagement paid; retain receipt ID privately; begin agreed delivery |
+| Duplicate receipt/event | Reconcile same engagement once; never create a second delivery obligation |
+| Refunded or partially refunded | Record refund and adjust October collections; apply agreed access/delivery terms |
+| Unknown or contradictory evidence | Pause paid-rights assertion and reconcile with issuer; browser redirect is insufficient |
+| Receipt or report access lost | Verify buyer identity privately; recover by engagement/receipt ID through agreed channel |
+
+Stripe is UNAUTHORIZED per the current human brief. No Stripe calls, live keys,
+invoice creation or sandbox authentication workaround are used. An appropriate
+contract/invoice path still needs the actual issuing entity and payment method;
+this is an external configuration/business dependency, not a completed checkout.
+
+Release: preview exact PR head; check sample download, email draft, narrow desktop
+and mobile layouts, no automatic submissions, and absence of paid-access claims.
+Then obtain any production activation authority required by the original brief.
+Rollback: close unmerged PR or revert its commit after an approved release; no DB,
+credential or billing migrations exist. Live production remains unchanged.
