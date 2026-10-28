@@ -4,12 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/test-rate-contract.mjs && node scripts/test-public-ai-contract.mjs && node scripts/test-funnel-contract.mjs && node scripts/test-puco-scrape-contract.mjs && node scripts/test-assessment-report.mjs",
+    "prebuild": "node scripts/test-rate-contract.mjs && node scripts/test-public-ai-contract.mjs && node scripts/test-funnel-contract.mjs && node scripts/test-puco-scrape-contract.mjs && node scripts/test-assessment-report.mjs && node scripts/test-assessment-custody.mjs && node scripts/test-assessment-adapters.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "scrape": "ts-node scripts/scrape-energychoice.ts",
-    "test:puco": "node scripts/test-puco-scrape-contract.mjs"
+    "test:puco": "node scripts/test-puco-scrape-contract.mjs",
+    "test:assessment-custody": "node scripts/test-assessment-custody.mjs",
+    "test:assessment-adapters": "node scripts/test-assessment-adapters.mjs",
+    "test:assessment-saved-render": "node scripts/test-assessment-saved-render.mjs",
+    "test:assessment-reader-transitions": "node scripts/test-assessment-reader-transitions.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.38",
@@ -35,7 +39,8 @@
     "react-dom": "18.2.0",
     "react-markdown": "^10.1.0",
     "tailwind-merge": "^3.5.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "3.25.76"
   },
   "devDependencies": {
     "@types/node": "20.12.7",
