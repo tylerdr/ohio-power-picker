@@ -39,11 +39,16 @@ Leads are stored in `data/leads.json` with this structure:
 }
 ```
 
-## Monetization Models
+## Monetization Hypotheses — Not Verified Commercial Terms
+
+All payout ranges below are legacy planning assumptions, not sourced market rates,
+partner offers, contracted economics, or authorization to send leads. No qualified
+buyer or payout schedule is established by this document. See
+`documents/BROKER-ASSESSMENT.md` for the bounded validation proposal.
 
 ### Option 1: Lead Generation (Most Likely)
 - **How it works**: Sell qualified leads to energy brokers or suppliers
-- **Typical payout**: $20-50 per qualified lead, $100-200 per conversion
+- **Unverified planning range**: $20-50 per qualified lead, $100-200 per conversion
 - **Setup needed**:
   1. Find energy broker partners (Ohio-specific)
   2. Negotiate payout terms (per-lead vs per-conversion)
@@ -52,7 +57,7 @@ Leads are stored in `data/leads.json` with this structure:
 
 ### Option 2: Broker Partnership
 - **How it works**: Partner with a single licensed broker who handles all enrollments
-- **Typical payout**: $50-150 per completed enrollment
+- **Unverified planning range**: $50-150 per completed enrollment
 - **Setup needed**:
   1. Find a licensed Ohio electricity broker
   2. White-label the switching process (or send leads via API)
@@ -61,7 +66,7 @@ Leads are stored in `data/leads.json` with this structure:
 
 ### Option 3: Direct Affiliate (Less Common)
 - **How it works**: Some large suppliers offer affiliate programs
-- **Typical payout**: $50-100 per enrollment
+- **Unverified planning range**: $50-100 per enrollment
 - **Limitation**: Only works for suppliers with affiliate programs (rare in retail electricity)
 
 ## Recommended Next Steps
@@ -106,5 +111,5 @@ Once you have 10+ leads, you can:
 
 ## Important
 - **Privacy**: Don't sell leads without explicit user consent (add terms to form footer)
-- **Licensing**: We don't need a broker license if we're just referring leads (not enrolling customers)
+- **Licensing prerequisite**: Do not assume an exemption. Before any referral or enrollment activation, obtain a documented determination for the exact proposed activities and named partner using current PUCO requirements and appropriate review. This repository establishes no licensing conclusion.
 - **Quality**: Track which leads convert so you can optimize form/targeting
