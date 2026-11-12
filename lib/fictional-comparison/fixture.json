@@ -1,0 +1,43 @@
+{
+  "schema": "fictional-tariff-input.1",
+  "fictional": true,
+  "caseId": "fictional-household-001",
+  "currency": "USD",
+  "horizonMonths": 12,
+  "usageKwh": [900, 800, 700, 600, 700, 900, 1100, 1200, 1000, 800, 700, 900],
+  "baseline": {
+    "id": "baseline", "name": "Fictional incumbent", "termMonths": 12,
+    "eligibility": "fictional-eligible", "monthlyFeeCents": 500, "exitFeeCents": 6000,
+    "rateSchedule": [{ "fromMonth": 1, "toMonth": 12, "rateMicroUsdPerKwh": 110000 }]
+  },
+  "plans": [
+    {
+      "id": "harbor", "name": "Fictional Harbor Fixed", "termMonths": 12,
+      "eligibility": "fictional-eligible", "monthlyFeeCents": 1200, "exitFeeCents": 7500,
+      "rateSchedule": [{ "fromMonth": 1, "toMonth": 12, "rateMicroUsdPerKwh": 90000 }]
+    },
+    {
+      "id": "meadow", "name": "Fictional Meadow Scheduled", "termMonths": 12,
+      "eligibility": "fictional-eligible", "monthlyFeeCents": 500, "exitFeeCents": 5000,
+      "rateSchedule": [
+        { "fromMonth": 1, "toMonth": 3, "rateMicroUsdPerKwh": 70000 },
+        { "fromMonth": 4, "toMonth": 12, "rateMicroUsdPerKwh": 105000 }
+      ]
+    },
+    {
+      "id": "breeze", "name": "Fictional Breeze Variable Scenario", "termMonths": 12,
+      "eligibility": "fictional-eligible", "monthlyFeeCents": 500, "exitFeeCents": 0,
+      "rateBand": { "lowMicroUsdPerKwh": 70000, "highMicroUsdPerKwh": 150000 }
+    },
+    {
+      "id": "short", "name": "Fictional Six-Month Offer", "termMonths": 6,
+      "eligibility": "fictional-eligible", "monthlyFeeCents": 0, "exitFeeCents": 0,
+      "rateSchedule": [{ "fromMonth": 1, "toMonth": 6, "rateMicroUsdPerKwh": 60000 }]
+    },
+    {
+      "id": "unknown-area", "name": "Fictional Eligibility Unknown", "termMonths": 12,
+      "eligibility": "unknown", "monthlyFeeCents": 0, "exitFeeCents": 0,
+      "rateSchedule": [{ "fromMonth": 1, "toMonth": 12, "rateMicroUsdPerKwh": 50000 }]
+    }
+  ]
+}
