@@ -1,20 +1,8 @@
 import type { Metadata } from 'next';
-import { Fraunces, Manrope } from 'next/font/google';
 import { GoogleAnalytics } from '@/components/google-analytics';
 import { SITE_URL } from '@/lib/site';
 import './globals.css';
-
-const manrope = Manrope({
-  subsets: ['latin'],
-  variable: '--font-manrope',
-  weight: ['400', '500', '600', '700']
-});
-
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-fraunces',
-  weight: ['600', '700']
-});
+import './fonts.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -44,7 +32,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${fraunces.variable} font-sans`}
+      <head>
+        <link rel="preload" href="/fonts/8760c4774489e4ba-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/af4bf8399d1aacdf-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </head>
+      <body className="font-sans"
         style={{ fontFamily: 'var(--font-manrope), ui-sans-serif, system-ui' }}>
         <GoogleAnalytics />
         <div className="min-h-screen">
