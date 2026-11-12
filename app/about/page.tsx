@@ -3,6 +3,7 @@ import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
 import { utilities } from '@/lib/utilities';
 import { utilityPageConfigs } from '@/lib/utility-pages';
+import { Button } from '@/components/ui/button';
 
 export default function AboutPage({
   searchParams
@@ -71,6 +72,8 @@ export default function AboutPage({
               We plan to refresh data via the official EnergyChoice listings. The MVP ships with a local JSON dataset for speed and simplicity.
             </p>
           </div>
+          <p className="mt-6 text-sm text-ink/70">Explore how monthly fees, introductory rates and contract terms change costs using wholly fictional examples.</p>
+          <Button asChild variant="outline" className="mt-3"><Link href="/comparison-lab">Open the free fictional comparison lab</Link></Button>
         </div>
       </section>
       <SiteFooter />
