@@ -4,6 +4,7 @@ import SiteFooter from '@/components/site-footer';
 import { utilities } from '@/lib/utilities';
 import { utilityPageConfigs } from '@/lib/utility-pages';
 import { Button } from '@/components/ui/button';
+import { rateSnapshotNotice } from '@/lib/rate-snapshot';
 
 export default function AboutPage({
   searchParams
@@ -30,7 +31,7 @@ export default function AboutPage({
               Ohio has a deregulated electricity market. Your utility still delivers power, but you can choose the supplier that provides the energy. The default utility rate is called the “Price to Compare.”
             </p>
             <p className="mt-4 text-base text-ink/70">
-              Ohio Power Picker compares supplier offers against the Price to Compare and helps homeowners avoid variable rates or surprise fees.
+              Ohio Power Picker compares an archived supplier snapshot against stored utility benchmarks to help you screen plan structures and fees before verifying current offers.
             </p>
           </div>
           <div className="rounded-3xl border border-white/60 bg-white/70 p-8 shadow-card backdrop-blur">
@@ -66,10 +67,10 @@ export default function AboutPage({
           </h2>
           <div className="mt-4 grid gap-4 text-sm text-ink/70 md:grid-cols-2">
             <p>
-              Supplier offers are seed data modeled after typical Apples to Apples listings. Rates, term lengths, and fees are representative and should be verified before enrolling.
+              {rateSnapshotNotice}
             </p>
             <p>
-              We plan to refresh data via the official EnergyChoice listings. The MVP ships with a local JSON dataset for speed and simplicity.
+              The archived snapshot is separate from the fictional comparison lab below. The lab uses invented tariffs and usage to explain costs; it does not establish current availability or achievable savings.
             </p>
           </div>
           <p className="mt-6 text-sm text-ink/70">Explore how monthly fees, introductory rates and contract terms change costs using wholly fictional examples.</p>
