@@ -116,6 +116,13 @@ export default function PricingPage({
           >
             Check current PUCO Apples to Apples offers →
           </a>
+          <h2 className="mt-5 text-lg font-semibold">How to recheck your Price to Compare</h2>
+          <ol className="mt-2 list-decimal space-y-2 pl-5">
+            <li>Find the delivery utility on your bill. In Apples to Apples, choose electricity, your customer class and that utility. Look for the utility’s Price to Compare in cents per kWh.</li>
+            <li>Check the effective dates against the period you want to compare. If the dates are missing or the period has expired, confirm the benchmark with your utility before using it.</li>
+            <li>Fictional example for November 19, 2026: suppose a benchmark of 12¢/kWh applies November 1–30. For 500 kWh used within those dates, the supply benchmark is 500 × $0.12 = $60. Delivery charges and taxes are separate. For December usage, check the dates again.</li>
+          </ol>
+          <p className="mt-2">Compare the verified benchmark with a supplier’s current written rate, fees and term for the same usage period. The table below uses archived offers and stored benchmarks.</p>
         </div>
       </section>
 
