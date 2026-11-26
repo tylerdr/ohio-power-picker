@@ -75,6 +75,10 @@ export default function AboutPage({
           </div>
           <p className="mt-6 text-sm text-ink/70">Explore how monthly fees, introductory rates and contract terms change costs using wholly fictional examples.</p>
           <Button asChild variant="outline" className="mt-3"><Link href="/comparison-lab">Open the free fictional comparison lab</Link></Button>
+          <div className="mt-6 border-t pt-4">
+            <p className="text-sm text-ink/70">For brokers evaluating a comparison or referral page, use the worksheet to check whether you can measure completed analyses from the same group of inquiries.</p>
+            <Button asChild variant="outline" className="mt-3"><a href="/referral-measurement-worksheet.md" download>Download the referral measurement worksheet</a></Button>
+          </div>
         </div>
       </section>
       <SiteFooter />
